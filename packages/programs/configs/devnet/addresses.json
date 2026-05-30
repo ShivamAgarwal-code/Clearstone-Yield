@@ -1,0 +1,49 @@
+{
+  "cluster": "devnet",
+  "_seeAlso": "cssol-market-v3.json — current v3 market state including the 2026-05-06 wSOL → cSOL EG-2 debt-reserve migration. The v1 program IDs below (governor=BrZYcb…3KJh, deltaMint=13Su8nR…QkEn) are legacy; v3 uses governor=6xqW3D…tJi, deltaMint=BKprvL…X1xy.",
+  "tokens": {
+    "USDC": {
+      "mint": "8iBux2LRja1PhVZph8Rw4Hi45pgkaufNEiaZma5nTD5g",
+      "decimals": 6,
+      "tokenProgram": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+      "mintAuthority": "5RabYeYt19sor9RvExkiRvv1T9rWje5hPW7xeYXB6quQ"
+    },
+    "USDT": {
+      "mint": "5dXXpWyZCCPhBHxmp79Du81t7t9oh7HacUW864ARFyft",
+      "decimals": 6,
+      "tokenProgram": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+      "mintAuthority": "5RabYeYt19sor9RvExkiRvv1T9rWje5hPW7xeYXB6quQ"
+    },
+    "USX": {
+      "mint": "7QC4zjrKA6XygpXPQCKSS9BmAsEFDJR6awiHSdgLcDvS",
+      "decimals": 6,
+      "tokenProgram": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+      "mintAuthority": "3ShUStmc89XBkzPLwjKjcX3WjYiryoQfoLBdfdFSP7n3",
+      "freezeAuthority": "3ShUStmc89XBkzPLwjKjcX3WjYiryoQfoLBdfdFSP7n3"
+    },
+    "eUSX": {
+      "mint": "Gkt9h4QWpPBDtbaF5HvYKCc87H5WCRTUtMf77HdTGHBt",
+      "decimals": 6,
+      "tokenProgram": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+      "mintAuthority": "6qaXkxV8mKV13MP4VoLcBVstR94xhB8u8ctjCt8RWXgM"
+    },
+    "USDY": {
+      "mint": "A1KLoBrKBde8Ty9qtNQUtq3C2ortoC3u7twggz7sEto6",
+      "decimals": 6,
+      "note": "Ondo USDY on devnet"
+    }
+  },
+  "programs": {
+    "deltaMint": "13Su8nR5NBzQ7UwFFUiNAH1zH5DQtLyjezhbwRREQkEn",
+    "governor": "BrZYcbPBt9nW4b6xUSodwXRfAfRNZTCzthp1ywMG3KJh",
+    "klend": "KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD",
+    "usxProgram": "usxTTTgAJS1Cr6GTFnNRnNqtCbQKQXcUTvguz3UuwBD",
+    "yieldVault": "euxU8CnAgYk5qkRrSdqKoCM8huyexecRRWS67dz2FVr"
+  },
+  "oracles": {
+    "pythV2Program": "gSbePebfvPy7tRqimPoVecS2UsBvYv46ynrzWocc92s",
+    "pythPushProgram": "pythWSnswVUd12oZpeFP8e9CVaEqJg25g1Vtc2biRsT",
+    "USDY_USD": "E4pitSrZV9MWSspahe2vr26Cwsn3podnvHvW3cuT74R4",
+    "SOL_USD": "J83w4HKfqxwcq3BEMMkPFSppX3gqekLyLJBexebFVkix"
+  }
+}

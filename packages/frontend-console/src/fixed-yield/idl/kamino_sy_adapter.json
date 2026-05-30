@@ -1,0 +1,875 @@
+{
+  "address": "29tisXppYM4NcAEJfzMe1aqyuf2M7w9StTtiXBHxTKxd",
+  "metadata": {
+    "name": "kamino_sy_adapter",
+    "version": "0.1.0",
+    "spec": "0.1.0",
+    "description": "Clearstone SY adapter that wraps a Kamino Lend V2 reserve. Optionally CPIs into the clearstone-finance governor to whitelist clearstone_core escrow PDAs for KYC-gated d-token underlyings."
+  },
+  "instructions": [
+    {
+      "name": "claim_emission",
+      "docs": [
+        "No-op; this adapter has no emissions. Placeholder for interface parity."
+      ],
+      "discriminator": [
+        8
+      ],
+      "accounts": [
+        {
+          "name": "sy_metadata"
+        }
+      ],
+      "args": [
+        {
+          "name": "_amount",
+          "type": {
+            "defined": {
+              "name": "Amount"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "deposit_sy",
+      "docs": [
+        "User deposits SY into adapter's pool escrow and credits their position."
+      ],
+      "discriminator": [
+        5
+      ],
+      "accounts": [
+        {
+          "name": "owner",
+          "signer": true
+        },
+        {
+          "name": "sy_metadata"
+        },
+        {
+          "name": "sy_mint",
+          "writable": true
+        },
+        {
+          "name": "sy_src",
+          "writable": true
+        },
+        {
+          "name": "pool_escrow",
+          "writable": true
+        },
+        {
+          "name": "position",
+          "writable": true
+        },
+        {
+          "name": "klend_reserve"
+        },
+        {
+          "name": "token_program"
+        }
+      ],
+      "args": [
+        {
+          "name": "amount",
+          "type": "u64"
+        }
+      ],
+      "returns": {
+        "defined": {
+          "name": "SyState"
+        }
+      }
+    },
+    {
+      "name": "get_position",
+      "docs": [
+        "Read-only: position data."
+      ],
+      "discriminator": [
+        10
+      ],
+      "accounts": [
+        {
+          "name": "sy_metadata"
+        },
+        {
+          "name": "position"
+        }
+      ],
+      "args": [],
+      "returns": {
+        "defined": {
+          "name": "PositionState"
+        }
+      }
+    },
+    {
+      "name": "get_sy_state",
+      "docs": [
+        "Read-only SyState. Exchange rate read from klend reserve."
+      ],
+      "discriminator": [
+        7
+      ],
+      "accounts": [
+        {
+          "name": "sy_metadata"
+        },
+        {
+          "name": "klend_reserve"
+        }
+      ],
+      "args": [],
+      "returns": {
+        "defined": {
+          "name": "SyState"
+        }
+      }
+    },
+    {
+      "name": "init_personal_account",
+      "docs": [
+        "Create a PersonalPosition for `owner` on this SY market."
+      ],
+      "discriminator": [
+        3
+      ],
+      "accounts": [
+        {
+          "name": "payer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "owner"
+        },
+        {
+          "name": "sy_metadata"
+        },
+        {
+          "name": "position",
+          "writable": true
+        },
+        {
+          "name": "system_program"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "init_sy_params",
+      "docs": [
+        "Create SY parameters: new SY mint, collateral vault (holds ctokens), SY pool escrow.",
+        "When kyc_mode is GovernorWhitelist, the caller passes",
+        "`core_pdas_to_whitelist: Vec<Pubkey>` and paired `[wallet, whitelist_entry]` accounts",
+        "via remaining_accounts; the adapter CPIs governor once per PDA."
+      ],
+      "discriminator": [
+        0
+      ],
+      "accounts": [
+        {
+          "name": "payer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "curator",
+          "docs": [
+            "Curator is the caller authorizing the init. When kyc_mode is GovernorWhitelist",
+            "they must be a governor root/admin — enforced by the governor CPI in M-KYC-3.",
+            "Marked `mut` because the governor CPI's `add_participant_via_pool` requires",
+            "the authority to be writable; without the annotation Anchor builds the outer",
+            "tx's AccountMeta read-only and the inner CPI fails with",
+            "\"writable privilege escalated\"."
+          ],
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "underlying_mint"
+        },
+        {
+          "name": "sy_metadata",
+          "writable": true
+        },
+        {
+          "name": "sy_mint",
+          "writable": true
+        },
+        {
+          "name": "collateral_vault",
+          "docs": [
+            "Adapter-owned vault holding klend ctokens. SY supply tracks this 1:1."
+          ],
+          "writable": true
+        },
+        {
+          "name": "pool_escrow",
+          "docs": [
+            "Pool escrow for deposit_sy / withdraw_sy flow."
+          ],
+          "writable": true
+        },
+        {
+          "name": "klend_reserve",
+          "docs": [
+            "downstream ixs. Here we just store its pubkey."
+          ]
+        },
+        {
+          "name": "klend_lending_market"
+        },
+        {
+          "name": "klend_collateral_mint"
+        },
+        {
+          "name": "klend_program"
+        },
+        {
+          "name": "governor_program",
+          "optional": true
+        },
+        {
+          "name": "pool_config",
+          "docs": [
+            "`mut` because the governor CPI's `pool_config` slot is writable."
+          ],
+          "writable": true,
+          "optional": true
+        },
+        {
+          "name": "dm_mint_config",
+          "docs": [
+            "`mut` because the governor CPI's `dm_mint_config` slot is writable."
+          ],
+          "writable": true,
+          "optional": true
+        },
+        {
+          "name": "delta_mint_program",
+          "optional": true
+        },
+        {
+          "name": "token_program"
+        },
+        {
+          "name": "system_program"
+        },
+        {
+          "name": "rent"
+        }
+      ],
+      "args": [
+        {
+          "name": "kyc_mode",
+          "type": {
+            "defined": {
+              "name": "KycMode"
+            }
+          }
+        },
+        {
+          "name": "core_pdas_to_whitelist",
+          "type": {
+            "vec": "pubkey"
+          }
+        }
+      ]
+    },
+    {
+      "name": "mint_sy",
+      "docs": [
+        "Mint SY: user's underlying → klend.deposit_reserve_liquidity → ctokens stored in",
+        "adapter's collateral_vault → adapter mints amount_collateral of SY (1:1) to user."
+      ],
+      "discriminator": [
+        1
+      ],
+      "accounts": [
+        {
+          "name": "owner",
+          "signer": true
+        },
+        {
+          "name": "sy_metadata"
+        },
+        {
+          "name": "underlying_mint"
+        },
+        {
+          "name": "sy_mint",
+          "writable": true
+        },
+        {
+          "name": "user_underlying",
+          "writable": true
+        },
+        {
+          "name": "sy_dst",
+          "writable": true
+        },
+        {
+          "name": "collateral_vault",
+          "writable": true
+        },
+        {
+          "name": "klend_reserve",
+          "writable": true
+        },
+        {
+          "name": "klend_liquidity_supply",
+          "writable": true
+        },
+        {
+          "name": "klend_collateral_mint",
+          "writable": true
+        },
+        {
+          "name": "klend_program"
+        },
+        {
+          "name": "token_program"
+        },
+        {
+          "name": "klend_lending_market",
+          "optional": true
+        },
+        {
+          "name": "klend_lending_market_authority",
+          "optional": true
+        },
+        {
+          "name": "klend_instruction_sysvar",
+          "optional": true
+        },
+        {
+          "name": "klend_liquidity_token_program",
+          "optional": true
+        },
+        {
+          "name": "klend_pyth_oracle",
+          "optional": true
+        },
+        {
+          "name": "klend_switchboard_price",
+          "optional": true
+        },
+        {
+          "name": "klend_switchboard_twap",
+          "optional": true
+        },
+        {
+          "name": "klend_scope_prices",
+          "optional": true
+        }
+      ],
+      "args": [
+        {
+          "name": "amount_underlying",
+          "type": "u64"
+        }
+      ],
+      "returns": {
+        "defined": {
+          "name": "MintSyReturnData"
+        }
+      }
+    },
+    {
+      "name": "redeem_sy",
+      "docs": [
+        "Redeem SY: burn SY from user → redeem equal ctokens from adapter vault via",
+        "klend.redeem_reserve_collateral → user receives underlying."
+      ],
+      "discriminator": [
+        2
+      ],
+      "accounts": [
+        {
+          "name": "owner",
+          "signer": true
+        },
+        {
+          "name": "sy_metadata"
+        },
+        {
+          "name": "underlying_mint"
+        },
+        {
+          "name": "sy_mint",
+          "writable": true
+        },
+        {
+          "name": "sy_src",
+          "writable": true
+        },
+        {
+          "name": "user_underlying",
+          "writable": true
+        },
+        {
+          "name": "collateral_vault",
+          "writable": true
+        },
+        {
+          "name": "klend_reserve",
+          "writable": true
+        },
+        {
+          "name": "klend_liquidity_supply",
+          "writable": true
+        },
+        {
+          "name": "klend_collateral_mint",
+          "writable": true
+        },
+        {
+          "name": "klend_program"
+        },
+        {
+          "name": "token_program"
+        },
+        {
+          "name": "klend_lending_market",
+          "optional": true
+        },
+        {
+          "name": "klend_lending_market_authority",
+          "optional": true
+        },
+        {
+          "name": "klend_instruction_sysvar",
+          "optional": true
+        },
+        {
+          "name": "klend_liquidity_token_program",
+          "optional": true
+        },
+        {
+          "name": "klend_pyth_oracle",
+          "optional": true
+        },
+        {
+          "name": "klend_switchboard_price",
+          "optional": true
+        },
+        {
+          "name": "klend_switchboard_twap",
+          "optional": true
+        },
+        {
+          "name": "klend_scope_prices",
+          "optional": true
+        }
+      ],
+      "args": [
+        {
+          "name": "amount_sy",
+          "type": "u64"
+        }
+      ],
+      "returns": {
+        "defined": {
+          "name": "RedeemSyReturnData"
+        }
+      }
+    },
+    {
+      "name": "withdraw_sy",
+      "docs": [
+        "Withdraw SY from pool escrow back to owner."
+      ],
+      "discriminator": [
+        6
+      ],
+      "accounts": [
+        {
+          "name": "owner",
+          "signer": true
+        },
+        {
+          "name": "sy_metadata"
+        },
+        {
+          "name": "sy_mint",
+          "writable": true
+        },
+        {
+          "name": "sy_dst",
+          "writable": true
+        },
+        {
+          "name": "pool_escrow",
+          "writable": true
+        },
+        {
+          "name": "position",
+          "writable": true
+        },
+        {
+          "name": "klend_reserve"
+        },
+        {
+          "name": "token_program"
+        }
+      ],
+      "args": [
+        {
+          "name": "amount",
+          "type": "u64"
+        }
+      ],
+      "returns": {
+        "defined": {
+          "name": "SyState"
+        }
+      }
+    }
+  ],
+  "accounts": [
+    {
+      "name": "PersonalPosition",
+      "discriminator": [
+        40,
+        172,
+        123,
+        89,
+        170,
+        15,
+        56,
+        141
+      ]
+    },
+    {
+      "name": "SyMetadata",
+      "discriminator": [
+        238,
+        103,
+        154,
+        99,
+        51,
+        91,
+        34,
+        91
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "ZeroAmount",
+      "msg": "Amount must be > 0"
+    },
+    {
+      "code": 6001,
+      "name": "InvalidExchangeRate",
+      "msg": "Invalid exchange rate (must be > 0)"
+    },
+    {
+      "code": 6002,
+      "name": "Overflow",
+      "msg": "Position balance overflow"
+    },
+    {
+      "code": 6003,
+      "name": "InsufficientBalance",
+      "msg": "Position balance underflow"
+    },
+    {
+      "code": 6004,
+      "name": "GovernorAccountMismatch",
+      "msg": "Governor account does not match kyc_mode payload"
+    },
+    {
+      "code": 6005,
+      "name": "WhitelistAccountsMismatch",
+      "msg": "remaining_accounts count does not match whitelist request length"
+    },
+    {
+      "code": 6006,
+      "name": "WhitelistPdaMismatch",
+      "msg": "remaining_accounts pubkey does not match core_pdas_to_whitelist entry"
+    },
+    {
+      "code": 6007,
+      "name": "WhitelistNotInKycMode",
+      "msg": "Cannot pass core_pdas_to_whitelist when kyc_mode is None"
+    },
+    {
+      "code": 6008,
+      "name": "ReserveDataMalformed",
+      "msg": "Reserve account data malformed / unexpected layout"
+    },
+    {
+      "code": 6009,
+      "name": "MissingRealKlendAccount",
+      "msg": "Real klend reserve detected but required account (lending_market / lending_market_authority / instruction_sysvar / liquidity_token_program) not provided"
+    }
+  ],
+  "types": [
+    {
+      "name": "Amount",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "All"
+          },
+          {
+            "name": "Some",
+            "fields": [
+              "u64"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "Emission",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "mint",
+            "type": "pubkey"
+          },
+          {
+            "name": "amount_claimable",
+            "type": "u64"
+          },
+          {
+            "name": "last_seen_emission_index",
+            "type": {
+              "defined": {
+                "name": "Number"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "KycMode",
+      "docs": [
+        "KYC configuration stored on SyMetadata."
+      ],
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "None"
+          },
+          {
+            "name": "GovernorWhitelist",
+            "fields": [
+              {
+                "name": "governor_program",
+                "type": "pubkey"
+              },
+              {
+                "name": "pool_config",
+                "type": "pubkey"
+              },
+              {
+                "name": "dm_mint_config",
+                "type": "pubkey"
+              },
+              {
+                "name": "delta_mint_program",
+                "type": "pubkey"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "MintSyReturnData",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "sy_out_amount",
+            "type": "u64"
+          },
+          {
+            "name": "exchange_rate",
+            "type": {
+              "defined": {
+                "name": "Number"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "Number",
+      "docs": [
+        "High precision number, stored as 4 u64 words in little endian"
+      ],
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "array": [
+              "u64",
+              4
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "PersonalPosition",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "sy_metadata",
+            "type": "pubkey"
+          },
+          {
+            "name": "owner",
+            "type": "pubkey"
+          },
+          {
+            "name": "sy_balance",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "PositionState",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "owner",
+            "type": "pubkey"
+          },
+          {
+            "name": "sy_balance",
+            "type": "u64"
+          },
+          {
+            "name": "emissions",
+            "type": {
+              "vec": {
+                "defined": {
+                  "name": "Emission"
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "RedeemSyReturnData",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "base_out_amount",
+            "type": "u64"
+          },
+          {
+            "name": "exchange_rate",
+            "type": {
+              "defined": {
+                "name": "Number"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "SyMetadata",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "curator",
+            "type": "pubkey"
+          },
+          {
+            "name": "underlying_mint",
+            "type": "pubkey"
+          },
+          {
+            "name": "sy_mint",
+            "type": "pubkey"
+          },
+          {
+            "name": "collateral_vault",
+            "type": "pubkey"
+          },
+          {
+            "name": "pool_escrow",
+            "type": "pubkey"
+          },
+          {
+            "name": "klend_program",
+            "type": "pubkey"
+          },
+          {
+            "name": "klend_lending_market",
+            "type": "pubkey"
+          },
+          {
+            "name": "klend_reserve",
+            "type": "pubkey"
+          },
+          {
+            "name": "klend_collateral_mint",
+            "type": "pubkey"
+          },
+          {
+            "name": "kyc_mode",
+            "type": {
+              "defined": {
+                "name": "KycMode"
+              }
+            }
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "SyState",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "exchange_rate",
+            "type": {
+              "defined": {
+                "name": "Number"
+              }
+            }
+          },
+          {
+            "name": "emission_indexes",
+            "type": {
+              "vec": {
+                "defined": {
+                  "name": "Number"
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

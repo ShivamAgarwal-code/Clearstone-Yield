@@ -1,0 +1,18 @@
+{
+  "cluster": "devnet",
+  "rpc": "https://api.devnet.solana.com",
+  "authority": "AhKNmBmaeq6XrrEyGnSQne3WeU4SoN7hSAGieTiqPaJX",
+  "pool": {
+    "poolConfig": "5z7ScihUHe2WfHoiNzo4thDU3xes5C8Pj5vTPgXyjwwR",
+    "underlyingMint": "8iBux2LRja1PhVZph8Rw4Hi45pgkaufNEiaZma5nTD5g",
+    "underlyingOracle": "ETLQGfwHVfCYSqEG51ckf6h581e3k5CyoMnfz2WW45eD",
+    "decimals": 6
+  },
+  "cusdcMint": "4qU4eyXH4PR8Cf4jeKv4EUmMXrqg5Are7kugdjhP1EnY",
+  "cusdcAta": "o78XkapmkLTRhN5oLqutfdedrPFDjhi8XrvUWqYGJG7",
+  "poolSusdcVault": "8YUNGhdWeXXnpRvKRUa9PG29VaZE8iECkjLFLRGkLngM",
+  "dmMintConfig": "33jPSysPWwKfaL31duyHNWHAwKEYFjVrtWs9nVG3FmUT",
+  "dmMintAuthority": "G1mdEbe9EC1ag4bKqofLVjoiRbLjvuXfUD87QjVPMsFP",
+  "seedAmountUnits": "1000000",
+  "completedAt": "2026-05-07T17:36:56.817Z"
+}

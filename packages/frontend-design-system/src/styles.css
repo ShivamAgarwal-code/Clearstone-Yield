@@ -1,0 +1,294 @@
+/* ============================================================================
+ * Design-system component styles
+ * ----------------------------------------------------------------------------
+ * Imported once per app via:
+ *
+ *     @import "@clearstone/design-system/styles.css";
+ *
+ * Holds the keyframes + a small set of utility classes the React components
+ * reference. The visual tokens (colors, radii, fonts) live in theme.css —
+ * keep them there so non-React surfaces (landing pages, marketing sites)
+ * can pick them up without paying the React cost.
+ * ============================================================================ */
+
+@keyframes cs-toast-in {
+  from { transform: translateY(8px); opacity: 0; }
+  to   { transform: translateY(0);   opacity: 1; }
+}
+
+@keyframes cs-toast-out {
+  from { transform: translateY(0);   opacity: 1; }
+  to   { transform: translateY(8px); opacity: 0; }
+}
+
+@keyframes cs-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Subtle hover lift used by the primary Button. Half the delta of a
+ * stronger card-hover so it reads as interactive but doesn't look loud. */
+.cs-hover-lift {
+  transition: transform 150ms ease-out, box-shadow 150ms ease-out, filter 150ms ease-out;
+}
+.cs-hover-lift:hover:not(:disabled) {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+}
+.cs-hover-lift:active:not(:disabled) {
+  transform: translateY(0);
+  filter: brightness(0.95);
+}
+
+/* Focus-visible outline that respects the brand accent — used across
+ * Button, Tab, Input. */
+.cs-focus-ring:focus-visible {
+  outline: 2px solid var(--color-primary, #1F2D48);
+  outline-offset: 2px;
+}
+
+/* ============================================================================
+ * Wallet adapter (Solana) overrides
+ * ----------------------------------------------------------------------------
+ * Re-themes @solana/wallet-adapter-react-ui to match the design system.
+ *
+ * Why this lives in the DS, not per-app: every Clearstone app that mounts a
+ * <WalletMultiButton/> hits the same default styling (gradient purple
+ * trigger, transparent dropdown). Centralising avoids drift between
+ * console + institutional + retail.
+ *
+ * The earlier per-app blocks wrapped every variable in `oklch(...)` —
+ * `oklch(var(--color-base-200))`. That looked safe but expanded to
+ * `oklch(#FFFFFF)` (since DaisyUI 5 / our theme.css store full hex
+ * colours in `--color-*`, not bare oklch tuples). Invalid CSS → silent
+ * fallback to transparent → the dropdown rendered see-through over page
+ * content. Use the var directly and `color-mix` for alpha.
+ * ============================================================================ */
+
+/* Force the brand sans stack (Geist) on every wallet-adapter element.
+ * The adapter's stylesheet imports DM Sans and applies it to all of its
+ * own classes — without these overrides the modal feels grafted on
+ * (different typography from the rest of the app). */
+.wallet-adapter-modal,
+.wallet-adapter-modal *,
+.wallet-adapter-button,
+.wallet-adapter-dropdown,
+.wallet-adapter-dropdown * {
+  font-family: var(--font-sans) !important;
+}
+.wallet-adapter-modal-title {
+  font-family: var(--font-display) !important;
+}
+
+.wallet-adapter-button {
+  background-color: var(--color-primary) !important;
+  color: var(--color-primary-content) !important;
+  border: none !important;
+  border-radius: 0.5rem !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  height: 36px !important;
+  padding: 0 1rem !important;
+}
+.wallet-adapter-button:hover { filter: brightness(1.1); }
+.wallet-adapter-button-trigger {
+  background-color: var(--color-base-300) !important;
+  color: var(--color-base-content) !important;
+}
+
+/* Modal class structure (wallet-adapter v0.9.x):
+ *   .wallet-adapter-modal           ← z-index host (no bg)
+ *     .wallet-adapter-modal-container   ← positioning flex wrapper
+ *       .wallet-adapter-modal-wrapper   ← VISIBLE CARD
+ *     .wallet-adapter-modal-overlay     ← BACKDROP (sibling)
+ *
+ * Earlier versions of this stylesheet had wrapper/container swapped,
+ * which is why the visible card rendered navy (it was wearing the
+ * scrim styles). The overlay sits *behind* the wrapper in z-order
+ * because it's an absolute-positioned sibling.
+ */
+
+/* Backdrop — navy-tinted scrim with a strong blur so the page behind
+ * is clearly de-focused. The blur lives on the overlay (full-screen
+ * sibling of the modal wrapper), so anything visible through the
+ * modal's translucent card *also* picks it up. Bumped from blur(12px)
+ * to blur(18px) + a heavier scrim so the page behind reads as
+ * unambiguously out-of-focus instead of "slightly hazy". */
+.wallet-adapter-modal-overlay {
+  background-color: rgb(7 13 31 / 0.55) !important;
+  backdrop-filter: blur(18px) saturate(0.85) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(0.85) !important;
+}
+
+/* Visible card — frosted-glass surface. ~88% opaque base-200 plus its
+ * own backdrop-filter so any content peeking through (the dim scrim
+ * shows a hint of the page behind it) renders as a soft blur, never
+ * a sharp slice of the page. Reads as a real "modal floating above"
+ * rather than "white sheet pasted on the page".
+ *
+ * Height fix: wallet-adapter ships a hard `min-height: 500px` on the
+ * wrapper which leaves a giant empty stripe under a 3-wallet list on
+ * dark themes (retail). Override to `auto` and let the contents drive
+ * the box.
+ *
+ * Scroll fix: the wrapper used to carry `overflow-y: auto`, which made
+ * the entire card scroll when "More options" was expanded — the
+ * absolutely-positioned close button drifted off-screen on small
+ * viewports and the title scrolled with the list. Now the wrapper is
+ * a flex column that hides its overflow; the wallet `<ul>` is the
+ * scroll surface (see `.wallet-adapter-modal-list` below). Title +
+ * close button + more-options toggle all stay pinned. */
+.wallet-adapter-modal-wrapper {
+  background-color: color-mix(in oklab, var(--color-base-200) 88%, transparent) !important;
+  backdrop-filter: blur(20px) saturate(1.1) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(1.1) !important;
+  border: 1px solid color-mix(in oklab, var(--color-base-300) 80%, transparent) !important;
+  border-radius: 1.25rem !important;
+  color: var(--color-base-content) !important;
+  box-shadow:
+    0 1px 3px rgb(31 45 72 / 0.10),
+    0 30px 60px -20px rgb(31 45 72 / 0.45) !important;
+  padding: 1.75rem !important;
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 0 !important;
+  height: auto !important;
+  max-height: 90vh !important;
+  overflow: hidden !important;
+}
+
+/* Positioning wrapper — neutral, no surface styling. */
+.wallet-adapter-modal-container {
+  background-color: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+/* Title — display-stack weight; tighter tracking; slightly larger so
+   it owns the headline rather than fighting the rows below. The
+   trailing margin gives the rows real breathing room. */
+.wallet-adapter-modal-title {
+  color: var(--color-base-content) !important;
+  font-weight: 600 !important;
+  font-size: 1.125rem !important;
+  letter-spacing: -0.01em !important;
+  line-height: 1.35 !important;
+  margin: 0.25rem 0 1.25rem !important;
+  padding: 0 0.5rem !important;
+}
+
+/* Wallet list rows — clean white pills on the white card with a 1px
+   hairline border. Bigger padding + bigger gap than v1 so the row
+   stack reads as deliberate options, not a tightly packed list.
+   Hover lifts + tints the border with brand primary. */
+/* List uses flex-column so `gap` actually applies — the wallet-adapter
+   default is `display: block` on the <ul>, which would make `gap`
+   silently no-op. Explicit gap of 0.875rem so the wallet rows breathe. */
+.wallet-adapter-modal-list {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.875rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+  /* wallet-adapter v0.9 sets `flex: 1` on the list which, combined with
+     the library's hard wrapper min-height, leaves a half-modal of empty
+     space under a short list. With wrapper now a flex column and
+     `min-height: 0`, the natural flex behavior (`0 1 auto`) keeps short
+     lists at content height *and* lets long lists shrink to fit the
+     available wrapper space. `min-height: 0` is required for shrink to
+     actually take effect inside flex; `overflow-y: auto` makes the list
+     itself the scroll surface so the title and "More options" toggle
+     stay pinned when the list overflows. */
+  flex: 0 1 auto !important;
+  min-height: 0 !important;
+  overflow-y: auto !important;
+}
+.wallet-adapter-modal-list > li { margin: 0 !important; padding: 0 !important; }
+.wallet-adapter-modal-list .wallet-adapter-button {
+  background-color: var(--color-base-200) !important;
+  color: var(--color-base-content) !important;
+  border: 1px solid var(--color-base-300) !important;
+  border-radius: 0.875rem !important;
+  padding: 1rem 1.25rem !important;
+  height: auto !important;
+  min-height: 60px !important;
+  font-size: 0.95rem !important;
+  font-weight: 500 !important;
+  justify-content: flex-start !important;
+  width: 100% !important;
+  gap: 0.875rem !important;
+  transition: background-color 150ms ease-out, border-color 150ms ease-out, transform 150ms ease-out, box-shadow 150ms ease-out !important;
+}
+.wallet-adapter-modal-list .wallet-adapter-button:hover {
+  background-color: color-mix(in oklab, var(--color-primary) 5%, transparent) !important;
+  border-color: color-mix(in oklab, var(--color-primary) 35%, transparent) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 6px 16px -8px rgb(31 45 72 / 0.20) !important;
+}
+.wallet-adapter-modal-list .wallet-adapter-button-start-icon,
+.wallet-adapter-modal-list .wallet-adapter-button-start-icon img {
+  width: 28px !important;
+  height: 28px !important;
+}
+.wallet-adapter-modal-list .wallet-adapter-button .wallet-adapter-button-end-icon,
+.wallet-adapter-modal-list .wallet-adapter-button-end-icon {
+  color: color-mix(in oklab, var(--color-base-content) 45%, transparent) !important;
+  font-size: 0.75rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.01em !important;
+}
+
+.wallet-adapter-modal-list-more {
+  color: var(--color-primary) !important;
+  font-weight: 600 !important;
+  font-size: 0.85rem !important;
+  margin-top: 0.5rem !important;
+}
+
+/* Close button — soft neutral chip top-right of the modal. The default
+   wallet-adapter CSS sets `padding: 12px` which (combined with the
+   button's 14×14 SVG) crushes the X icon into a near-zero content box
+   when we override width/height — the result reads as a stray chevron.
+   Reset padding + lock the SVG's render size so it always shows as a
+   proper centred X. */
+.wallet-adapter-modal-button-close {
+  background-color: transparent !important;
+  color: color-mix(in oklab, var(--color-base-content) 50%, transparent) !important;
+  border-radius: 0.625rem !important;
+  width: 2.25rem !important;
+  height: 2.25rem !important;
+  padding: 0 !important;
+  top: 1rem !important;
+  right: 1rem !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: background-color 150ms ease-out, color 150ms ease-out !important;
+}
+.wallet-adapter-modal-button-close:hover {
+  background-color: color-mix(in oklab, var(--color-base-content) 8%, transparent) !important;
+  color: var(--color-base-content) !important;
+}
+.wallet-adapter-modal-button-close svg {
+  width: 14px !important;
+  height: 14px !important;
+  fill: currentColor !important;
+}
+
+/* Dropdown — the bug we're fixing. */
+.wallet-adapter-dropdown-list {
+  background-color: var(--color-base-200) !important;
+  border: 1px solid var(--color-base-300) !important;
+  border-radius: 0.75rem !important;
+  box-shadow: 0 10px 25px rgb(0 0 0 / 0.30) !important;
+  overflow: hidden;
+}
+.wallet-adapter-dropdown-list-item {
+  background-color: transparent !important;
+  color: var(--color-base-content) !important;
+  padding: 0.6rem 1rem !important;
+}
+.wallet-adapter-dropdown-list-item:hover {
+  background-color: color-mix(in oklab, var(--color-primary) 10%, transparent) !important;
+}

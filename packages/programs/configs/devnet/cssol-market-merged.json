@@ -1,0 +1,26 @@
+{
+  "market": "2gRy7fYaPe8ooB1HqTfa2sJeJZ8KdVebhj88tgShyejW",
+  "addedReserves": {
+    "ceUSX": {
+      "name": "ceUSX",
+      "reserve": "yBZB2WHSizBs6Mg7GVPBYqm6L7vfcyC5UzJ2KU4YG1U",
+      "mint": "8Uy7rmtAZvnQA1SuYZJKKBXFovHDPEYXiYH3H6iQMRwT",
+      "underlying": "Gkt9h4QWpPBDtbaF5HvYKCc87H5WCRTUtMf77HdTGHBt",
+      "oracle": "94vuYMSmrFBp2Nm9RBF1zd9cXe7mDyUtjEYJ8TgNcuPz",
+      "price": 1.08,
+      "tokenProgram": "Token-2022",
+      "role": "collateral"
+    },
+    "sUSDC": {
+      "name": "Solstice USDC",
+      "reserve": "DGMZhxx83nyquZ5Xb8m1VPACus2RdDNfBEyexgmXqtKC",
+      "mint": "8iBux2LRja1PhVZph8Rw4Hi45pgkaufNEiaZma5nTD5g",
+      "oracle": "6swAVtduQhqyDdL8varujooYSxJ5auii95NMAzsx7M36",
+      "price": 1,
+      "tokenProgram": "Token",
+      "role": "borrow"
+    }
+  },
+  "migratedAt": "2026-04-29T19:29:13.087Z",
+  "note": "Migration of eUSX market reserves into csSOL market for cross-margin. The standalone eUSX market (45FNL648…2tc98) is left in place during a deprecation window."
+}

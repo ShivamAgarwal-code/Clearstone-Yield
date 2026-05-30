@@ -1,0 +1,17 @@
+{
+  "market": "45FNL648aXgbMoMzLfYE2vCZAtWWDCky2tYLCEUztc98",
+  "dtUsdyReserve": {
+    "address": "HhTUuM5XwpnQchiUiLVNxUjPkHtfbcX4aF4bWKCSSAuT",
+    "mint": "6SV8ecHhfgWYHTiec2uDMPXHUXqqT2puNjR73gj6AvYu",
+    "oracle": "4Xv1RpZQHZNHatTba3xUW4foLYUM6x36NxehihVcUnPQ",
+    "role": "collateral",
+    "ltvPct": 75
+  },
+  "susdcReserve": {
+    "address": "HCQrPVyfPxqzTLwmEBb1Fo91JcNeCb6gsCT5B9PRxBhV",
+    "mint": "8iBux2LRja1PhVZph8Rw4Hi45pgkaufNEiaZma5nTD5g",
+    "oracle": "GkD4XAK18VsQba4r4FMwdxcxBef3LiBN45KvMjosS9n4",
+    "role": "borrow"
+  },
+  "createdAt": "2026-03-27T13:23:24.105Z"
+}

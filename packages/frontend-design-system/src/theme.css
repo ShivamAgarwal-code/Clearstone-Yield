@@ -1,0 +1,299 @@
+/* Clearstone Fusion — shared theme tokens (Tailwind v4 + DaisyUI 5)
+   Import once from each frontend's index.css after the tailwind/daisyui imports:
+
+       @import "tailwindcss";
+       @plugin "daisyui" { themes: clearstone --default; }
+       @import "@clearstone/design-system/fonts.css";
+       @import "@clearstone/design-system/theme.css";
+*/
+
+/* --- Brand palette (extracted from logo, single source of truth) --- */
+@theme {
+  --color-stone-0:  #E2E7EF;  /* lightest highlight   */
+  --color-stone-1:  #C5CFDC;  /* light face           */
+  --color-stone-2:  #A6B3C5;  /* mid-light            */
+  --color-stone-3:  #7C8BA3;  /* mid                  */
+  --color-stone-4:  #4F607C;  /* mid-dark / skin      */
+  --color-stone-5:  #1F2D48;  /* darkest / fusion     */
+
+  --color-fusion:        #1F2D48;
+  --color-fusion-fg:     #E2E7EF;
+  --color-clearstone:    #4F607C;
+  --color-clearstone-fg: #E2E7EF;
+
+  /* Warm accent — used sparingly: KPI highlights, focus glow, premium
+     gold leaf moments. Low chroma so it never reads "amber alert"; the
+     point is to break monotone slate without colour-coding meaning. */
+  --color-accent-warm:    #B89968;
+  --color-accent-warm-fg: #1F2D48;
+  --color-accent-warm-soft: #F2EBDD;
+
+  /* Brand teal — the "Learn more →" / link / secondary-CTA hue. Breaks
+     up the navy + gold + slate triad so the page doesn't read as one
+     long greyscale wash. Used by interactive secondary affordances:
+     inline links, MAX pills, "View details" tertiary buttons. */
+  --color-brand-teal:      #0E7C9E;
+  --color-brand-teal-soft: #E0EFF4;
+
+  /* type stack — Manrope for the brand wordmark / display, Geist for UI body */
+  --font-display: "Manrope", "Geist", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-sans:    "Geist", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono:    "Geist Mono", ui-monospace, "SF Mono", "JetBrains Mono", monospace;
+
+  /* radii / motion — tightened so md/lg fields share a family */
+  --radius-xs: 0.3125rem;   /* 5px  — chips, micro */
+  --radius-sm: 0.4375rem;   /* 7px  — sm field/btn */
+  --radius-md: 0.625rem;    /* 10px — default */
+  --radius-lg: 0.875rem;    /* 14px — cards */
+  --radius-xl: 1.25rem;     /* 20px — page panels */
+
+  /* Elevation — three steps so panels have visual hierarchy. Bumped
+     vs. v0.1 so cards lift visibly off the new tinted page rather
+     than competing with a flat 1px border alone. Each pairs an inset
+     highlight with a directional drop. */
+  --shadow-stone:    0 1px 2px rgba(31,45,72,0.08), 0 6px 18px -6px rgba(31,45,72,0.18);
+  --shadow-stone-md: 0 1px 3px rgba(31,45,72,0.10), 0 14px 32px -10px rgba(31,45,72,0.26);
+  --shadow-stone-lg: 0 2px 6px rgba(31,45,72,0.12), 0 24px 56px -18px rgba(31,45,72,0.34);
+  --shadow-inset-stone: inset 0 1px 0 rgba(255,255,255,0.55), inset 0 1px 2px rgba(31,45,72,0.06);
+  --shadow-well:        inset 0 1px 2px rgba(31,45,72,0.10), inset 0 0 0 1px rgba(31,45,72,0.04);
+}
+
+/* --- DaisyUI custom theme: "clearstone" --- */
+@plugin "daisyui/theme" {
+  name: "clearstone";
+  default: true;
+  prefersdark: false;
+  color-scheme: "light";
+
+  /* Inverted vs. v0.1 and pushed harder: page is now a visibly tinted
+     cool slate, cards are pure white, borders carry actual chroma so
+     they don't dissolve. Previous 6% L gap registered as "same colour"
+     on uncalibrated monitors. The combination of luminance gap +
+     chroma on the page (vs. 0 chroma on the white cards) is what
+     makes cards read as *lifted off the page* instead of "another
+     panel of beige". Hex format because daisyUI 5 emits utilities as
+     `var(--color-x)` without an oklch() wrapper. */
+  /* Palette matched to the landing page's light sections (`bg-stone-light`,
+     `card-stone-light`). Same stone family across the marketing surface
+     and the dashboard so the brand reads continuous from "/" to "/app".
+     Page is a pale cool stone (gradient applied on body, see below);
+     cards stay pure white with the landing's card border. */
+  --color-base-100: #EEF1F5;     /* page bg base — landing stone-light */
+  --color-base-200: #FFFFFF;     /* card surface — pure white */
+  --color-base-300: #DCE2EC;     /* divider / border — landing card border */
+  --color-base-content: #1F2D48; /* primary text — landing fusion navy */
+
+  --color-primary:         #1F2D48;
+  --color-primary-content: #E2E7EF;
+  --color-secondary:       #4F607C;
+  --color-secondary-content:#FFFFFF;
+  --color-accent:          #B89968;  /* warm gold-leaf, used sparingly */
+  --color-accent-content:  #1F2D48;
+  --color-neutral:         #4F607C;
+  --color-neutral-content: #E2E7EF;
+
+  --color-info:    #4F607C;
+  --color-success: #2E7D5B;
+  --color-warning: #B57F3A;
+  --color-error:   #B14A4A;
+
+  --color-info-content:    #E2E7EF;
+  --color-success-content: #E2E7EF;
+  --color-warning-content: #1F2D48;
+  --color-error-content:   #FFFFFF;
+
+  --radius-selector: 0.625rem;
+  --radius-field:    0.625rem;
+  --radius-box:      0.875rem;
+
+  --size-selector: 0.25rem;
+  --size-field:    0.25rem;
+
+  --border:    1px;
+  --depth:     1;
+  --noise:     0;
+}
+
+/* --- DaisyUI custom theme: "clearstone-dark" ---
+   Same brand voice (navy/stone palette, gold accent), inverted surface
+   stack for dark mode. The page becomes the deepest navy from the
+   stone palette (--color-stone-5) and cards lift to a slightly lighter
+   navy so the elevation hierarchy still reads. Text flips to the
+   palette's lightest stone (--color-stone-0).
+
+   Two consumers today:
+     - frontend-retail (savings + term deposits, KYC-gated retail UX)
+     - any future surface that opts in via <html data-theme="clearstone-dark">
+
+   Why a custom theme rather than reusing daisyUI's built-in `dark` /
+   `synthwave`: those drop our brand palette and break the design-system
+   components (TokenIcon halos, accent-warm gold leaf, stone shadows)
+   that reference our --color-stone-* tokens. Keeping the custom name
+   means semantic utilities (btn-primary, badge-info etc.) stay on-
+   brand whether the page is light or dark.
+*/
+@plugin "daisyui/theme" {
+  name: "clearstone-dark";
+  default: false;
+  prefersdark: true;
+  color-scheme: "dark";
+
+  /* Surfaces. base-100 is the page; base-200 lifts to card; base-300 is
+     divider/border. The 6%-luminance gap between page (#0E1729) and
+     card (#1A2540) reads as visible-but-subtle elevation against the
+     stone gold accent — keep these in sync if you tweak. */
+  --color-base-100: #0E1729;     /* page bg — deeper than fusion navy */
+  --color-base-200: #1A2540;     /* card surface — lifted navy */
+  --color-base-300: #2A3656;     /* divider / border */
+  --color-base-content: #E2E7EF; /* primary text — lightest stone */
+
+  /* Brand mapping flips so primary stays readable on dark bg. */
+  --color-primary:         #B89968;  /* warm gold becomes the dark-mode primary */
+  --color-primary-content: #1F2D48;
+  --color-secondary:       #7C8BA3;  /* mid stone — secondary CTA */
+  --color-secondary-content:#0E1729;
+  --color-accent:          #0E7C9E;  /* brand teal — interactive accent */
+  --color-accent-content:  #E2E7EF;
+  --color-neutral:         #2A3656;
+  --color-neutral-content: #E2E7EF;
+
+  /* Status colours brightened a notch for legibility on dark surfaces. */
+  --color-info:    #7C8BA3;
+  --color-success: #4FB088;
+  --color-warning: #D9A861;
+  --color-error:   #D97070;
+
+  --color-info-content:    #0E1729;
+  --color-success-content: #0E1729;
+  --color-warning-content: #1F2D48;
+  --color-error-content:   #FFFFFF;
+
+  --radius-selector: 0.625rem;
+  --radius-field:    0.625rem;
+  --radius-box:      0.875rem;
+
+  --size-selector: 0.25rem;
+  --size-field:    0.25rem;
+
+  --border:    1px;
+  --depth:     1;
+  --noise:     0;
+}
+
+/* Dark-mode overrides for tokens the daisyUI theme doesn't carry:
+   - the body gradient (light theme uses a pale stone gradient; dark
+     uses a navy-to-deeper-navy wash).
+   - panel shadows shift from "drop with light highlight" to "drop with
+     subtle warm-glow" so cards lift visibly against the dark page. */
+[data-theme="clearstone-dark"] {
+  --shadow-stone:    0 1px 2px rgba(0,0,0,0.4),  0 8px 22px -6px rgba(0,0,0,0.55);
+  --shadow-stone-md: 0 2px 4px rgba(0,0,0,0.45), 0 18px 36px -10px rgba(0,0,0,0.6);
+  --shadow-stone-lg: 0 3px 8px rgba(0,0,0,0.5),  0 28px 60px -18px rgba(0,0,0,0.7);
+  --shadow-inset-stone: inset 0 1px 0 rgba(255,255,255,0.04), inset 0 1px 2px rgba(0,0,0,0.35);
+  --shadow-well:        inset 0 1px 2px rgba(0,0,0,0.35), inset 0 0 0 1px rgba(255,255,255,0.04);
+}
+
+[data-theme="clearstone-dark"] body,
+html[data-theme="clearstone-dark"], html[data-theme="clearstone-dark"] body {
+  background-color: var(--color-base-100);
+  background-image: linear-gradient(180deg, #0E1729 0%, #060B17 100%);
+  background-attachment: fixed;
+  color: var(--color-base-content);
+}
+
+/* Eyebrow label flips to a warm-stone tone so it stays legible without
+   stealing the gold-accent role on dark backgrounds. */
+[data-theme="clearstone-dark"] .eyebrow {
+  color: var(--color-stone-2, #A6B3C5);
+}
+
+/* --- Global baseline --- */
+:root {
+  font-family: var(--font-sans);
+  font-feature-settings: "ss01", "cv11", "tnum";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body {
+  /* Subtle vertical stone gradient — same start/end as the landing's
+     light hero (`bg-stone-light`) so the dashboard feels like the same
+     surface continuing down from the marketing page. Fixed so it
+     persists across scroll without re-stretching. */
+  background-color: var(--color-base-100);
+  background-image: linear-gradient(180deg, #F4F6FA 0%, #E2E7EF 100%);
+  background-attachment: fixed;
+  color: var(--color-base-content);
+}
+
+/* Headings default to the display family so every page in the stack
+   gets the brand voice without per-component edits. Manrope at medium
+   weights — light enough to feel elegant, weighty enough to read. */
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  letter-spacing: -0.012em;
+}
+h1 { font-weight: 300; }   /* hero / page titles */
+h2 { font-weight: 400; }   /* section titles */
+h3 { font-weight: 500; }   /* card titles */
+h4 { font-weight: 500; }
+
+/* Display / wordmark — Manrope at thin weights for elegance.
+   - clearstone: light, slightly tight tracking
+   - fusion:     extralight, generous tracking, lowercase */
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.005em;
+}
+.brand-wordmark {
+  font-family: var(--font-display);
+  font-weight: 300;
+  letter-spacing: -0.008em;
+}
+.brand-wordmark-thin {
+  font-family: var(--font-display);
+  font-weight: 200;
+  letter-spacing: 0.22em;
+  text-transform: lowercase;
+}
+
+/* Tabular numbers for prices / TVL / rates */
+.num, .tabular { font-variant-numeric: tabular-nums; font-feature-settings: "tnum"; }
+
+/* Big figure — display family + tabular nums + tight tracking. Use for
+   prominent KPIs (TVL, total assets, APY) where numbers are the headline. */
+.figure {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+  letter-spacing: -0.02em;
+}
+
+/* Small caps eyebrow — tracked-out uppercase label, matches landing pattern */
+.eyebrow {
+  font-size: 0.6875rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-stone-3, #7C8BA3);
+  font-weight: 500;
+}
+
+/* Reusable surface utilities */
+.panel {
+  background: var(--color-base-200);
+  border: 1px solid var(--color-base-300);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-stone);
+}
+
+.panel-flat {
+  background: var(--color-base-200);
+  border: 1px solid var(--color-base-300);
+  border-radius: var(--radius-md);
+}
+
+.divider-stone {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-base-300), transparent);
+}

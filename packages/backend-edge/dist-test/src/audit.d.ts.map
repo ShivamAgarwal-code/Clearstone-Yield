@@ -1,0 +1,1 @@
+{"version":3,"file":"audit.d.ts","sourceRoot":"","sources":["../../src/audit.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,IAAI,EAAE,MAAM,MAAM,CAAC;AAC5B,OAAO,KAAK,EAAE,GAAG,EAAiB,MAAM,YAAY,CAAC;AAErD,QAAA,MAAM,KAAK;cAAwB,GAAG;yCAAK,CAAC;AA8H5C,OAAO,EAAE,KAAK,EAAE,CAAC"}

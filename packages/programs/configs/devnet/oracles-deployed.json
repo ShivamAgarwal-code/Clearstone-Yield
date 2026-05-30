@@ -1,0 +1,23 @@
+{
+  "program": "7qABPpPwvS7u7Y5vgDKZdSqLnc6N9FasVnG2iv7qe4vm",
+  "feeds": {
+    "USDC/USD": {
+      "pda": "FMa5ZioKAFMFhq2C8YdjGYRxjm8xDXQpkFjYXAeNHVnk",
+      "pythV2": "CMmA5hdDef1xWSADLD2i1iHA5fr7DYopBg8UYpF6VzMF",
+      "price": 100000000,
+      "expo": -8
+    },
+    "USDY/USD": {
+      "pda": "C8GoyvzcdfYMzAsTwd2efTS64MKA1TFevPhAdxToYhDS",
+      "pythV2": "B3mNJQtUMDqxYepKJPue1HwcBB4TyH5RbQQFTTh1GkSf",
+      "price": 105000000,
+      "expo": -8
+    },
+    "cUSDY/USD": {
+      "pda": "8ohm16q7KmdsWp8sTkQ8vJMWecTczr3rkdQo9muxiL2P",
+      "pythV2": "44DYiSbZf9ZuDo65X5Y1Rd6mtpn2v2ZptEp7ziFjSt1L",
+      "price": 105000000,
+      "expo": -8
+    }
+  }
+}

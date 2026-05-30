@@ -1,0 +1,94 @@
+{
+  "_comment": "wSOL borrow reserve. Debt asset for elevation group 2 (csSOL collateral). LTV=0 outside the group means it cannot be pledged as collateral cross-asset; supply-side only earns lending yield from group-2 borrows.",
+  "_oracle_note": "Real Pyth Receiver-owned SOL/USD push feed (7UVi…), updated by Pyth's permissionless updater on devnet (~30 s cadence). PDA = findProgramAddress([0_u16_le, sha256(SOL/USD feed_id)], pythWSnswVUd12oZpeFP8e9CVaEqJg25g1Vtc2biRsT).",
+
+  "status": 0,
+  "assetTier": 0,
+
+  "loanToValuePct": 0,
+  "liquidationThresholdPct": 0,
+  "minLiquidationBonusBps": 200,
+  "maxLiquidationBonusBps": 500,
+  "badDebtLiquidationBonusBps": 99,
+  "protocolLiquidationFeePct": 10,
+  "protocolOrderExecutionFeePct": 0,
+  "protocolTakeRatePct": 10,
+
+  "depositLimit": "1000000000000",
+  "borrowLimit": "750000000000",
+
+  "_irmNote": "11-point convex curve (matches cSOL's shape so klend's update_reserve_config validator accepts it). Constraints empirically: strictly-increasing util, non-decreasing borrow rate, AND monotonically non-decreasing slope between consecutive points (i.e. the curve must be convex). Trailing duplicates at (10000, 5000) and any slope-drop after the kink trigger 0x1774 InvalidConfig. Targets: ~10% APR at 90% util, 15% at 95%, 25% at 98%, 40% at 99.8%, 50% at 100%.",
+  "borrowRateCurve": {
+    "points": [
+      { "utilizationRateBps": 0,     "borrowRateBps": 1 },
+      { "utilizationRateBps": 5000,  "borrowRateBps": 200 },
+      { "utilizationRateBps": 8000,  "borrowRateBps": 500 },
+      { "utilizationRateBps": 9000,  "borrowRateBps": 1000 },
+      { "utilizationRateBps": 9500,  "borrowRateBps": 1500 },
+      { "utilizationRateBps": 9700,  "borrowRateBps": 2000 },
+      { "utilizationRateBps": 9800,  "borrowRateBps": 2500 },
+      { "utilizationRateBps": 9900,  "borrowRateBps": 3000 },
+      { "utilizationRateBps": 9950,  "borrowRateBps": 3500 },
+      { "utilizationRateBps": 9980,  "borrowRateBps": 4000 },
+      { "utilizationRateBps": 10000, "borrowRateBps": 5000 }
+    ]
+  },
+
+  "tokenInfo": {
+    "name": "wSOL",
+    "heuristic": { "exp": "0", "lower": "0", "upper": "0" },
+    "maxTwapDivergenceBps": "250",
+    "maxAgePriceSeconds": "600",
+    "maxAgeTwapSeconds": "1200",
+    "scopeConfiguration": {
+      "priceFeed": "11111111111111111111111111111111",
+      "priceChain": [65535, 65535, 65535, 65535],
+      "twapChain": [65535, 65535, 65535, 65535]
+    },
+    "switchboardConfiguration": {
+      "priceAggregator": "11111111111111111111111111111111",
+      "twapAggregator": "11111111111111111111111111111111"
+    },
+    "pythConfiguration": {
+      "price": "7UVimffxr9ow1uXYxsr4LHAcV58mLzhmwaeKvJ1pjLiE"
+    },
+    "blockPriceUsage": 0
+  },
+
+  "fees": {
+    "borrowFee": "0",
+    "flashLoanFee": "0",
+    "padding": [0, 0, 0, 0, 0, 0, 0, 0]
+  },
+
+  "depositWithdrawalCap": {
+    "configCapacity": "500000000000",
+    "currentTotal": "0",
+    "lastIntervalStartTimestamp": "0",
+    "configIntervalLengthSeconds": "86400"
+  },
+  "debtWithdrawalCap": {
+    "configCapacity": "500000000000",
+    "currentTotal": "0",
+    "lastIntervalStartTimestamp": "0",
+    "configIntervalLengthSeconds": "86400"
+  },
+
+  "borrowFactorPct": "100",
+  "multiplierSideBoost": [1, 1],
+  "multiplierTagBoost": [1, 1, 1, 1, 1, 1, 1, 1],
+  "elevationGroups": [2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+  "autodeleverageEnabled": 1,
+  "deleveragingBonusIncreaseBpsPerDay": 100,
+  "deleveragingThresholdDecreaseBpsPerDay": "24",
+  "deleveragingMarginCallPeriodSecs": "604800",
+  "disableUsageAsCollOutsideEmode": 0,
+  "utilizationLimitBlockBorrowingAbovePct": 80,
+  "hostFixedInterestRateBps": 0,
+  "borrowLimitOutsideElevationGroup": "18446744073709551615",
+  "borrowLimitAgainstThisCollateralInElevationGroup": [
+    "0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0",
+    "0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0"
+  ],
+  "reserved1": [0, 0]
+}

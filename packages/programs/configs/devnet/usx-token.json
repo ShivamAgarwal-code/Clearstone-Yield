@@ -1,0 +1,11 @@
+{
+  "name": "USX Stablecoin",
+  "symbol": "USX",
+  "decimals": 6,
+  "price": 1,
+  "underlyingMint": "7QC4zjrKA6XygpXPQCKSS9BmAsEFDJR6awiHSdgLcDvS",
+  "wrappedMint": "2ftH31xFwoSFDRXVD8bCNYYpFyfAzJJgg8yZBg9QgqS4",
+  "pool": "DC3Cnrz84qS9p2PtBhAkgbsAnJXG2amgbsaxpAE4NT8u",
+  "dmMintConfig": "GjKooeks153zrhHSyxjnigWukHANbg2ydKZ8qMrY9SAg",
+  "createdAt": "2026-03-26T12:05:04.120Z"
+}

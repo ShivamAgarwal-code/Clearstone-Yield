@@ -1,0 +1,11 @@
+{
+  "program": "7qABPpPwvS7u7Y5vgDKZdSqLnc6N9FasVnG2iv7qe4vm",
+  "desk": "9N3ehXfGZ7WYAkhLZo8kZczZyjXdqQkAYsVuaDKoP6NZ",
+  "admin": "AhKNmBmaeq6XrrEyGnSQne3WeU4SoN7hSAGieTiqPaJX",
+  "feeds": {
+    "USDY/USD": "4LRU3Zws8PaKiJ9reyPKqTWRidZ5ebcEWkjkupArfsZo",
+    "USDC/USD": "EifeWhRfbGxjq5NtLrE8e5k4QekgsTFRPr9Tde1kvbVh",
+    "cUSDY/USD": "HvwQZ1YWLv4VkqcJG85LSgEsxC7ckBwKvyEeAbneS2H6"
+  },
+  "createdAt": "2026-03-24T11:46:26.193Z"
+}

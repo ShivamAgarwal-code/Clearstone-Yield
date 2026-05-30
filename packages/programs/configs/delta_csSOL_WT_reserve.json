@@ -1,0 +1,94 @@
+{
+  "_comment": "csSOL-WT (withdraw ticket) collateral reserve. Underlying = csSOL queued for unstaking via Jito Vault, redeemable for wSOL after the Jito vault's epoch unlock window. Configured identically to csSOL inside elevation group 2 (90% LTV, 92% liquidation threshold via the group override) so atomic collateral swaps csSOL ↔ csSOL-WT preserve LTV. The deterrent against adversarial epoch-buying is oracle-side: csSOL-WT price = min(csSOL_price * (1 - epoch_discount), backing_per_share), so if redemptions outpace maturations the receipt's mark drops and normal liquidation kicks in.",
+  "_oracle_note": "csSOL-WT price = min(csSOL_price * (1 - epoch_time_discount), pool.pending_wsol_total / cssol_wt_supply * SOL_USD). Computed by a refresh-with-pool-backing variant of accrual-oracle that reads the WithdrawQueue PDA. Address below is the accrual-oracle OUTPUT account that script setup-cssol-wt-oracle.ts will create.",
+  "_flash_loan_note": "borrowLimit > 0 so klend's flash_borrow path can pull liquidity from the seed; flashLoanFee = 0 (verified on-chain on csSOL + wSOL reserves). The reserve is bootstrap-seeded with treasury-minted csSOL-WT (one-time) so the very first user collateral-swap has flash liquidity available; users then flash-repay with their freshly-minted WT, rotating the seed in place.",
+
+  "status": 0,
+  "assetTier": 0,
+
+  "loanToValuePct": 55,
+  "liquidationThresholdPct": 65,
+  "minLiquidationBonusBps": 200,
+  "maxLiquidationBonusBps": 500,
+  "badDebtLiquidationBonusBps": 99,
+  "protocolLiquidationFeePct": 10,
+  "protocolOrderExecutionFeePct": 0,
+  "protocolTakeRatePct": 10,
+
+  "depositLimit": "1000000000000",
+  "borrowLimit": "1000000000000",
+
+  "borrowRateCurve": {
+    "points": [
+      { "utilizationRateBps": 0,     "borrowRateBps": 0 },
+      { "utilizationRateBps": 10000, "borrowRateBps": 0 },
+      { "utilizationRateBps": 10000, "borrowRateBps": 0 },
+      { "utilizationRateBps": 10000, "borrowRateBps": 0 },
+      { "utilizationRateBps": 10000, "borrowRateBps": 0 },
+      { "utilizationRateBps": 10000, "borrowRateBps": 0 },
+      { "utilizationRateBps": 10000, "borrowRateBps": 0 },
+      { "utilizationRateBps": 10000, "borrowRateBps": 0 },
+      { "utilizationRateBps": 10000, "borrowRateBps": 0 },
+      { "utilizationRateBps": 10000, "borrowRateBps": 0 },
+      { "utilizationRateBps": 10000, "borrowRateBps": 0 }
+    ]
+  },
+
+  "tokenInfo": {
+    "name": "csSOL-WT",
+    "heuristic": { "exp": "0", "lower": "0", "upper": "0" },
+    "maxTwapDivergenceBps": "4050",
+    "maxAgePriceSeconds": "600",
+    "maxAgeTwapSeconds": "1200",
+    "scopeConfiguration": {
+      "priceFeed": "11111111111111111111111111111111",
+      "priceChain": [65535, 65535, 65535, 65535],
+      "twapChain": [65535, 65535, 65535, 65535]
+    },
+    "switchboardConfiguration": {
+      "priceAggregator": "11111111111111111111111111111111",
+      "twapAggregator": "11111111111111111111111111111111"
+    },
+    "pythConfiguration": {
+      "price": "11111111111111111111111111111111"
+    },
+    "blockPriceUsage": 0
+  },
+
+  "fees": {
+    "borrowFee": "0",
+    "flashLoanFee": "0",
+    "padding": [0, 0, 0, 0, 0, 0, 0, 0]
+  },
+
+  "depositWithdrawalCap": {
+    "configCapacity": "500000000000",
+    "currentTotal": "0",
+    "lastIntervalStartTimestamp": "0",
+    "configIntervalLengthSeconds": "86400"
+  },
+  "debtWithdrawalCap": {
+    "configCapacity": "0",
+    "currentTotal": "0",
+    "lastIntervalStartTimestamp": "0",
+    "configIntervalLengthSeconds": "86400"
+  },
+
+  "borrowFactorPct": "100",
+  "multiplierSideBoost": [1, 1],
+  "multiplierTagBoost": [1, 1, 1, 1, 1, 1, 1, 1],
+  "elevationGroups": [2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+  "autodeleverageEnabled": 1,
+  "deleveragingBonusIncreaseBpsPerDay": 100,
+  "deleveragingThresholdDecreaseBpsPerDay": "24",
+  "deleveragingMarginCallPeriodSecs": "604800",
+  "disableUsageAsCollOutsideEmode": 1,
+  "utilizationLimitBlockBorrowingAbovePct": 100,
+  "hostFixedInterestRateBps": 0,
+  "borrowLimitOutsideElevationGroup": "18446744073709551615",
+  "borrowLimitAgainstThisCollateralInElevationGroup": [
+    "0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0",
+    "0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0"
+  ],
+  "reserved1": [0, 0]
+}

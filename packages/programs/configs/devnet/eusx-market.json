@@ -1,0 +1,18 @@
+{
+  "market": "45FNL648aXgbMoMzLfYE2vCZAtWWDCky2tYLCEUztc98",
+  "collateral": {
+    "name": "ceUSX",
+    "reserve": "3FkBgVfnYBnUre6GMQZv8w4dDM1x7Fp5RiGk96kZ5mVs",
+    "mint": "8Uy7rmtAZvnQA1SuYZJKKBXFovHDPEYXiYH3H6iQMRwT",
+    "oracle": "6dbNQrjLVQxk1bJhbB6AiMFWzaf8G2d3LPjH69Je498A",
+    "price": 1.08,
+    "tokenProgram": "Token-2022"
+  },
+  "borrow": {
+    "name": "Solstice USDC",
+    "reserve": "AYhwFLgzxWwqznhxv6Bg1NVnNeoDNu9SBGLzM1W3hSfb",
+    "mint": "8iBux2LRja1PhVZph8Rw4Hi45pgkaufNEiaZma5nTD5g",
+    "oracle": "EN2FsFZFdpiFAWpKDZqeJ2PY8EyE7xzz9Ew8ZQVhtHCJ",
+    "price": 1
+  }
+}

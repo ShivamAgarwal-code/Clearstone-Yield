@@ -1,0 +1,96 @@
+{
+  "_comment": "cUSDC reserve. Underlying = sUSDC (Solstice USD Coin) via the cUSDC native-pool wrapper (KYC-gated, 1:1 wrap, no yield bearing). Replaces the unrestricted sUSDC reserve as the debt asset in EG-1 (stables) + EG-3 (margin long SOL) and as the collateral asset in EG-4 (margin short SOL). The retail sUSDC reserve at 78kkPN…BFy9 is being deprecated — see scripts/deprecate-susdc-reserve.ts and the project memory note.",
+  "_oracle_note": "cUSDC price = same Pyth USDC feed sUSDC was pegged to (no exchange-rate drift; cUSDC is a 1:1 KYC wrapper). pythConfiguration.price below is the USDC Pyth Receiver price account (PriceUpdateV2 format).",
+  "_irm_note": "Borrow-rate curve floors at 2.5% APR at 0% utilization (institutional-grade idle yield) and ramps through a soft kink at 80% util / 6% APR before climbing steeply past 90% to discourage 100% utilization. 11-point linearly-interpolated curve as klend requires.",
+
+  "status": 0,
+  "assetTier": 0,
+
+  "loanToValuePct": 0,
+  "liquidationThresholdPct": 0,
+  "minLiquidationBonusBps": 200,
+  "maxLiquidationBonusBps": 500,
+  "badDebtLiquidationBonusBps": 99,
+  "protocolLiquidationFeePct": 10,
+  "protocolOrderExecutionFeePct": 0,
+  "protocolTakeRatePct": 15,
+
+  "depositLimit": "1000000000000",
+  "borrowLimit": "750000000000",
+
+  "borrowRateCurve": {
+    "points": [
+      { "utilizationRateBps": 0,     "borrowRateBps": 250 },
+      { "utilizationRateBps": 3000,  "borrowRateBps": 300 },
+      { "utilizationRateBps": 5000,  "borrowRateBps": 400 },
+      { "utilizationRateBps": 7000,  "borrowRateBps": 500 },
+      { "utilizationRateBps": 8000,  "borrowRateBps": 600 },
+      { "utilizationRateBps": 8500,  "borrowRateBps": 900 },
+      { "utilizationRateBps": 9000,  "borrowRateBps": 1500 },
+      { "utilizationRateBps": 9300,  "borrowRateBps": 3000 },
+      { "utilizationRateBps": 9500,  "borrowRateBps": 5000 },
+      { "utilizationRateBps": 9800,  "borrowRateBps": 8000 },
+      { "utilizationRateBps": 10000, "borrowRateBps": 12000 }
+    ]
+  },
+
+  "tokenInfo": {
+    "name": "cUSDC",
+    "heuristic": { "exp": "0", "lower": "0", "upper": "0" },
+    "maxTwapDivergenceBps": "250",
+    "_max_age_note": "Set to u64::MAX (== effectively 'never stale') because the devnet Pyth USDC feed is pushed sporadically; a tight 120s/240s window rejects every refresh with PriceTooOld 6039 → empty price_status flags → check_borrow_possible trips ReserveStale 6009. Matches the legacy sUSDC reserve, which has the same value. For mainnet this should drop back to the 60s / 120s window the IRM_NOTES doc recommends.",
+    "maxAgePriceSeconds": "18446744073709551615",
+    "maxAgeTwapSeconds": "18446744073709551615",
+    "scopeConfiguration": {
+      "priceFeed": "11111111111111111111111111111111",
+      "priceChain": [65535, 65535, 65535, 65535],
+      "twapChain": [65535, 65535, 65535, 65535]
+    },
+    "switchboardConfiguration": {
+      "priceAggregator": "11111111111111111111111111111111",
+      "twapAggregator": "11111111111111111111111111111111"
+    },
+    "pythConfiguration": {
+      "price": "ETLQGfwHVfCYSqEG51ckf6h581e3k5CyoMnfz2WW45eD"
+    },
+    "blockPriceUsage": 0
+  },
+
+  "fees": {
+    "borrowFee": "0",
+    "flashLoanFee": "0",
+    "padding": [0, 0, 0, 0, 0, 0, 0, 0]
+  },
+
+  "depositWithdrawalCap": {
+    "configCapacity": "500000000000",
+    "currentTotal": "0",
+    "lastIntervalStartTimestamp": "0",
+    "configIntervalLengthSeconds": "86400"
+  },
+  "debtWithdrawalCap": {
+    "configCapacity": "500000000000",
+    "currentTotal": "0",
+    "lastIntervalStartTimestamp": "0",
+    "configIntervalLengthSeconds": "86400"
+  },
+
+  "borrowFactorPct": "100",
+  "multiplierSideBoost": [1, 1],
+  "multiplierTagBoost": [1, 1, 1, 1, 1, 1, 1, 1],
+  "_eg_note": "Lists EVERY elevation group this reserve participates in, whether as debt (EG-1, EG-3) or collateral (EG-4). cSOL uses the same convention: [2, 3, 4] = debt in EG-2 + EG-4, collateral in EG-3. klend's `check_same_elevation_group` rejects a borrow with InconsistentElevationGroup (6068) if the reserve's array doesn't contain the obligation's EG — even on the debt side.",
+  "elevationGroups": [1,3,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+  "autodeleverageEnabled": 1,
+  "deleveragingBonusIncreaseBpsPerDay": 100,
+  "deleveragingThresholdDecreaseBpsPerDay": "24",
+  "deleveragingMarginCallPeriodSecs": "604800",
+  "disableUsageAsCollOutsideEmode": 1,
+  "utilizationLimitBlockBorrowingAbovePct": 100,
+  "hostFixedInterestRateBps": 0,
+  "borrowLimitOutsideElevationGroup": "750000000000",
+  "borrowLimitAgainstThisCollateralInElevationGroup": [
+    "0","0","0","0","18446744073709551615","0","0","0","0","0","0","0","0","0","0","0",
+    "0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0"
+  ],
+  "reserved1": [0, 0]
+}

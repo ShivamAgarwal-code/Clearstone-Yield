@@ -1,0 +1,365 @@
+/* Brand fonts — must precede any other CSS so @import is valid. */
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..700&family=Geist:wght@300..700&family=Geist+Mono:wght@400..600&display=swap");
+@import "tailwindcss";
+@import "daisyui/daisyui.css" layer(base);
+@import "daisyui/themes.css" layer(base);
+@import "@clearstone/design-system/fonts.css";
+@import "@clearstone/design-system/theme.css";
+
+/* ---- Deck baseline ------------------------------------------- */
+:root {
+  --slide-w: 1920px;
+  --slide-h: 1080px;
+  --slide-scale: 1;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background: #070D1F;
+  color: #E2E7EF;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---- Deck shell ---------------------------------------------- */
+/* Screen: viewport contains a centered scaled stage. We render only
+   the active slide on screen; print mode (below) renders all.
+   The bg color is set per-slide via a `deck-screen--<theme>` class so
+   the letterbox bars (visible on non-16:9 viewports) match the active
+   slide's bg rather than always reading as a dark navy frame. */
+.deck-screen {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  background-color: #070D1F;
+  transition: background-color 220ms ease;
+  /* Browser handles pan-y scroll + pinch-zoom; horizontal swipes fall
+     through to our React onTouchStart/End handler for slide nav. */
+  touch-action: pan-y pinch-zoom;
+}
+.deck-screen--deep  { background-color: #070D1F; }
+.deck-screen--rise  { background-color: #0F1A33; }
+.deck-screen--fade  { background-color: #0F1A33; }
+.deck-screen--light { background-color: #F4F6F9; }
+.deck-screen--soft  { background-color: #EBEEF4; }
+
+/* Absolute-centered stage with translate(-50%, -50%) scale(...). Same
+   pattern reveal.js uses: the visual box (after scale) is what gets
+   centered, so non-16:9 viewports don't clip asymmetrically. The
+   1920×1080 layout box no longer fights `place-items: center`. */
+.deck-stage {
+  width: var(--slide-w);
+  height: var(--slide-h);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(var(--slide-scale));
+  transform-origin: center center;
+}
+
+/* Each slide fills the 1920×1080 stage exactly. Fixed dimensions in
+   the source = identical layout in screen and print, no font-size
+   guesswork. */
+.slide {
+  width: var(--slide-w);
+  height: var(--slide-h);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 96px 128px;
+  box-sizing: border-box;
+  color: #E2E7EF;
+  /* Split bg into solid color + gradient image. Solid color is the most
+     reliable thing to print across browsers; gradient stacks on top.
+     Even if a print engine strips the gradient image, the solid bg
+     still keeps light text legible on a non-white page. */
+  background-color: #070D1F;
+  background-image: linear-gradient(180deg, #070D1F 0%, #0E172E 50%, #070D1F 100%);
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.slide--light {
+  background-color: #F4F6F9;
+  background-image: linear-gradient(180deg, #FBFCFD 0%, #EEF1F5 100%);
+  color: #1F2D48;
+}
+
+.slide--rise   { background-color: #0F1A33; background-image: linear-gradient(180deg, #070D1F 0%, #182441 100%); }
+.slide--fade   { background-color: #0F1A33; background-image: linear-gradient(180deg, #182441 0%, #070D1F 100%); }
+.slide--soft   { background-color: #EBEEF4; background-image: linear-gradient(180deg, #F4F6FA 0%, #E2E7EF 100%); color: #1F2D48; }
+
+/* Subtle vector grid inside dark slides */
+.slide--grid::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(166,179,197,0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(166,179,197,0.06) 1px, transparent 1px);
+  background-size: 80px 80px;
+  pointer-events: none;
+}
+
+/* ---- Typography (sized for 1920×1080) ------------------------ */
+.slide h1 {
+  font-family: var(--font-display, "Manrope", sans-serif);
+  font-weight: 600;
+  font-size: 112px;
+  line-height: 1.04;
+  letter-spacing: -0.025em;
+  margin: 0;
+}
+.slide h2 {
+  font-family: var(--font-display, "Manrope", sans-serif);
+  font-weight: 600;
+  font-size: 84px;
+  line-height: 1.06;
+  letter-spacing: -0.022em;
+  margin: 0;
+}
+.slide h3 {
+  font-family: var(--font-display, "Manrope", sans-serif);
+  font-weight: 600;
+  font-size: 56px;
+  line-height: 1.1;
+  letter-spacing: -0.018em;
+  margin: 0;
+}
+.slide p, .slide li {
+  font-size: 32px;
+  line-height: 1.45;
+  color: inherit;
+}
+.slide .lead {
+  font-size: 40px;
+  line-height: 1.4;
+}
+.slide .eyebrow {
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.32em;
+  font-size: 20px;
+  color: #7C8BA3;
+  margin-bottom: 28px;
+}
+.slide--light .eyebrow { color: #6B7E9A; }
+
+.slide .footer-line {
+  position: absolute;
+  left: 128px;
+  right: 128px;
+  bottom: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 18px;
+  color: #7C8BA3;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+.slide--light .footer-line,
+.slide--soft .footer-line { color: #6B7E9A; }
+
+.slide .footer-line .brand {
+  font-family: var(--font-display, "Manrope", sans-serif);
+  letter-spacing: -0.01em;
+  text-transform: none;
+  font-size: 20px;
+}
+
+/* ---- Cards / chips reused across slides ---------------------- */
+.deck-card {
+  background: linear-gradient(180deg, rgba(33,46,72,0.55) 0%, rgba(20,30,52,0.65) 100%);
+  border: 1px solid rgba(166,179,197,0.18);
+  border-radius: 22px;
+  padding: 36px 40px;
+}
+.deck-card--light {
+  background: #FFFFFF;
+  border: 1px solid #DCE2EC;
+  border-radius: 22px;
+  padding: 36px 40px;
+}
+.deck-chip {
+  display: inline-block;
+  font-size: 18px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #C5CFDC;
+  border: 1px solid rgba(197,207,220,0.32);
+  border-radius: 999px;
+  padding: 8px 18px;
+}
+
+/* Hairline divider */
+.deck-hair {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(166,179,197,0.4), transparent);
+}
+
+/* ---- Chrome (page number, hint, controls) --------------------
+   Sits above the deck-screen letterbox so the chrome stays readable
+   on every theme. Uses safe-area insets so it doesn't get hidden
+   behind iOS home-indicator / Android nav bars. */
+.deck-chrome {
+  position: fixed;
+  z-index: 50;
+  pointer-events: none;
+  color: #7C8BA3;
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  mix-blend-mode: difference;
+}
+.deck-chrome--br { right: max(14px, env(safe-area-inset-right)); bottom: max(12px, env(safe-area-inset-bottom)); }
+.deck-chrome--bl { left:  max(14px, env(safe-area-inset-left));  bottom: max(12px, env(safe-area-inset-bottom)); pointer-events: auto; }
+.deck-chrome a, .deck-chrome button {
+  pointer-events: auto;
+  color: inherit;
+  background: transparent;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  padding: 8px 14px;
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  cursor: pointer;
+  /* Tap target: meet ~44px minimum without making the visible pill huge. */
+  min-height: 32px;
+  min-width: 44px;
+}
+.deck-chrome a + a, .deck-chrome button + button { margin-left: 6px; }
+.deck-chrome a:hover, .deck-chrome button:hover { opacity: 0.7; }
+@media print { .deck-chrome { display: none !important; } }
+
+/* ---- Overview mode ------------------------------------------- */
+.deck-overview {
+  position: fixed;
+  inset: 0;
+  background: #050913;
+  z-index: 100;
+  overflow: auto;
+  padding: 48px;
+}
+.deck-overview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 24px;
+}
+.deck-thumb {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(166,179,197,0.18);
+  cursor: pointer;
+  background: #070D1F;
+  transition: transform .2s, border-color .2s, box-shadow .2s;
+}
+.deck-thumb:hover {
+  transform: translateY(-2px);
+  border-color: rgba(197,207,220,0.5);
+  box-shadow: 0 14px 36px -16px rgba(0,0,0,0.7);
+}
+.deck-thumb--active {
+  border-color: #C5CFDC;
+  box-shadow: 0 0 0 2px rgba(197,207,220,0.45);
+}
+/* Each thumbnail renders a real slide scaled down. The inner stage is
+   absolutely positioned so the 1920×1080 contents shrink uniformly
+   into the thumbnail box. */
+.deck-thumb-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--slide-w);
+  height: var(--slide-h);
+  transform-origin: top left;
+}
+.deck-thumb-num {
+  position: absolute;
+  bottom: 8px;
+  right: 10px;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #C5CFDC;
+  background: rgba(7,13,31,0.6);
+  border-radius: 6px;
+  padding: 3px 8px;
+  z-index: 2;
+}
+
+/* ---- Print / PDF export -------------------------------------- */
+/* Strategy: in print, render every slide stacked, one per page, at
+   exact 1920×1080. Cmd+P → "Save as PDF" gives a clean deck.
+   `print-color-adjust: exact` (set inside @media print below) forces
+   backgrounds + gradients to render regardless of the user's
+   "Background graphics" checkbox. */
+@page {
+  size: 1920px 1080px;
+  margin: 0;
+}
+
+@media print {
+  /* Force background colors / gradients / images to print regardless of
+     the user's "Background graphics" checkbox. Without this, every
+     slide's gradient bg + every box's accent color gets stripped to
+     white at print time. Apply broadly; it's a print-only hint. */
+  *,
+  *::before,
+  *::after {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  html, body {
+    background: #fff !important;
+  }
+  /* Hide all chrome */
+  .deck-chrome,
+  .deck-overview { display: none !important; }
+
+  /* Switch from fixed-stage screen layout to flowed page layout */
+  .deck-screen {
+    position: static;
+    display: block;
+    overflow: visible;
+    height: auto;
+    background: transparent;
+  }
+  .deck-stage {
+    /* Reset the new absolute-centering so the print stack flows
+       normally — each slide is its own page at full 1920×1080. */
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    width: var(--slide-w);
+    height: auto;
+  }
+
+  .deck-print-stack {
+    display: block !important;
+  }
+  .deck-print-stack .slide {
+    display: flex;
+    page-break-after: always;
+    break-after: page;
+  }
+  .deck-print-stack .slide:last-child {
+    page-break-after: auto;
+  }
+
+  /* Hide the active-only screen view in print */
+  .deck-screen-active { display: none !important; }
+}
+
+/* Outside print, the print-stack is hidden */
+.deck-print-stack { display: none; }

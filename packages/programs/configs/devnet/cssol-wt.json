@@ -1,0 +1,10 @@
+{
+  "cluster": "devnet",
+  "rpc": "https://devnet.helius-rpc.com/?api-key=b4b7a200-6ff5-41ec-80ef-d7e7163d06ec",
+  "mint": "8vmVcN9krv8edY8GY75hMLvkSSjANjkmYeZUux2a4Sva",
+  "decimals": 9,
+  "dmMintConfig": "BQ4cqyRgJkhwfF477uUJsXhY7ga2Jp9VoKS2XsxfhtT4",
+  "dmMintAuthority": "FxoXoyK9nMYWXWjrZYLb88jCoYdTPbZBgAA2UQCRTAKe",
+  "mintConfigAuthority": "QoR6KXoiyTfd3TRk9gds4pLWbaueFmTgagec9fAWD9e",
+  "completedAt": "2026-04-28T21:28:58.776Z"
+}

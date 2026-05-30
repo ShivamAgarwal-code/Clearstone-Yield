@@ -1,0 +1,12 @@
+{
+  "cluster": "devnet",
+  "market": "EVw8B9WC2AX5ScCwkYJF2mZz6RdHLQZtoDeKChdMiz2E",
+  "csolReserve": "7dRBLGfkzKBAR1MmGM3HfHQXufter8pC3cA3rPfzGYTg",
+  "csolCollMint": "7Hz9ENdRatuTVaosnVnjeV5Huq61eADt529mpTKkfF8h",
+  "csolCollSupply": "35n25ZFcatfB9TU4cc32snWPU9m22pkRAmUfj2va5wVo",
+  "csolLiqSupply": "E8YKsVjA2R1rwGdYMPT9tU8AoJ5VaB9pPxKy6BttdJJp",
+  "csolMint": "AX66E5UvhdndwBfdebrW2YeGbsQhRndsPfNWGd16xBhf",
+  "csolDmMintConfig": "GJTRSUzfsXaroq4z4praK2Pu9VDZSmAkaj6h6XftEf3B",
+  "csolPoolConfig": "7LrzKp9UHfgR3AVqDtdWeB5N9CaxLdVUVJGTzNGcUAeQ",
+  "_note": "init_reserve + phase-1 config (LTV 55, liq 65, oracle = wSOL Pyth feed, IRM curve) applied. Phase-2 (elevation_groups array on the reserve, deposit/borrow limits) pending — klend's mode-34 update for EG-4 collateral list rejected because the per-EG bonus check failed before patches landed. EG-4 IS registered on the lending market (debt=this reserve), so it shows up in the console's Elevation Groups panel as live; users can't yet request_elevation_group(3 or 4) until the per-reserve elevation_groups arrays are completed."
+}

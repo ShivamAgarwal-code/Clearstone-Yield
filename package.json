@@ -1,0 +1,26 @@
+{
+  "name": "delta-stablehacks",
+  "private": true,
+  "scripts": {
+    "build": "pnpm -r build",
+    "test": "pnpm --filter @delta/calldata-sdk-solana --filter keeper-auto-roll --filter backend-edge run test",
+    "test:all": "pnpm -r test",
+    "dev:console": "pnpm --filter frontend-console dev",
+    "dev:retail": "pnpm --filter frontend-retail dev",
+    "dev:institutional": "pnpm --filter frontend-institutional dev",
+    "dev:backend": "pnpm --filter backend-compliance dev",
+    "dev:edge": "pnpm --filter backend-edge dev",
+    "cf:edge": "pnpm --filter backend-edge run deploy",
+    "cf:console": "pnpm --filter frontend-console run deploy",
+    "cf:institutional": "pnpm --filter frontend-institutional run deploy",
+    "cf:retail": "pnpm --filter frontend-retail run deploy",
+    "cf:all": "pnpm cf:edge && pnpm cf:console && pnpm cf:institutional && pnpm cf:retail",
+    "test:programs": "pnpm --filter programs test",
+    "build:programs": "pnpm --filter programs build"
+  },
+  "engines": {
+    "node": ">=18",
+    "pnpm": ">=9"
+  },
+  "dependencies": {}
+}

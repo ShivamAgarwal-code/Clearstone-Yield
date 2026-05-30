@@ -1,0 +1,75 @@
+[
+  {
+    "id": "cssol-90d-seed5",
+    "label": "csSOL · 90d (Aug 2026)",
+    "baseSymbol": "csSOL",
+    "baseDecimals": 9,
+    "kycGated": true,
+    "vault": "FWvEaLFdmwRZBAGAcNhrCgFboaETqt2qQVoyusPu12nj",
+    "market": "ER2Z72XMzXLugYPXTLPs4mhhtAFN5nFAVaGPR458acHC",
+    "baseMint": "6qpu7yCkdKF2D8vnySUNQEQczo5tYGRxbVFfdd8S5Nxt",
+    "accounts": {
+      "syProgram": "29tisXppYM4NcAEJfzMe1aqyuf2M7w9StTtiXBHxTKxd",
+      "syMarket": "7vekBrhxoyV7S4caUP1t32ztrvpoayBHXnWAC5Z7AiDJ",
+      "syMint": "jVXmuVB5sEKkq8xYQLfYuggX8QMKVkpT4GSmRsLY3uV",
+      "baseVault": "HRwvxef9aXEyKSTLkz8jq4xL8MMKvjfiU85Y8Ku8ojwx",
+      "vaultAuthority": "Fo9uNxJwxN7XWshyK5CvpD1CuVGNK68gxFdA2QHAQroC",
+      "yieldPosition": "FVN22bCmQmoWLjjShmLfmkn5pPebqRe8pUWuFKLg845o",
+      "mintPt": "6A9EXzqqnBKdBAbDDNn8Jyja7dRx8FhDMKEC7AwwtbYK",
+      "mintYt": "Ga4F1hq27at8m18JVHwHJeRfxyyjbCzeTZQffmDQcFpM",
+      "escrowSy": "3odeKePqTD8LctE8pgaqXcyG8tn9rGioCaBNVfa6yPaH",
+      "vaultAlt": "5zPdvNtGp6pH5aaxUzjZjWssshCtmQSf57hGk8Rx7Vzu",
+      "coreEventAuthority": "LJja6iRBoyGnfHnz5dZi2pwX2RCWfQM39N9Jr26SWgY",
+      "mintLp": "5ezAP1k97HHzErVEfV4trncGg2hGjnZ5B4yKUfJZgbyZ",
+      "marketEscrowPt": "29fgwRGKRC6169uKJ1cv4zAbwSAvKTuRzk2cnVM5S3Eq",
+      "marketEscrowSy": "6JrECXNM92327PqPi81FpS5kHem74UVY6LVLMBhPyrgH",
+      "marketAlt": "8Jjvdy6ng5b1cisjijW7XkKTkUCA9MvXFgfwghj2tCUr",
+      "tokenFeeTreasurySy": "E9sEsVGTrorYbSPbdUMD5My1RSUWFWYiD12T813qox2g",
+      "kamino": {
+        "klendReserve": "Ez1axBhD6M6t1Zmzfz8MQ95Kmuc48BuoYhQEEHEhT4U1",
+        "klendLiquiditySupply": "3pwGnhSqyoEK36QGPSH5MQn1dNkGn1Wvt3PEZnU91AdJ",
+        "klendCollateralMint": "Ej1j2SQLjdxY3BEu16tsiEYzXqiMAqbWJ7k83upasTWy",
+        "klendProgram": "KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD",
+        "tokenProgramKamino": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+        "realKlend": {
+          "klendLendingMarket": "2gRy7fYaPe8ooB1HqTfa2sJeJZ8KdVebhj88tgShyejW",
+          "klendLendingMarketAuthority": "F4AmBxo5MGVNVhkzMvnecGh6JGDRFYudtkHMakVLuxf1",
+          "klendInstructionSysvar": "Sysvar1nstructions1111111111111111111111111",
+          "klendLiquidityTokenProgram": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+          "klendPythOracle": "3Sx8WJC7y1kokmsu7SoxfJW8nQJktkuQ5fKK8icxPw3P",
+          "klendSwitchboardPrice": null,
+          "klendSwitchboardTwap": null,
+          "klendScopePrices": null
+        }
+      }
+    }
+  },
+  {
+    "id": "susdc-30d-kamino",
+    "label": "Solstice USDC · 30d (May 2026)",
+    "baseSymbol": "sUSDC",
+    "baseDecimals": 6,
+    "kycGated": true,
+    "vault": "DJhsAvfH67DRHvZSYMjHMQchVd77zTSCq62BNXEqu8ze",
+    "market": "HJmpC6EK8EfJyEwoSEwwgieKR1uPQbb755zq5gDjouZB",
+    "baseMint": "8iBux2LRja1PhVZph8Rw4Hi45pgkaufNEiaZma5nTD5g",
+    "accounts": {
+      "syProgram": "29tisXppYM4NcAEJfzMe1aqyuf2M7w9StTtiXBHxTKxd",
+      "syMarket": "7F6vSabYg9eke3iPbzsBigX9FL2e9JZS2rZN57V9Sja2",
+      "syMint": "2vyiNved2xwKortbH1fERsWPjZLijtiJBaqoqT96EsGX",
+      "baseVault": "8cubBJT1WYyEUSfPWEcoy84EptgoCsjdy5uKqJt5S4VY",
+      "vaultAuthority": "9aVE4b6RasHNN6uzPHqfUVZrbgMpyvu3eGTdUCyebWWA",
+      "yieldPosition": "ELjFzxKn4tUmVbgAs1rz8mKiMMupv5iAk1BPeHNaWhc2",
+      "mintPt": "5yKkeK83FNECQLEr37rQqaWANEkAJSnTQCgigWDCcwvm",
+      "mintYt": "FhosjjdpHjYzzkw6swjQC5wc8t3D751txxJgo38ZmBq8",
+      "escrowSy": "8PjCWVnqxw86Ly37zei4LW6ytLd9zcBJkYTmdDbSqdDr",
+      "vaultAlt": "6vPqNEQN2hrEn2TCJyrVutscv6XN8pKKGGe4siZ6sLs5",
+      "coreEventAuthority": "LJja6iRBoyGnfHnz5dZi2pwX2RCWfQM39N9Jr26SWgY",
+      "mintLp": "52m4zmeCqY91cBdzMYMLhigVT1yiLTPKHd1NFrSep1Q4",
+      "marketEscrowPt": "AsQdaikVmjzSxHqjjiz5ewYeDnQg8XwJy92tDrg2CqC4",
+      "marketEscrowSy": "G3jxeTKzuNBorzYrLHPkkoVX5bjX8cgyCua3QuGVQwd3",
+      "marketAlt": "365QNLt7jPou6v9zT1b2fdR65FwV2j3KeQLNEzvx6Mzv",
+      "tokenFeeTreasurySy": "9j4jyCbNVRLMU6wLRJtLJbhh3bnYzwLwtRHQrKUh9SvB"
+    }
+  }
+]

@@ -1,0 +1,15 @@
+/* Brand fonts — must precede any other CSS so @import is valid. */
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..700&family=Geist:wght@300..700&family=Geist+Mono:wght@400..600&display=swap");
+@import "tailwindcss";
+@import "daisyui/daisyui.css" layer(base);
+@import "daisyui/themes.css" layer(base);
+@import "@clearstone/design-system/fonts.css";
+@import "@clearstone/design-system/theme.css";
+@import "@clearstone/design-system/styles.css";
+
+/* Tailwind v4 auto-detects sources via Vite's module graph, but workspace
+ * packages resolved through pnpm's symlink in node_modules can fall
+ * outside the default scan heuristics. Make the design-system source
+ * explicit so every utility class used inside Button/Input/Snackbar/etc.
+ * lands in the generated CSS. */
+@source "../../frontend-design-system/src";

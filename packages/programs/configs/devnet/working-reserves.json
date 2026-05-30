@@ -1,0 +1,9 @@
+{
+  "market": "45FNL648aXgbMoMzLfYE2vCZAtWWDCky2tYLCEUztc98",
+  "dUsdyReserve": "HhTUuM5XwpnQchiUiLVNxUjPkHtfbcX4aF4bWKCSSAuT",
+  "dUsdyOracle": "4Xv1RpZQHZNHatTba3xUW4foLYUM6x36NxehihVcUnPQ",
+  "usdcReserve": "AYhwFLgzxWwqznhxv6Bg1NVnNeoDNu9SBGLzM1W3hSfb",
+  "usdcMint": "8iBux2LRja1PhVZph8Rw4Hi45pgkaufNEiaZma5nTD5g",
+  "usdcOracle": "EN2FsFZFdpiFAWpKDZqeJ2PY8EyE7xzz9Ew8ZQVhtHCJ",
+  "note": "Updated per IRM_NOTES.md — stranded reserves removed"
+}

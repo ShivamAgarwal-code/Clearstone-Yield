@@ -1,0 +1,11 @@
+{
+  "name": "Staked USX",
+  "symbol": "eUSX",
+  "decimals": 6,
+  "price": 1.08,
+  "underlyingMint": "Gkt9h4QWpPBDtbaF5HvYKCc87H5WCRTUtMf77HdTGHBt",
+  "wrappedMint": "8Uy7rmtAZvnQA1SuYZJKKBXFovHDPEYXiYH3H6iQMRwT",
+  "pool": "5TbEz3YEsaMzzRPgUL6paz6t12Bk19fFkgHYDfMsXFxj",
+  "dmMintConfig": "JC7tZGUahP99HZ8NwmvZWGvnXJjLg5edyYPAnTBFquDD",
+  "createdAt": "2026-03-26T12:04:43.525Z"
+}

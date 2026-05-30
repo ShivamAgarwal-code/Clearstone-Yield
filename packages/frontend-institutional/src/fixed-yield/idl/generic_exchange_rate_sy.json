@@ -1,0 +1,688 @@
+{
+  "address": "HA1T2p7DkktepgtwrVqNBK8KidAYr5wvS1uKqzvScNm3",
+  "metadata": {
+    "name": "generic_exchange_rate_sy",
+    "version": "0.1.0",
+    "spec": "0.1.0",
+    "description": "Reference SY adapter for Clearstone fixed-yield core. Wraps an SPL mint behind a manually-pokable exchange rate."
+  },
+  "instructions": [
+    {
+      "name": "claim_emission",
+      "docs": [
+        "No-op: this reference adapter has no emissions.",
+        "The `amount` arg is accepted to match the core's call shape."
+      ],
+      "discriminator": [
+        8
+      ],
+      "accounts": [
+        {
+          "name": "sy_market"
+        }
+      ],
+      "args": [
+        {
+          "name": "_amount",
+          "type": {
+            "defined": {
+              "name": "Amount"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "deposit_sy",
+      "docs": [
+        "Deposit SY into the adapter's pool escrow and credit the position.",
+        "Returns the current SyState so the caller can update its view."
+      ],
+      "discriminator": [
+        5
+      ],
+      "accounts": [
+        {
+          "name": "owner",
+          "docs": [
+            "Must sign. Moves SY from sy_src to the adapter's pool."
+          ],
+          "signer": true
+        },
+        {
+          "name": "sy_market"
+        },
+        {
+          "name": "sy_mint",
+          "writable": true
+        },
+        {
+          "name": "sy_src",
+          "writable": true
+        },
+        {
+          "name": "pool_escrow",
+          "writable": true
+        },
+        {
+          "name": "position",
+          "writable": true
+        },
+        {
+          "name": "token_program"
+        }
+      ],
+      "args": [
+        {
+          "name": "amount",
+          "type": "u64"
+        }
+      ],
+      "returns": {
+        "defined": {
+          "name": "SyState"
+        }
+      }
+    },
+    {
+      "name": "get_position",
+      "docs": [
+        "Read-only: position data for the passed PersonalPosition."
+      ],
+      "discriminator": [
+        10
+      ],
+      "accounts": [
+        {
+          "name": "sy_market"
+        },
+        {
+          "name": "position"
+        }
+      ],
+      "args": [],
+      "returns": {
+        "defined": {
+          "name": "PositionState"
+        }
+      }
+    },
+    {
+      "name": "get_sy_state",
+      "docs": [
+        "Read-only: current SyState."
+      ],
+      "discriminator": [
+        7
+      ],
+      "accounts": [
+        {
+          "name": "sy_market"
+        }
+      ],
+      "args": [],
+      "returns": {
+        "defined": {
+          "name": "SyState"
+        }
+      }
+    },
+    {
+      "name": "init_personal_account",
+      "docs": [
+        "Create a PersonalPosition for `owner` on this SY market.",
+        "Positions are PDAs keyed by (sy_market, owner)."
+      ],
+      "discriminator": [
+        3
+      ],
+      "accounts": [
+        {
+          "name": "payer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "owner",
+          "docs": [
+            "The owner the position is being created for. Does not need to be the",
+            "payer — a router program can init positions on behalf of callers."
+          ]
+        },
+        {
+          "name": "sy_market"
+        },
+        {
+          "name": "position",
+          "writable": true
+        },
+        {
+          "name": "system_program"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "initialize",
+      "docs": [
+        "Create a new SY market wrapping `base_mint`. Anyone can call this",
+        "once per base_mint — the SyMarket PDA is derived from the mint."
+      ],
+      "discriminator": [
+        0
+      ],
+      "accounts": [
+        {
+          "name": "payer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "authority",
+          "docs": [
+            "Authority that can later poke the exchange rate. Does NOT have to",
+            "equal the payer — creators can hand this to a timelock or oracle."
+          ]
+        },
+        {
+          "name": "base_mint"
+        },
+        {
+          "name": "sy_market",
+          "writable": true
+        },
+        {
+          "name": "sy_mint",
+          "docs": [
+            "SY mint; authority is the sy_market PDA."
+          ],
+          "writable": true
+        },
+        {
+          "name": "base_vault",
+          "docs": [
+            "Pool escrow for base asset (pays out on redeem)."
+          ],
+          "writable": true
+        },
+        {
+          "name": "pool_escrow",
+          "docs": [
+            "Pool escrow for deposited SY (deposit_sy / withdraw_sy flow)."
+          ],
+          "writable": true
+        },
+        {
+          "name": "token_program"
+        },
+        {
+          "name": "system_program"
+        },
+        {
+          "name": "rent"
+        }
+      ],
+      "args": [
+        {
+          "name": "initial_exchange_rate",
+          "type": {
+            "defined": {
+              "name": "Number"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "mint_sy",
+      "docs": [
+        "Mint SY from base. `sy_out = floor(base_in / exchange_rate)`."
+      ],
+      "discriminator": [
+        1
+      ],
+      "accounts": [
+        {
+          "name": "owner",
+          "signer": true
+        },
+        {
+          "name": "sy_market"
+        },
+        {
+          "name": "base_mint"
+        },
+        {
+          "name": "sy_mint",
+          "writable": true
+        },
+        {
+          "name": "base_src",
+          "writable": true
+        },
+        {
+          "name": "base_vault",
+          "writable": true
+        },
+        {
+          "name": "sy_dst",
+          "writable": true
+        },
+        {
+          "name": "token_program"
+        }
+      ],
+      "args": [
+        {
+          "name": "amount_base",
+          "type": "u64"
+        }
+      ],
+      "returns": {
+        "defined": {
+          "name": "MintSyReturnData"
+        }
+      }
+    },
+    {
+      "name": "poke_exchange_rate",
+      "docs": [
+        "Authority-only: overwrite the stored exchange rate.",
+        "Stand-in for a real oracle read.",
+        "",
+        "Enforces ATH monotonicity (I-V3): the rate may only increase. This",
+        "prevents a compromised authority from dropping the rate to strip",
+        "value from PT/YT holders on any vault wired to this SY market.",
+        "A real oracle-backed adapter would replace the manual `new_rate`",
+        "input with an oracle read but keep the same floor check."
+      ],
+      "discriminator": [
+        9
+      ],
+      "accounts": [
+        {
+          "name": "authority",
+          "signer": true
+        },
+        {
+          "name": "sy_market",
+          "writable": true
+        }
+      ],
+      "args": [
+        {
+          "name": "new_rate",
+          "type": {
+            "defined": {
+              "name": "Number"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "redeem_sy",
+      "docs": [
+        "Burn SY, return base. `base_out = floor(amount_sy * exchange_rate)`."
+      ],
+      "discriminator": [
+        2
+      ],
+      "accounts": [
+        {
+          "name": "owner",
+          "signer": true
+        },
+        {
+          "name": "sy_market"
+        },
+        {
+          "name": "base_mint"
+        },
+        {
+          "name": "sy_mint",
+          "writable": true
+        },
+        {
+          "name": "sy_src",
+          "writable": true
+        },
+        {
+          "name": "base_vault",
+          "writable": true
+        },
+        {
+          "name": "base_dst",
+          "writable": true
+        },
+        {
+          "name": "token_program"
+        }
+      ],
+      "args": [
+        {
+          "name": "amount_sy",
+          "type": "u64"
+        }
+      ],
+      "returns": {
+        "defined": {
+          "name": "RedeemSyReturnData"
+        }
+      }
+    },
+    {
+      "name": "withdraw_sy",
+      "docs": [
+        "Withdraw SY from pool escrow back to the owner."
+      ],
+      "discriminator": [
+        6
+      ],
+      "accounts": [
+        {
+          "name": "owner",
+          "signer": true
+        },
+        {
+          "name": "sy_market"
+        },
+        {
+          "name": "sy_mint",
+          "writable": true
+        },
+        {
+          "name": "sy_dst",
+          "writable": true
+        },
+        {
+          "name": "pool_escrow",
+          "writable": true
+        },
+        {
+          "name": "position",
+          "writable": true
+        },
+        {
+          "name": "token_program"
+        }
+      ],
+      "args": [
+        {
+          "name": "amount",
+          "type": "u64"
+        }
+      ],
+      "returns": {
+        "defined": {
+          "name": "SyState"
+        }
+      }
+    }
+  ],
+  "accounts": [
+    {
+      "name": "PersonalPosition",
+      "discriminator": [
+        40,
+        172,
+        123,
+        89,
+        170,
+        15,
+        56,
+        141
+      ]
+    },
+    {
+      "name": "SyMarket",
+      "discriminator": [
+        180,
+        101,
+        13,
+        82,
+        190,
+        193,
+        213,
+        148
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "InvalidExchangeRate",
+      "msg": "Invalid exchange rate (must be > 0)"
+    },
+    {
+      "code": 6001,
+      "name": "ExchangeRateRegression",
+      "msg": "Exchange rate cannot regress below previous value"
+    },
+    {
+      "code": 6002,
+      "name": "Overflow",
+      "msg": "Position balance overflow"
+    },
+    {
+      "code": 6003,
+      "name": "InsufficientBalance",
+      "msg": "Position balance underflow"
+    }
+  ],
+  "types": [
+    {
+      "name": "Amount",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "All"
+          },
+          {
+            "name": "Some",
+            "fields": [
+              "u64"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "Emission",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "mint",
+            "type": "pubkey"
+          },
+          {
+            "name": "amount_claimable",
+            "type": "u64"
+          },
+          {
+            "name": "last_seen_emission_index",
+            "type": {
+              "defined": {
+                "name": "Number"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "MintSyReturnData",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "sy_out_amount",
+            "type": "u64"
+          },
+          {
+            "name": "exchange_rate",
+            "type": {
+              "defined": {
+                "name": "Number"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "Number",
+      "docs": [
+        "High precision number, stored as 4 u64 words in little endian"
+      ],
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "array": [
+              "u64",
+              4
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "PersonalPosition",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "sy_market",
+            "type": "pubkey"
+          },
+          {
+            "name": "owner",
+            "type": "pubkey"
+          },
+          {
+            "name": "sy_balance",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "PositionState",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "owner",
+            "type": "pubkey"
+          },
+          {
+            "name": "sy_balance",
+            "type": "u64"
+          },
+          {
+            "name": "emissions",
+            "type": {
+              "vec": {
+                "defined": {
+                  "name": "Emission"
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "RedeemSyReturnData",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "base_out_amount",
+            "type": "u64"
+          },
+          {
+            "name": "exchange_rate",
+            "type": {
+              "defined": {
+                "name": "Number"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "SyMarket",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "authority",
+            "docs": [
+              "Who can poke the exchange rate. No admin hierarchy — creator is it."
+            ],
+            "type": "pubkey"
+          },
+          {
+            "name": "base_mint",
+            "type": "pubkey"
+          },
+          {
+            "name": "sy_mint",
+            "type": "pubkey"
+          },
+          {
+            "name": "pool_escrow",
+            "type": "pubkey"
+          },
+          {
+            "name": "exchange_rate",
+            "docs": [
+              "Base units per 1 SY. Monotonicity is NOT enforced in this reference;",
+              "a production adapter should guarantee it (ATH monotonicity — I-V3)."
+            ],
+            "type": {
+              "defined": {
+                "name": "Number"
+              }
+            }
+          },
+          {
+            "name": "sy_market_bump",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "SyState",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "exchange_rate",
+            "type": {
+              "defined": {
+                "name": "Number"
+              }
+            }
+          },
+          {
+            "name": "emission_indexes",
+            "type": {
+              "vec": {
+                "defined": {
+                  "name": "Number"
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

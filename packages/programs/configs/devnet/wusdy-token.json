@@ -1,0 +1,11 @@
+{
+  "name": "Wrapped USDY",
+  "symbol": "wUSDY",
+  "decimals": 6,
+  "price": 1.08,
+  "underlyingMint": "FkWtdbB62yvbEy5hxG1UC6FGJo7afRFeTNMTMQwjoJGP",
+  "wrappedMint": "9LDTdeaQMKRSn6rxYK9Q6Myrr8b1ec69WxhYt7VJHUd3",
+  "pool": "FU54iirkPTzYHLuh93QHsxBfJwmJJArrJDvoNC8moY8X",
+  "dmMintConfig": "B1yxseV6ELa8PoPzbsGAdAzKyvmmu92uErAPNn15JGLe",
+  "createdAt": "2026-03-25T17:45:03.348Z"
+}

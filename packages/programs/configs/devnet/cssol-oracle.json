@@ -1,0 +1,10 @@
+{
+  "sourceProgram": "rec5EKMGg6MxZYaMdyBfgwp4d5rB9T1VQH5pJv5LtFJ",
+  "feedIdHex": "ef0d8b6fda2ceba41da15d4095d1da392a0d2f8ed0c6c7bc0f4cfac8c280b56d",
+  "accrualOutput": "3Sx8WJC7y1kokmsu7SoxfJW8nQJktkuQ5fKK8icxPw3P",
+  "accrualConfig": "6ZhhrkGkN91zz6qPu4n3YmyMCFA7hoPYpj5jtzvkF1JM",
+  "initialIndexE9": "1000000000",
+  "rateBpsPerYear": 0,
+  "minRateChangeDelaySecs": 86400,
+  "maxRateDeltaBpsPerChange": 200
+}

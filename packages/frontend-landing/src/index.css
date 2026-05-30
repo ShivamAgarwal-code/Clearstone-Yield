@@ -1,0 +1,354 @@
+/* Brand fonts — must precede any other CSS so @import is valid. */
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..700&family=Geist:wght@300..700&family=Geist+Mono:wght@400..600&display=swap");
+@import "tailwindcss";
+@import "daisyui/daisyui.css" layer(base);
+@import "daisyui/themes.css" layer(base);
+@import "@clearstone/design-system/fonts.css";
+@import "@clearstone/design-system/theme.css";
+
+/* ---- Landing page baseline ----------------------------------- */
+html { scroll-behavior: smooth; }
+
+body {
+  background: #070D1F;
+  color: #E2E7EF;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Section reveal: hidden until intersect, then fade-up smoothly */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 900ms cubic-bezier(.2,.7,.2,1), transform 900ms cubic-bezier(.2,.7,.2,1);
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Stagger children once the parent reveals */
+.reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 700ms cubic-bezier(.2,.7,.2,1), transform 700ms cubic-bezier(.2,.7,.2,1);
+}
+.reveal-stagger.is-visible > *:nth-child(1) { transition-delay:   80ms; opacity:1; transform:none; }
+.reveal-stagger.is-visible > *:nth-child(2) { transition-delay:  160ms; opacity:1; transform:none; }
+.reveal-stagger.is-visible > *:nth-child(3) { transition-delay:  240ms; opacity:1; transform:none; }
+.reveal-stagger.is-visible > *:nth-child(4) { transition-delay:  320ms; opacity:1; transform:none; }
+.reveal-stagger.is-visible > *:nth-child(5) { transition-delay:  400ms; opacity:1; transform:none; }
+.reveal-stagger.is-visible > *:nth-child(6) { transition-delay:  480ms; opacity:1; transform:none; }
+
+/* Hero: subtle vertical float */
+@keyframes hero-float {
+  0%,100% { transform: translateY(0) }
+  50%     { transform: translateY(-10px) }
+}
+.hero-float { animation: hero-float 6s ease-in-out infinite; }
+
+/* Drifting mesh gradient — GPU-friendly (transform-only animation) */
+.hero-mesh {
+  background:
+    radial-gradient(40% 35% at 22% 28%, rgba(79,96,124,0.45)  0%, rgba(79,96,124,0) 70%),
+    radial-gradient(48% 42% at 78% 24%, rgba(166,179,197,0.22) 0%, rgba(166,179,197,0) 70%),
+    radial-gradient(55% 50% at 50% 78%, rgba(31,45,72,0.55)   0%, rgba(7,13,31,0)    78%);
+  animation: mesh-drift 24s ease-in-out infinite alternate;
+  will-change: transform;
+  transform: translateZ(0);
+}
+@keyframes mesh-drift {
+  0%   { transform: scale(1)    rotate(0deg) translateZ(0); }
+  100% { transform: scale(1.04) rotate(2deg) translateZ(0); }
+}
+
+/* Slow rotating conic sweep — reduced blur for performance */
+.hero-conic {
+  position: absolute;
+  width: 720px; height: 720px;
+  left: 50%; top: 50%;
+  margin-left: -360px; margin-top: -360px;
+  background: conic-gradient(
+    from 0deg,
+    rgba(166,179,197,0)    0deg,
+    rgba(166,179,197,0.05) 50deg,
+    rgba(226,231,239,0.16) 90deg,
+    rgba(166,179,197,0.05) 130deg,
+    rgba(166,179,197,0)    220deg,
+    rgba(166,179,197,0)    360deg
+  );
+  border-radius: 50%;
+  filter: blur(14px);
+  animation: conic-spin 32s linear infinite;
+  will-change: transform;
+  transform: translateZ(0);
+}
+@keyframes conic-spin {
+  from { transform: rotate(0deg)   translateZ(0); }
+  to   { transform: rotate(360deg) translateZ(0); }
+}
+
+/* Light-themed hero (the "head of the page" with strong logo contrast).
+   Page bg pushed a touch deeper so the orbs have actual stone to read
+   against — the previous near-white #FBFCFD made every shape dissolve. */
+.bg-stone-page-light {
+  background: linear-gradient(180deg, #F4F7FB 0%, #DCE3EE 100%);
+}
+
+/* Mesh — four radials in the brand stone family, each carrying real
+   chroma instead of the previous near-grey washes. Opacity bumped
+   ~1.7× so each orb registers as a distinct shape on the page; a new
+   fusion-navy bottom-left lobe + warm-stone bottom-right lobe break
+   the monotone slate. */
+.hero-mesh-light {
+  background:
+    /* top-left — clearstone mid stone */
+    radial-gradient(46% 40% at 18% 26%, rgba(124,139,163,0.65) 0%, rgba(124,139,163,0) 70%),
+    /* top-right — fusion navy hint, defines the upper wash */
+    radial-gradient(50% 44% at 82% 22%, rgba(79,96,124,0.48)   0%, rgba(79,96,124,0)   70%),
+    /* bottom-left — deeper fusion lobe so the page anchors visually */
+    radial-gradient(55% 48% at 14% 88%, rgba(31,45,72,0.32)    0%, rgba(31,45,72,0)    72%),
+    /* bottom-right — warm accent (gold leaf), low chroma but visible */
+    radial-gradient(48% 44% at 86% 80%, rgba(184,153,104,0.18) 0%, rgba(184,153,104,0) 70%),
+    /* center bloom — drives the logo halo */
+    radial-gradient(60% 55% at 50% 80%, rgba(166,179,197,0.55) 0%, rgba(166,179,197,0) 78%);
+  animation: mesh-drift 24s ease-in-out infinite alternate;
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* Conic sweep — three visible spokes on a stone palette so the rotation
+   actually reads. Old version was a single 18%-alpha stop that washed
+   out completely on the new lighter base. */
+.hero-conic-light {
+  position: absolute;
+  width: 820px; height: 820px;
+  left: 50%; top: 50%;
+  margin-left: -410px; margin-top: -410px;
+  background: conic-gradient(
+    from 0deg,
+    rgba(124,139,163,0)    0deg,
+    rgba(166,179,197,0.14)  40deg,
+    rgba(79,96,124,0.32)   100deg,
+    rgba(166,179,197,0.18) 160deg,
+    rgba(124,139,163,0)    240deg,
+    rgba(184,153,104,0.10) 300deg,
+    rgba(124,139,163,0)    360deg
+  );
+  border-radius: 50%;
+  filter: blur(16px);
+  animation: conic-spin 32s linear infinite;
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+.hero-halo-light {
+  position: absolute;
+  width: 480px; height: 480px;
+  border-radius: 50%;
+  background: radial-gradient(50% 50% at 50% 55%,
+    rgba(31,45,72,0.18) 0%,
+    rgba(31,45,72,0.08) 35%,
+    rgba(31,45,72,0)    72%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Light-bg variant of the ghost CTA */
+.btn-ghost-cs-light {
+  background: transparent;
+  color: #1F2D48;
+  border: 1px solid rgba(31,45,72,0.28);
+  border-radius: 999px;
+  padding: 0.85rem 1.6rem;
+  font-weight: 500;
+  transition: background .2s, border-color .2s;
+}
+.btn-ghost-cs-light:hover {
+  background: rgba(31,45,72,0.06);
+  border-color: rgba(31,45,72,0.55);
+}
+
+/* Logo tilt — driven by --px-x / --px-y CSS variables set by an rAF
+   lerp loop. No CSS transition (the lerp is the smoothing) so cursor
+   tracking feels organic, not laggy. */
+.hero-logo-wrap {
+  transform:
+    perspective(1200px)
+    rotateY(calc(var(--px-x, 0) * 4deg))
+    rotateX(calc(var(--px-y, 0) * -3deg));
+  transform-origin: center;
+  will-change: transform;
+}
+
+/* Single soft halo behind the logo — brighter cool wash so the mark
+   doesn't melt into the deep navy page. No filter blur (the radial
+   gradient is already soft). One element. One color family. */
+.hero-halo {
+  position: absolute;
+  width: 420px; height: 420px;
+  border-radius: 50%;
+  background: radial-gradient(50% 50% at 50% 50%,
+    rgba(197,207,220,0.22) 0%,
+    rgba(166,179,197,0.12) 35%,
+    rgba(124,139,163,0.04) 60%,
+    rgba(166,179,197,0)    78%);
+  pointer-events: none;
+  z-index: 0;
+  animation: glow-pulse 5s ease-in-out infinite;
+  will-change: opacity, transform;
+  transform: translateZ(0);
+}
+@keyframes glow-pulse {
+  0%,100% { opacity: 0.55; transform: scale(1);    }
+  50%     { opacity: 1.00; transform: scale(1.07); }
+}
+
+/* Letter-by-letter wordmark mount */
+.hero-letter {
+  opacity: 0;
+  transform: translateY(0.55em);
+  animation: letter-in 820ms cubic-bezier(.2,.7,.2,1) forwards;
+}
+@keyframes letter-in {
+  to { opacity: 1; transform: none; }
+}
+.hero-fusion {
+  opacity: 0;
+  animation: fade-in 800ms cubic-bezier(.2,.7,.2,1) 950ms forwards;
+}
+.hero-tag {
+  opacity: 0;
+  animation: fade-up 700ms cubic-bezier(.2,.7,.2,1) 1150ms forwards;
+}
+.hero-cta {
+  opacity: 0;
+  animation: fade-up 700ms cubic-bezier(.2,.7,.2,1) 1400ms forwards;
+}
+@keyframes fade-in { to { opacity: 1; } }
+@keyframes fade-up { from { transform: translateY(14px); opacity: 0; } to { transform: none; opacity: 1; } }
+
+/* Scroll-cue tail line — slow downward shimmer */
+@keyframes scroll-tail {
+  0%   { transform: scaleY(0.4); transform-origin: top; opacity: 0.4; }
+  60%  { transform: scaleY(1);   opacity: 1; }
+  100% { transform: scaleY(0.4); transform-origin: bottom; opacity: 0.4; }
+}
+.hero-scroll-dot { animation: scroll-tail 2.4s ease-in-out infinite; }
+
+/* Shimmer pass on the primary CTA */
+.btn-shimmer { position: relative; overflow: hidden; isolation: isolate; }
+.btn-shimmer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, transparent 30%, rgba(226,231,239,0.38) 50%, transparent 70%);
+  transform: translateX(-130%);
+  animation: shimmer 4.5s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes shimmer {
+  0%   { transform: translateX(-130%); }
+  55%  { transform: translateX(130%);  }
+  100% { transform: translateX(130%);  }
+}
+
+/* Section gradients */
+.bg-stone-deep   { background: linear-gradient(180deg, #070D1F 0%, #0E172E 50%, #070D1F 100%); }
+.bg-stone-rise   { background: linear-gradient(180deg, #070D1F 0%, #182441 100%); }
+.bg-stone-light  { background: linear-gradient(180deg, #F4F6FA 0%, #E2E7EF 100%); color: #1F2D48; }
+.bg-stone-fade   { background: linear-gradient(180deg, #182441 0%, #070D1F 100%); }
+
+/* Hairline divider in the dark sections */
+.divider-hair {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(166,179,197,0.35), transparent);
+}
+
+/* Card surfaces tuned for the deep background — solid surfaces (no
+   backdrop-filter) so scrolling stays smooth */
+.card-stone {
+  background: linear-gradient(180deg, rgba(33,46,72,0.55) 0%, rgba(20,30,52,0.65) 100%);
+  border: 1px solid rgba(166,179,197,0.14);
+  border-radius: 18px;
+  transition: transform .35s cubic-bezier(.2,.7,.2,1), border-color .35s, box-shadow .35s;
+}
+.card-stone:hover {
+  transform: translateY(-3px);
+  border-color: rgba(197,207,220,0.32);
+  box-shadow: 0 18px 50px -22px rgba(7,13,31,.85);
+}
+
+.card-stone-light {
+  background: #FFFFFF;
+  border: 1px solid #DCE2EC;
+  border-radius: 18px;
+  transition: transform .35s cubic-bezier(.2,.7,.2,1), border-color .35s, box-shadow .35s;
+}
+.card-stone-light:hover {
+  transform: translateY(-3px);
+  border-color: #A6B3C5;
+  box-shadow: 0 18px 50px -22px rgba(31,45,72,.18);
+}
+
+/* CTA buttons */
+.btn-primary-cs {
+  background: linear-gradient(180deg, #4F607C 0%, #1F2D48 100%);
+  color: #E2E7EF;
+  border: 1px solid rgba(197,207,220,0.18);
+  border-radius: 999px;
+  padding: 0.85rem 1.6rem;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  transition: filter .2s, transform .2s, box-shadow .3s;
+  box-shadow: 0 8px 24px -10px rgba(7,13,31,.7);
+}
+.btn-primary-cs:hover { filter: brightness(1.12); transform: translateY(-1px); }
+.btn-primary-cs:active { transform: translateY(0); }
+
+.btn-ghost-cs {
+  background: transparent;
+  color: #C5CFDC;
+  border: 1px solid rgba(197,207,220,0.28);
+  border-radius: 999px;
+  padding: 0.85rem 1.6rem;
+  font-weight: 500;
+  transition: background .2s, border-color .2s;
+}
+.btn-ghost-cs:hover { background: rgba(166,179,197,0.08); border-color: rgba(197,207,220,0.55); }
+
+/* Animated diagram lines */
+@keyframes flow {
+  0%   { stroke-dashoffset: 64; }
+  100% { stroke-dashoffset: 0;  }
+}
+.flow-line { stroke-dasharray: 4 8; animation: flow 3s linear infinite; }
+
+/* Marquee for partners (slow, subtle) */
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.marquee { animation: marquee 40s linear infinite; }
+
+/* Number counter */
+.kpi-num {
+  font-feature-settings: "tnum";
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .reveal-stagger > *, .hero-float, .marquee, .flow-line,
+  .hero-mesh, .hero-conic, .hero-glow, .hero-accent-spark,
+  .hero-letter, .hero-fusion, .hero-tag, .hero-cta,
+  .hero-scroll-dot, .btn-shimmer::before {
+    transition: none !important;
+    animation: none !important;
+  }
+  .reveal, .reveal-stagger > *, .hero-letter, .hero-fusion, .hero-tag, .hero-cta {
+    opacity: 1; transform: none;
+  }
+}

@@ -1,0 +1,3837 @@
+{
+  "address": "6xqW3D1ebp5WjbYh4vwar7ponxrpEaQiVG6uhBYVZtJi",
+  "metadata": {
+    "name": "governor",
+    "version": "0.1.0",
+    "spec": "0.1.0",
+    "description": "Governor for KYC-gated lending pools — orchestrates delta-mint and Kamino market setup"
+  },
+  "instructions": [
+    {
+      "name": "activate_wrapping",
+      "docs": [
+        "Transfer delta-mint authority from deployer → pool PDA.",
+        "This enables the wrap/unwrap flow. Call AFTER whitelisting is done.",
+        "Only the root authority (current delta-mint authority) can call this."
+      ],
+      "discriminator": [
+        12,
+        50,
+        128,
+        61,
+        170,
+        11,
+        167,
+        34
+      ],
+      "accounts": [
+        {
+          "name": "authority",
+          "writable": true,
+          "signer": true,
+          "relations": [
+            "pool_config"
+          ]
+        },
+        {
+          "name": "pool_config"
+        },
+        {
+          "name": "dm_mint_config",
+          "writable": true
+        },
+        {
+          "name": "delta_mint_program",
+          "address": "BKprvLqNUDCGrpxddppHHQ3UBhof8J5axyexDyctX1xy"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "activate_wrapping_native",
+      "docs": [
+        "Transfer delta-mint authority → native pool PDA.",
+        "Mirrors `activate_wrapping` for the staker pool."
+      ],
+      "discriminator": [
+        95,
+        13,
+        113,
+        87,
+        125,
+        186,
+        70,
+        32
+      ],
+      "accounts": [
+        {
+          "name": "authority",
+          "writable": true,
+          "signer": true,
+          "relations": [
+            "pool_config"
+          ]
+        },
+        {
+          "name": "pool_config"
+        },
+        {
+          "name": "dm_mint_config",
+          "writable": true
+        },
+        {
+          "name": "delta_mint_program",
+          "address": "BKprvLqNUDCGrpxddppHHQ3UBhof8J5axyexDyctX1xy"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "add_admin",
+      "docs": [
+        "Add an admin to the pool. Only the root authority can add admins."
+      ],
+      "discriminator": [
+        177,
+        236,
+        33,
+        205,
+        124,
+        152,
+        55,
+        186
+      ],
+      "accounts": [
+        {
+          "name": "authority",
+          "writable": true,
+          "signer": true,
+          "relations": [
+            "pool_config"
+          ]
+        },
+        {
+          "name": "pool_config"
+        },
+        {
+          "name": "new_admin"
+        },
+        {
+          "name": "admin_entry",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  97,
+                  100,
+                  109,
+                  105,
+                  110
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "pool_config"
+              },
+              {
+                "kind": "account",
+                "path": "new_admin"
+              }
+            ]
+          }
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "add_participant",
+      "docs": [
+        "Add a participant (KYC'd holder or liquidator bot).",
+        "Can be called by root authority OR any admin.",
+        "NOTE: Only works on pools where wrapping is NOT activated (authority not transferred).",
+        "For activated pools, use add_participant_via_pool."
+      ],
+      "discriminator": [
+        153,
+        137,
+        99,
+        142,
+        169,
+        212,
+        240,
+        50
+      ],
+      "accounts": [
+        {
+          "name": "authority",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "pool_config"
+        },
+        {
+          "name": "admin_entry",
+          "docs": [
+            "Optional admin PDA. Pass if signer is not root authority."
+          ],
+          "optional": true
+        },
+        {
+          "name": "dm_mint_config",
+          "writable": true
+        },
+        {
+          "name": "wallet"
+        },
+        {
+          "name": "whitelist_entry",
+          "writable": true
+        },
+        {
+          "name": "delta_mint_program",
+          "address": "BKprvLqNUDCGrpxddppHHQ3UBhof8J5axyexDyctX1xy"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "role",
+          "type": {
+            "defined": {
+              "name": "ParticipantRole"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "add_participant_native_via_pool",
+      "docs": [
+        "Whitelist a wallet on a native-wrap pool. Mirrors",
+        "`add_participant_via_pool` for the native_pool seed shape so",
+        "post-activation pools (where the pool PDA is delta-mint",
+        "co_authority) can issue whitelist entries via CPI."
+      ],
+      "discriminator": [
+        39,
+        129,
+        189,
+        223,
+        29,
+        143,
+        15,
+        98
+      ],
+      "accounts": [
+        {
+          "name": "authority",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "pool_config",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  110,
+                  97,
+                  116,
+                  105,
+                  118,
+                  101,
+                  95,
+                  112,
+                  111,
+                  111,
+                  108
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "pool_config.wrapped_mint",
+                "account": "PoolConfig"
+              }
+            ]
+          }
+        },
+        {
+          "name": "admin_entry",
+          "optional": true
+        },
+        {
+          "name": "dm_mint_config",
+          "writable": true
+        },
+        {
+          "name": "wallet"
+        },
+        {
+          "name": "whitelist_entry",
+          "writable": true
+        },
+        {
+          "name": "delta_mint_program",
+          "address": "BKprvLqNUDCGrpxddppHHQ3UBhof8J5axyexDyctX1xy"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "role",
+          "type": {
+            "defined": {
+              "name": "ParticipantRole"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "add_participant_via_pool",
+      "docs": [
+        "Add a participant via pool PDA (for pools where wrapping is activated).",
+        "The pool PDA signs as the delta-mint authority (since authority was transferred).",
+        "Can be called by root authority OR any admin."
+      ],
+      "discriminator": [
+        200,
+        11,
+        127,
+        111,
+        117,
+        242,
+        194,
+        36
+      ],
+      "accounts": [
+        {
+          "name": "authority",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "pool_config",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  111,
+                  111,
+                  108
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "pool_config.underlying_mint",
+                "account": "PoolConfig"
+              }
+            ]
+          }
+        },
+        {
+          "name": "admin_entry",
+          "docs": [
+            "Optional admin PDA."
+          ],
+          "optional": true
+        },
+        {
+          "name": "dm_mint_config",
+          "writable": true
+        },
+        {
+          "name": "wallet"
+        },
+        {
+          "name": "whitelist_entry",
+          "writable": true
+        },
+        {
+          "name": "delta_mint_program",
+          "address": "BKprvLqNUDCGrpxddppHHQ3UBhof8J5axyexDyctX1xy"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "role",
+          "type": {
+            "defined": {
+              "name": "ParticipantRole"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "add_wt_participant_via_pool",
+      "docs": [
+        "Add a participant on a *secondary* MintConfig owned by the pool PDA",
+        "(e.g. csSOL-WT, ceUSX-WT). The primary `add_participant_via_pool`",
+        "pins `dm_mint_config` to `pool_config.dm_mint_config`, which only",
+        "covers the wrap-token MintConfig — withdraw-ticket MintConfigs live",
+        "outside that field. This ix accepts any MintConfig and signs as",
+        "pool PDA = `MintConfig.authority` via the regular (non-co-authority)",
+        "add_to_whitelist path."
+      ],
+      "discriminator": [
+        175,
+        28,
+        135,
+        47,
+        36,
+        228,
+        98,
+        66
+      ],
+      "accounts": [
+        {
+          "name": "authority",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "pool_config",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  111,
+                  111,
+                  108
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "pool_config.underlying_mint",
+                "account": "PoolConfig"
+              }
+            ]
+          }
+        },
+        {
+          "name": "admin_entry",
+          "optional": true
+        },
+        {
+          "name": "dm_mint_config",
+          "docs": [
+            "inside delta-mint's add_to_whitelist handler."
+          ],
+          "writable": true
+        },
+        {
+          "name": "wallet"
+        },
+        {
+          "name": "whitelist_entry",
+          "writable": true
+        },
+        {
+          "name": "delta_mint_program",
+          "address": "BKprvLqNUDCGrpxddppHHQ3UBhof8J5axyexDyctX1xy"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "role",
+          "type": {
+            "defined": {
+              "name": "ParticipantRole"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "admin_mint_wt",
+      "docs": [
+        "Mint a WT-style \"secondary\" wrapped token whose MintConfig authority",
+        "is this pool — but whose mint pubkey is NOT `pool_config.wrapped_mint`.",
+        "Sibling of `mint_wrapped`; only the constraint on `wrapped_mint`",
+        "differs. Used to seed klend reserves for ceUSX-WT / future WT mints",
+        "before their dedicated `enqueue_*_via_pool` ix is deployed.",
+        "",
+        "Authority gate: same `is_authorized` check as `mint_wrapped` — must",
+        "be pool root or admin. This is a v1 bootstrap-only convenience and",
+        "will be removed once the production WT-issuance ixes ship.",
+        "",
+        "Runtime safety: we read the MintConfig.authority field (offset",
+        "8..40 of the account data) and require it equals this pool's PDA,",
+        "so cross-pool minting can't happen even if the caller passes the",
+        "wrong MintConfig."
+      ],
+      "discriminator": [
+        204,
+        223,
+        242,
+        174,
+        189,
+        52,
+        190,
+        190
+      ],
+      "accounts": [
+        {
+          "name": "authority",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "pool_config",
+          "docs": [
+            "Pool whose PDA is the MintConfig authority. Marked writable",
+            "because we pass `pool_config.to_account_info()` as the `authority`",
+            "of the inner `delta_mint::mint_to` CPI; that CPI's authority",
+            "account is `mut` in the delta-mint program, and Solana's CPI",
+            "privilege rules require the outer scope to be writable too."
+          ],
+          "writable": true
+        },
+        {
+          "name": "admin_entry",
+          "docs": [
+            "Optional admin PDA. Pass if signer is not root authority."
+          ],
+          "optional": true
+        },
+        {
+          "name": "dm_mint_config",
+          "docs": [
+            "in the handler against `pool_config.key()`. Cannot use the static",
+            "`address = pool_config.dm_mint_config` constraint because we",
+            "explicitly want this to differ from the pool's primary wrapped mint."
+          ],
+          "writable": true
+        },
+        {
+          "name": "wt_mint",
+          "docs": [
+            "pool_config; the MintConfig.authority check is the gate."
+          ],
+          "writable": true
+        },
+        {
+          "name": "dm_mint_authority",
+          "docs": [
+            "delta-mint program validates it against the MintConfig."
+          ]
+        },
+        {
+          "name": "whitelist_entry"
+        },
+        {
+          "name": "destination",
+          "writable": true
+        },
+        {
+          "name": "delta_mint_program",
+          "address": "BKprvLqNUDCGrpxddppHHQ3UBhof8J5axyexDyctX1xy"
+        },
+        {
+          "name": "token_program"
+        }
+      ],
+      "args": [
+        {
+          "name": "amount",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "close_withdraw_queue",
+      "docs": [
+        "Pool-authority-only: closes the WithdrawQueue PDA and refunds",
+        "rent to the authority. Required when the layout changes (we",
+        "added `staker: Pubkey` to WithdrawTicket post-v1) — Anchor's",
+        "strict `Account<WithdrawQueue>` would refuse to deserialize the",
+        "old-layout account, so we use UncheckedAccount + verify the PDA",
+        "derivation ourselves. Re-run `init_withdraw_queue` afterwards."
+      ],
+      "discriminator": [
+        198,
+        82,
+        153,
+        242,
+        181,
+        222,
+        236,
+        145
+      ],
+      "accounts": [
+        {
+          "name": "authority",
+          "writable": true,
+          "signer": true,
+          "relations": [
+            "pool_config"
+          ]
+        },
+        {
+          "name": "pool_config",
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  111,
+                  111,
+                  108
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "pool_config.underlying_mint",
+                "account": "PoolConfig"
+              }
+            ]
+          }
+        },
+        {
+          "name": "withdraw_queue",
+          "docs": [
+            "pool config; we use UncheckedAccount so old-layout queues can",
+            "still be closed (the old data won't deserialize against the",
+            "new WithdrawQueue layout)."
+          ],
+          "writable": true
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "enqueue_eusx_unlock_via_pool",
+      "docs": [
+        "Convert eUSX → ceUSX-WT (collateral swap leg). The user must",
+        "already hold `amount` eUSX in their ATA at the moment this ix",
+        "runs (typically obtained via a top-level `legacy_governor.unwrap`",
+        "CPI in the same tx, after a klend collateral-swap that moved",
+        "the user's ceUSX out of the obligation).",
+        "",
+        "CPIs Solstice's YieldVault `Unlock` (ix disc 0x1513d02bed3eff57,",
+        "13 accounts per the on-chain sample) which burns the user's eUSX",
+        "and queues `amount` USX in the user's pending-unlock PDA. Then",
+        "mints `amount` ceUSX-WT to the user via delta-mint, signed by",
+        "the host pool PDA (pool_config).",
+        "",
+        "Atomicity: both halves run inside this ix, so the WT supply",
+        "always equals the queued USX in Solstice (no over-mint)."
+      ],
+      "discriminator": [
+        92,
+        64,
+        71,
+        59,
+        183,
+        196,
+        175,
+        140
+      ],
+      "accounts": [
+        {
+          "name": "user",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "pool_config",
+          "writable": true
+        },
+        {
+          "name": "wt_mint_config",
+          "writable": true
+        },
+        {
+          "name": "wt_mint",
+          "writable": true
+        },
+        {
+          "name": "wt_mint_authority"
+        },
+        {
+          "name": "user_wt_whitelist_entry"
+        },
+        {
+          "name": "user_wt_ata",
+          "writable": true
+        },
+        {
+          "name": "delta_mint_program",
+          "address": "BKprvLqNUDCGrpxddppHHQ3UBhof8J5axyexDyctX1xy"
+        },
+        {
+          "name": "wt_token_program"
+        },
+        {
+          "name": "solstice_yield_vault_program"
+        },
+        {
+          "name": "solstice_vault_state",
+          "writable": true
+        },
+        {
+          "name": "solstice_vault_eusx_account",
+          "writable": true
+        },
+        {
+          "name": "eusx_mint",
+          "writable": true
+        },
+        {
+          "name": "user_eusx_ata",
+          "docs": [
+            "here at ix entry; Solstice burns from this."
+          ],
+          "writable": true
+        },
+        {
+          "name": "usx_mint",
+          "writable": true
+        },
+        {
+          "name": "solstice_config_a",
+          "docs": [
+            "PDA whose role we haven't pinned without an IDL; passed as-is."
+          ],
+          "writable": true
+        },
+        {
+          "name": "solstice_config_b",
+          "writable": true
+        },
+        {
+          "name": "user_pending_unlock_pda",
+          "docs": [
+            "`amount` and the unlock-after timestamp here."
+          ],
+          "writable": true
+        },
+        {
+          "name": "user_pending_unlock_pda_b",
+          "docs": [
+            "a redeemable-amount tracker."
+          ],
+          "writable": true
+        },
+        {
+          "name": "solstice_token_program"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "amount",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "enqueue_withdraw_via_pool",
+      "docs": [
+        "User-facing entry that converts X csSOL into X csSOL-WT and",
+        "queues X VRT for unstaking via Jito Vault. Permissionless (any",
+        "KYC-whitelisted holder of csSOL can call). Inside one ix:",
+        "",
+        "1. Token-2022 burn — X csSOL out of user's ATA (user signs as",
+        "authority; whitelist checked at the program level via the",
+        "`whitelist_entry` PDA passed in).",
+        "2. Jito EnqueueWithdrawal CPI — pool PDA (staker) burns X VRT",
+        "from `POOL_VRT_ATA`, ticket PDA + ticket-VRT-ATA hold the",
+        "VRT until epoch unlock. Pool PDA also signs as `base` and",
+        "`burn_signer` (mintBurnAdmin role on the vault).",
+        "3. delta-mint mint_to CPI — mints X csSOL-WT to user via the",
+        "pool PDA acting as authority on the *second* delta-mint",
+        "MintConfig (one per token).",
+        "4. Append a ticket record to the WithdrawQueue PDA.",
+        "",
+        "Calldata: u64 amount (in csSOL/VRT base units, decimals = 9)."
+      ],
+      "discriminator": [
+        37,
+        48,
+        1,
+        44,
+        243,
+        65,
+        21,
+        106
+      ],
+      "accounts": [
+        {
+          "name": "user",
+          "docs": [
+            "The user requesting the unstake. Pays the Jito ticket creation",
+            "rent + the Solana base fee; signs the Token-2022 burn for csSOL."
+          ],
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "base",
+          "docs": [
+            "Per-enqueue base PDA used as Jito's `base` for the ticket PDA",
+            "derivation, so each enqueue produces a unique ticket address.",
+            "Seeds: [b\"wt_base\", pool_config, withdraw_queue.total_cssol_wt_minted_le].",
+            "Using the queue's running mint counter as the nonce ensures",
+            "uniqueness across all enqueues (counter only ever increases).",
+            "Replaces the v1 ephemeral-keypair approach so the user only",
+            "needs one wallet signature — fewer \"suspicious tx\" wallet",
+            "warnings."
+          ],
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  119,
+                  116,
+                  95,
+                  98,
+                  97,
+                  115,
+                  101
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "pool_config"
+              },
+              {
+                "kind": "account",
+                "path": "withdraw_queue.total_cssol_wt_minted",
+                "account": "WithdrawQueue"
+              }
+            ]
+          }
+        },
+        {
+          "name": "pool_config",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  111,
+                  111,
+                  108
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "pool_config.underlying_mint",
+                "account": "PoolConfig"
+              }
+            ]
+          },
+          "relations": [
+            "withdraw_queue"
+          ]
+        },
+        {
+          "name": "withdraw_queue",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  119,
+                  105,
+                  116,
+                  104,
+                  100,
+                  114,
+                  97,
+                  119,
+                  95,
+                  113,
+                  117,
+                  101,
+                  117,
+                  101
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "pool_config"
+              }
+            ]
+          }
+        },
+        {
+          "name": "cssol_mint",
+          "writable": true
+        },
+        {
+          "name": "user_cssol_ata",
+          "writable": true
+        },
+        {
+          "name": "cssol_token_program",
+          "docs": [
+            "SPL Token-2022 program (csSOL is a Token-2022 mint)."
+          ]
+        },
+        {
+          "name": "jito_vault_config"
+        },
+        {
+          "name": "jito_vault",
+          "writable": true
+        },
+        {
+          "name": "vault_staker_withdrawal_ticket",
+          "writable": true
+        },
+        {
+          "name": "vault_staker_withdrawal_ticket_token_account",
+          "writable": true
+        },
+        {
+          "name": "pool_vrt_token_account",
+          "docs": [
+            "before the Jito EnqueueWithdrawal CPI. Pool PDA is the authority."
+          ],
+          "writable": true
+        },
+        {
+          "name": "vrt_mint",
+          "docs": [
+            "when moving VRT pool→user."
+          ]
+        },
+        {
+          "name": "user_vrt_token_account",
+          "docs": [
+            "is consumed by the Jito EnqueueWithdrawal CPI within the same ix."
+          ],
+          "writable": true
+        },
+        {
+          "name": "jito_vault_program",
+          "address": "Vau1t6sLNxnzB7ZDsef8TLbPLfyZMYXH8WTNqUdm9g8"
+        },
+        {
+          "name": "spl_token_program",
+          "docs": [
+            "SPL Token program (regular, not 2022) — VRT is SPL Token."
+          ]
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        },
+        {
+          "name": "cssol_wt_mint_config",
+          "docs": [
+            "from the csSOL one). Validated by the delta-mint CPI."
+          ],
+          "writable": true
+        },
+        {
+          "name": "cssol_wt_mint",
+          "writable": true
+        },
+        {
+          "name": "cssol_wt_mint_authority"
+        },
+        {
+          "name": "whitelist_entry",
+          "docs": [
+            "validated by delta-mint::mint_to."
+          ]
+        },
+        {
+          "name": "user_cssol_wt_ata",
+          "writable": true
+        },
+        {
+          "name": "delta_mint_program",
+          "address": "BKprvLqNUDCGrpxddppHHQ3UBhof8J5axyexDyctX1xy"
+        },
+        {
+          "name": "cssol_wt_token_program",
+          "docs": [
+            "SPL Token-2022 program (csSOL-WT is also Token-2022)."
+          ]
+        }
+      ],
+      "args": [
+        {
+          "name": "amount",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "fix_co_authority",
+      "docs": [
+        "Fix co_authority on an activated pool's MintConfig.",
+        "Sets co_authority = pool PDA so whitelist_via_pool works."
+      ],
+      "discriminator": [
+        207,
+        204,
+        16,
+        243,
+        198,
+        62,
+        99,
+        178
+      ],
+      "accounts": [
+        {
+          "name": "authority",
+          "writable": true,
+          "signer": true,
+          "relations": [
+            "pool_config"
+          ]
+        },
+        {
+          "name": "pool_config",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  111,
+                  111,
+                  108
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "pool_config.underlying_mint",
+                "account": "PoolConfig"
+              }
+            ]
+          }
+        },
+        {
+          "name": "dm_mint_config",
+          "writable": true
+        },
+        {
+          "name": "delta_mint_program",
+          "address": "BKprvLqNUDCGrpxddppHHQ3UBhof8J5axyexDyctX1xy"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "import_orphan_ticket",
+      "docs": [
+        "Pool-authority-only: register a Jito withdrawal ticket that",
+        "already exists on-chain but is missing from the queue. Used to",
+        "recover tickets stranded by layout migrations or by an early",
+        "failure-then-success sequence where the ticket got created but",
+        "the queue write didn't (e.g. partial-success orphans across our",
+        "own program upgrades).",
+        "",
+        "The on-chain ticket account must:",
+        "- exist and be owned by the Jito Vault program",
+        "- have its `staker` field equal to the `staker` arg passed in",
+        "- have its `vault` field equal to the pool's csSOL Jito vault",
+        "",
+        "Validation lives in this ix (we read the raw bytes); we do NOT",
+        "require the queue to deserialize correctly so this works after",
+        "arbitrary layout changes."
+      ],
+      "discriminator": [
+        241,
+        194,
+        142,
+        124,
+        119,
+        158,
+        24,
+        75
+      ],
+      "accounts": [
+        {
+          "name": "authority",
+          "writable": true,
+          "signer": true,
+          "relations": [
+            "pool_config"
+          ]
+        },
+        {
+          "name": "pool_config",
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  111,
+                  111,
+                  108
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "pool_config.underlying_mint",
+                "account": "PoolConfig"
+              }
+            ]
+          },
+          "relations": [
+            "withdraw_queue"
+          ]
+        },
+        {
+          "name": "withdraw_queue",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  119,
+                  105,
+                  116,
+                  104,
+                  100,
+                  114,
+                  97,
+                  119,
+                  95,
+                  113,
+                  117,
+                  101,
+                  117,
+                  101
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "pool_config"
+              }
+            ]
+          }
+        },
+        {
+          "name": "jito_vault"
+        },
+        {
+          "name": "vault_staker_withdrawal_ticket",
+          "docs": [
+            "inside the ix (owner must equal Jito Vault, vault field must",
+            "match `jito_vault`, staker field must match the `staker` arg)."
+          ]
+        }
+      ],
+      "args": [
+        {
+          "name": "staker",
+          "type": "pubkey"
+        },
+        {
+          "name": "cssol_wt_amount",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "init_withdraw_queue",
+      "docs": [
+        "One-shot init of the per-pool `WithdrawQueue` PDA. Holds a bounded",
+        "list of `{ticket_pda, staker, cssol_wt_amount, created_at_slot}` records,",
+        "plus a counter of pending wSOL backing already in the pool's",
+        "`pending_wsol_pool` ATA but not yet redeemed."
+      ],
+      "discriminator": [
+        86,
+        13,
+        175,
+        124,
+        210,
+        91,
+        238,
+        147
+      ],
+      "accounts": [
+        {
+          "name": "authority",
+          "writable": true,
+          "signer": true,
+          "relations": [
+            "pool_config"
+          ]
+        },
+        {
+          "name": "pool_config",
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  111,
+                  111,
+                  108
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "pool_config.underlying_mint",
+                "account": "PoolConfig"
+              }
+            ]
+          }
+        },
+        {
+          "name": "withdraw_queue",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  119,
+                  105,
+                  116,
+                  104,
+                  100,
+                  114,
+                  97,
+                  119,
+                  95,
+                  113,
+                  117,
+                  101,
+                  117,
+                  101
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "pool_config"
+              }
+            ]
+          }
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "initialize_native_pool",
+      "docs": [
+        "Create a native-wrap pool. The wrapped mint must already exist",
+        "(delta-mint MintConfig set up separately via `initialize_mint`).",
+        "Same activate-wrapping flow as the staker pool — call",
+        "`activate_wrapping_native` to transfer delta-mint authority to",
+        "the pool PDA."
+      ],
+      "discriminator": [
+        212,
+        30,
+        244,
+        129,
+        175,
+        40,
+        233,
+        34
+      ],
+      "accounts": [
+        {
+          "name": "authority",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "pool_config",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  110,
+                  97,
+                  116,
+                  105,
+                  118,
+                  101,
+                  95,
+                  112,
+                  111,
+                  111,
+                  108
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "wrapped_mint"
+              }
+            ]
+          }
+        },
+        {
+          "name": "underlying_mint"
+        },
+        {
+          "name": "wrapped_mint",
+          "docs": [
+            "Fresh wrapper mint keypair — initialized in this ix via",
+            "delta-mint CPI (mirrors the staker pool flow)."
+          ],
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "dm_mint_config",
+          "writable": true
+        },
+        {
+          "name": "dm_mint_authority"
+        },
+        {
+          "name": "delta_mint_program",
+          "address": "BKprvLqNUDCGrpxddppHHQ3UBhof8J5axyexDyctX1xy"
+        },
+        {
+          "name": "token_program"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": {
+              "name": "NativePoolParams"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "initialize_pool",
+      "docs": [
+        "Create a new KYC-gated lending pool."
+      ],
+      "discriminator": [
+        95,
+        180,
+        10,
+        172,
+        84,
+        174,
+        232,
+        40
+      ],
+      "accounts": [
+        {
+          "name": "authority",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "pool_config",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  111,
+                  111,
+                  108
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "underlying_mint"
+              }
+            ]
+          }
+        },
+        {
+          "name": "underlying_mint"
+        },
+        {
+          "name": "wrapped_mint",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "dm_mint_config",
+          "writable": true
+        },
+        {
+          "name": "dm_mint_authority"
+        },
+        {
+          "name": "delta_mint_program",
+          "address": "BKprvLqNUDCGrpxddppHHQ3UBhof8J5axyexDyctX1xy"
+        },
+        {
+          "name": "token_program"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": {
+              "name": "PoolParams"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "mature_withdrawal_tickets",
+      "docs": [
+        "Permissionless: once a Jito withdrawal ticket has cleared its",
+        "epoch-lock window, anyone can call this to:",
+        "1. CPI BurnWithdrawalTicket on the Jito Vault — pool PDA signs as",
+        "`staker` + `burn_signer`. Underlying wSOL flows from the Jito",
+        "vault's `vault_token_account` into the pool's",
+        "`pending_wsol_pool` ATA.",
+        "2. Mark the matching queue entry `redeemed = true` and bump",
+        "`pending_wsol`.",
+        "",
+        "Multiple tickets per call are not supported in v1 — caller fires",
+        "one ix per matured ticket. Cheap enough at devnet/mainnet rates,",
+        "and keeps account-list sizing bounded."
+      ],
+      "discriminator": [
+        39,
+        191,
+        176,
+        237,
+        193,
+        106,
+        171,
+        229
+      ],
+      "accounts": [
+        {
+          "name": "user",
+          "docs": [
+            "The original ticket creator. Must match the staker recorded in",
+            "the queue entry AND in the underlying Jito ticket. Pays the",
+            "base fee. Maturation is therefore NOT permissionless — only",
+            "the user who enqueued can mature their own ticket. This is a",
+            "requirement of Jito's `ticket.staker == provided_staker` check",
+            "and a correctness requirement of our pool accounting (we sweep",
+            "the matured wSOL through this user's wSOL ATA)."
+          ],
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "pool_config",
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  111,
+                  111,
+                  108
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "pool_config.underlying_mint",
+                "account": "PoolConfig"
+              }
+            ]
+          },
+          "relations": [
+            "withdraw_queue"
+          ]
+        },
+        {
+          "name": "withdraw_queue",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  119,
+                  105,
+                  116,
+                  104,
+                  100,
+                  114,
+                  97,
+                  119,
+                  95,
+                  113,
+                  117,
+                  101,
+                  117,
+                  101
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "pool_config"
+              }
+            ]
+          }
+        },
+        {
+          "name": "jito_vault_config"
+        },
+        {
+          "name": "jito_vault",
+          "writable": true
+        },
+        {
+          "name": "vault_st_token_account",
+          "writable": true
+        },
+        {
+          "name": "vrt_mint",
+          "writable": true
+        },
+        {
+          "name": "wsol_mint"
+        },
+        {
+          "name": "user_wsol_ata",
+          "docs": [
+            "here first, then we sweep it into pool_pending_wsol_ata",
+            "inside the same ix."
+          ],
+          "writable": true
+        },
+        {
+          "name": "pool_pending_wsol_ata",
+          "docs": [
+            "after the same-ix sweep. Used by `redeem_cssol_wt` as the",
+            "payout source."
+          ],
+          "writable": true
+        },
+        {
+          "name": "vault_staker_withdrawal_ticket",
+          "writable": true
+        },
+        {
+          "name": "vault_staker_withdrawal_ticket_token_account",
+          "writable": true
+        },
+        {
+          "name": "vault_fee_token_account",
+          "writable": true
+        },
+        {
+          "name": "program_fee_token_account",
+          "writable": true
+        },
+        {
+          "name": "jito_vault_program",
+          "address": "Vau1t6sLNxnzB7ZDsef8TLbPLfyZMYXH8WTNqUdm9g8"
+        },
+        {
+          "name": "spl_token_program"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "mint_wrapped",
+      "docs": [
+        "Mint wrapped tokens to a whitelisted holder.",
+        "Can be called by root authority OR any admin."
+      ],
+      "discriminator": [
+        130,
+        90,
+        18,
+        116,
+        188,
+        64,
+        204,
+        199
+      ],
+      "accounts": [
+        {
+          "name": "authority",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "pool_config"
+        },
+        {
+          "name": "admin_entry",
+          "docs": [
+            "Optional admin PDA. Pass if signer is not root authority."
+          ],
+          "optional": true
+        },
+        {
+          "name": "dm_mint_config"
+        },
+        {
+          "name": "wrapped_mint",
+          "writable": true
+        },
+        {
+          "name": "dm_mint_authority"
+        },
+        {
+          "name": "whitelist_entry"
+        },
+        {
+          "name": "destination",
+          "writable": true
+        },
+        {
+          "name": "delta_mint_program",
+          "address": "BKprvLqNUDCGrpxddppHHQ3UBhof8J5axyexDyctX1xy"
+        },
+        {
+          "name": "token_program"
+        }
+      ],
+      "args": [
+        {
+          "name": "amount",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "mint_wrapped_native",
+      "docs": [
+        "Mint a wrapper to a whitelisted destination via the native pool.",
+        "Used by the bootstrap to seed klend reserves with ≥1 unit of the",
+        "wrapper before `init_reserve`."
+      ],
+      "discriminator": [
+        55,
+        97,
+        161,
+        145,
+        76,
+        229,
+        8,
+        146
+      ],
+      "accounts": [
+        {
+          "name": "authority",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "pool_config",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  110,
+                  97,
+                  116,
+                  105,
+                  118,
+                  101,
+                  95,
+                  112,
+                  111,
+                  111,
+                  108
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "pool_config.wrapped_mint",
+                "account": "PoolConfig"
+              }
+            ]
+          }
+        },
+        {
+          "name": "admin_entry",
+          "optional": true
+        },
+        {
+          "name": "dm_mint_config",
+          "writable": true
+        },
+        {
+          "name": "wrapped_mint",
+          "writable": true
+        },
+        {
+          "name": "dm_mint_authority"
+        },
+        {
+          "name": "whitelist_entry"
+        },
+        {
+          "name": "destination",
+          "writable": true
+        },
+        {
+          "name": "delta_mint_program",
+          "address": "BKprvLqNUDCGrpxddppHHQ3UBhof8J5axyexDyctX1xy"
+        },
+        {
+          "name": "token_program"
+        }
+      ],
+      "args": [
+        {
+          "name": "amount",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "redeem_ceusx_wt",
+      "docs": [
+        "Unwind ceUSX-WT → USX. Burns `amount` ceUSX-WT from the user",
+        "(Token-2022, user signs directly), then CPIs Solstice's",
+        "YieldVault `Withdraw` (disc 0xb712469c946da122, 8 accounts) which",
+        "claims the matured queue entry and mints `amount` USX into the",
+        "user's USX ATA.",
+        "",
+        "`Withdraw` takes no amount arg — it claims the full pending",
+        "amount. We still take `amount` as the WT-burn quantity. They",
+        "should match in healthy use; mismatch is the caller's problem",
+        "(e.g. they queued more USX than they have WT for).",
+        "",
+        "The downstream Solstice `RequestRedeem` + `ConfirmRedeem`",
+        "(USX → USDC) and the klend flash-repay are top-level user-signed",
+        "ixes in the same tx, NOT CPI'd from here. Keeps account count",
+        "manageable."
+      ],
+      "discriminator": [
+        49,
+        17,
+        147,
+        9,
+        101,
+        123,
+        235,
+        155
+      ],
+      "accounts": [
+        {
+          "name": "user",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "pool_config"
+        },
+        {
+          "name": "wt_mint",
+          "writable": true
+        },
+        {
+          "name": "user_wt_ata",
+          "writable": true
+        },
+        {
+          "name": "wt_token_program"
+        },
+        {
+          "name": "solstice_yield_vault_program"
+        },
+        {
+          "name": "solstice_vault_state",
+          "writable": true
+        },
+        {
+          "name": "usx_mint",
+          "writable": true
+        },
+        {
+          "name": "user_pending_unlock_pda",
+          "writable": true
+        },
+        {
+          "name": "user_usx_ata",
+          "writable": true
+        },
+        {
+          "name": "solstice_vault_usx_account",
+          "docs": [
+            "DIFFERENT token account than `solstice_vault_eusx_account` used",
+            "during Unlock — Solstice keeps eUSX and USX in separate vaults."
+          ],
+          "writable": true
+        },
+        {
+          "name": "solstice_token_program"
+        }
+      ],
+      "args": [
+        {
+          "name": "amount",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "redeem_cssol_wt",
+      "docs": [
+        "User burns X csSOL-WT and receives X wSOL from the pool's",
+        "`pending_wsol_pool`. Permissionless (any holder of csSOL-WT). The",
+        "burn does not go through delta-mint — Token-2022 burn is a",
+        "permissionless authority-of-holder action — but the user must",
+        "have wSOL ATA receiving capability (whitelist not strictly",
+        "required to receive wSOL, since wSOL is not delta-mint-gated).",
+        "",
+        "Reverts with `RedeemExceedsPending` if the queue's matured",
+        "pool is short. Caller should fire `mature_withdrawal_tickets`",
+        "against any unlocked ticket first."
+      ],
+      "discriminator": [
+        103,
+        188,
+        234,
+        35,
+        58,
+        25,
+        54,
+        150
+      ],
+      "accounts": [
+        {
+          "name": "user",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "pool_config",
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  111,
+                  111,
+                  108
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "pool_config.underlying_mint",
+                "account": "PoolConfig"
+              }
+            ]
+          },
+          "relations": [
+            "withdraw_queue"
+          ]
+        },
+        {
+          "name": "withdraw_queue",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  119,
+                  105,
+                  116,
+                  104,
+                  100,
+                  114,
+                  97,
+                  119,
+                  95,
+                  113,
+                  117,
+                  101,
+                  117,
+                  101
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "pool_config"
+              }
+            ]
+          }
+        },
+        {
+          "name": "cssol_wt_mint",
+          "writable": true
+        },
+        {
+          "name": "user_cssol_wt_ata",
+          "writable": true
+        },
+        {
+          "name": "cssol_wt_token_program"
+        },
+        {
+          "name": "wsol_mint"
+        },
+        {
+          "name": "pool_pending_wsol_ata",
+          "writable": true
+        },
+        {
+          "name": "user_wsol_ata",
+          "writable": true
+        },
+        {
+          "name": "spl_token_program"
+        }
+      ],
+      "args": [
+        {
+          "name": "amount",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "register_lending_market",
+      "docs": [
+        "Register the klend market and reserve addresses.",
+        "Transitions Initializing → Active. Only root authority."
+      ],
+      "discriminator": [
+        55,
+        69,
+        63,
+        204,
+        224,
+        83,
+        4,
+        64
+      ],
+      "accounts": [
+        {
+          "name": "authority",
+          "writable": true,
+          "signer": true,
+          "relations": [
+            "pool_config"
+          ]
+        },
+        {
+          "name": "pool_config",
+          "writable": true
+        }
+      ],
+      "args": [
+        {
+          "name": "lending_market",
+          "type": "pubkey"
+        },
+        {
+          "name": "collateral_reserve",
+          "type": "pubkey"
+        },
+        {
+          "name": "borrow_reserve",
+          "type": "pubkey"
+        }
+      ]
+    },
+    {
+      "name": "remove_admin",
+      "docs": [
+        "Remove an admin. Only root authority."
+      ],
+      "discriminator": [
+        74,
+        202,
+        71,
+        106,
+        252,
+        31,
+        72,
+        183
+      ],
+      "accounts": [
+        {
+          "name": "authority",
+          "writable": true,
+          "signer": true,
+          "relations": [
+            "pool_config"
+          ]
+        },
+        {
+          "name": "pool_config"
+        },
+        {
+          "name": "admin_entry",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  97,
+                  100,
+                  109,
+                  105,
+                  110
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "pool_config"
+              },
+              {
+                "kind": "account",
+                "path": "admin_entry.wallet",
+                "account": "AdminEntry"
+              }
+            ]
+          }
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "self_register",
+      "docs": [
+        "Self-register as a KYC'd holder by proving a valid Civic gateway token.",
+        "The user signs and pays for their own whitelist PDA.",
+        "Requires a valid, non-expired Civic pass from the pool's gatekeeper network."
+      ],
+      "discriminator": [
+        178,
+        242,
+        25,
+        57,
+        254,
+        122,
+        182,
+        226
+      ],
+      "accounts": [
+        {
+          "name": "user",
+          "docs": [
+            "The user who wants to self-register. They sign and pay rent."
+          ],
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "pool_config",
+          "docs": [
+            "Pool config — used to read gatekeeper_network and as PDA signer for CPI."
+          ],
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  111,
+                  111,
+                  108
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "pool_config.underlying_mint",
+                "account": "PoolConfig"
+              }
+            ]
+          }
+        },
+        {
+          "name": "gateway_token"
+        },
+        {
+          "name": "dm_mint_config",
+          "writable": true
+        },
+        {
+          "name": "whitelist_entry",
+          "writable": true
+        },
+        {
+          "name": "delta_mint_program",
+          "address": "BKprvLqNUDCGrpxddppHHQ3UBhof8J5axyexDyctX1xy"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "self_register_native",
+      "docs": [
+        "Native-pool variant of `self_register`. Used by cSOL / cUSDC and",
+        "any future native-wrap pool. Same Civic-gated permissionless",
+        "onboarding semantics as `self_register`, but signs the",
+        "delta-mint CPI with the native-pool PDA seeds",
+        "`[\"native_pool\", wrapped_mint]`. The original `self_register`",
+        "can't be reused because Anchor's `seeds` constraint on",
+        "`pool_config` rejects native-pool accounts before the handler",
+        "runs (`ConstraintSeeds 2006`). Pair with `self_register` in a",
+        "single signed tx so retail UIs can onboard a wallet onto",
+        "every applicable pool in one Civic ceremony."
+      ],
+      "discriminator": [
+        213,
+        71,
+        120,
+        110,
+        1,
+        75,
+        239,
+        49
+      ],
+      "accounts": [
+        {
+          "name": "user",
+          "docs": [
+            "The user who wants to self-register. They sign and pay rent."
+          ],
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "pool_config",
+          "docs": [
+            "Pool config — native-pool seed shape, used both for reading",
+            "`gatekeeper_network` and as the PDA signer for the delta-mint CPI."
+          ],
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  110,
+                  97,
+                  116,
+                  105,
+                  118,
+                  101,
+                  95,
+                  112,
+                  111,
+                  111,
+                  108
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "pool_config.wrapped_mint",
+                "account": "PoolConfig"
+              }
+            ]
+          }
+        },
+        {
+          "name": "gateway_token"
+        },
+        {
+          "name": "dm_mint_config",
+          "writable": true
+        },
+        {
+          "name": "whitelist_entry",
+          "writable": true
+        },
+        {
+          "name": "delta_mint_program",
+          "address": "BKprvLqNUDCGrpxddppHHQ3UBhof8J5axyexDyctX1xy"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "set_borrow_rate_curve",
+      "docs": [
+        "Set the borrow rate curve on a klend reserve via CPI.",
+        "Authority must be both pool authority (or admin) AND the klend market owner.",
+        "The curve is validated for monotonicity and bounds before forwarding to klend."
+      ],
+      "discriminator": [
+        85,
+        153,
+        152,
+        170,
+        20,
+        70,
+        239,
+        124
+      ],
+      "accounts": [
+        {
+          "name": "authority",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "pool_config"
+        },
+        {
+          "name": "admin_entry",
+          "docs": [
+            "Optional admin PDA. Pass if signer is not root authority."
+          ],
+          "optional": true
+        },
+        {
+          "name": "lending_market"
+        },
+        {
+          "name": "reserve",
+          "writable": true
+        },
+        {
+          "name": "klend_global_config"
+        },
+        {
+          "name": "klend_program"
+        }
+      ],
+      "args": [
+        {
+          "name": "reserve_type",
+          "type": {
+            "defined": {
+              "name": "ReserveType"
+            }
+          }
+        },
+        {
+          "name": "curve",
+          "type": {
+            "defined": {
+              "name": "BorrowRateCurve"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "set_elevation_group",
+      "docs": [
+        "Set the klend elevation group for this pool. Only root authority.",
+        "Handles migration from pre-v3 PoolConfig accounts (expands if needed).",
+        "Note: this only updates the off-chain pool record; the actual klend",
+        "reserve config still has to be applied via `update_reserve_config`."
+      ],
+      "discriminator": [
+        5,
+        57,
+        51,
+        21,
+        111,
+        229,
+        71,
+        165
+      ],
+      "accounts": [
+        {
+          "name": "authority",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "pool_config",
+          "writable": true
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "elevation_group",
+          "type": "u8"
+        }
+      ]
+    },
+    {
+      "name": "set_gatekeeper_network",
+      "docs": [
+        "Set the Civic gatekeeper network for self-registration.",
+        "Only root authority. Pass Pubkey::default() to disable self-registration.",
+        "Handles migration from pre-v2 PoolConfig accounts (expands if needed)."
+      ],
+      "discriminator": [
+        204,
+        176,
+        133,
+        243,
+        72,
+        93,
+        118,
+        91
+      ],
+      "accounts": [
+        {
+          "name": "authority",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "pool_config",
+          "writable": true
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "gatekeeper_network",
+          "type": "pubkey"
+        }
+      ]
+    },
+    {
+      "name": "set_pool_status",
+      "docs": [
+        "Freeze or unfreeze the pool. Only root authority."
+      ],
+      "discriminator": [
+        112,
+        87,
+        135,
+        223,
+        83,
+        204,
+        132,
+        53
+      ],
+      "accounts": [
+        {
+          "name": "authority",
+          "writable": true,
+          "signer": true,
+          "relations": [
+            "pool_config"
+          ]
+        },
+        {
+          "name": "pool_config",
+          "writable": true
+        }
+      ],
+      "args": [
+        {
+          "name": "status",
+          "type": {
+            "defined": {
+              "name": "PoolStatus"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "unwrap",
+      "docs": [
+        "Unwrap d-tokens back into underlying tokens.",
+        "User burns d-tokens and receives underlying tokens from the vault.",
+        "Requires the user to be KYC-whitelisted."
+      ],
+      "discriminator": [
+        126,
+        175,
+        198,
+        14,
+        212,
+        69,
+        50,
+        44
+      ],
+      "accounts": [
+        {
+          "name": "user",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "pool_config",
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  111,
+                  111,
+                  108
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "pool_config.underlying_mint",
+                "account": "PoolConfig"
+              }
+            ]
+          }
+        },
+        {
+          "name": "underlying_mint",
+          "docs": [
+            "The underlying token mint."
+          ]
+        },
+        {
+          "name": "user_underlying_ata",
+          "docs": [
+            "User's underlying token account (destination)."
+          ],
+          "writable": true
+        },
+        {
+          "name": "vault",
+          "docs": [
+            "Pool vault — underlying tokens transferred out."
+          ],
+          "writable": true
+        },
+        {
+          "name": "wrapped_mint",
+          "docs": [
+            "Wrapped Token-2022 mint (tokens burned from user)."
+          ],
+          "writable": true
+        },
+        {
+          "name": "user_wrapped_ata",
+          "docs": [
+            "User's d-token account (source — burned)."
+          ],
+          "writable": true
+        },
+        {
+          "name": "underlying_token_program"
+        },
+        {
+          "name": "wrapped_token_program"
+        }
+      ],
+      "args": [
+        {
+          "name": "amount",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "unwrap_native",
+      "docs": [
+        "Unwrap wrapper → underlying 1:1. No whitelist check on burn —",
+        "the wrapper had to pass through KYC to be in circulation, and",
+        "the borrower path of the credit trade depends on this being",
+        "unconditionally callable (so klend-borrowed cSOL can be",
+        "auto-unwrapped to wSOL in the same tx)."
+      ],
+      "discriminator": [
+        26,
+        68,
+        51,
+        112,
+        162,
+        105,
+        110,
+        231
+      ],
+      "accounts": [
+        {
+          "name": "user",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "pool_config",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  110,
+                  97,
+                  116,
+                  105,
+                  118,
+                  101,
+                  95,
+                  112,
+                  111,
+                  111,
+                  108
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "pool_config.wrapped_mint",
+                "account": "PoolConfig"
+              }
+            ]
+          }
+        },
+        {
+          "name": "underlying_mint",
+          "docs": [
+            "Underlying mint (e.g. wSOL)."
+          ]
+        },
+        {
+          "name": "wrapped_mint",
+          "writable": true
+        },
+        {
+          "name": "user_wrapped_ata",
+          "docs": [
+            "User's wrapper ATA (source — burned)."
+          ],
+          "writable": true
+        },
+        {
+          "name": "vault",
+          "docs": [
+            "Pool's underlying vault — token account owned by pool PDA."
+          ],
+          "writable": true
+        },
+        {
+          "name": "recipient_underlying_ata",
+          "docs": [
+            "Recipient's underlying ATA (destination — credit-trade flow",
+            "usually passes user's own wSOL ATA so the auto-unwrap lands",
+            "in the user's wallet)."
+          ],
+          "writable": true
+        },
+        {
+          "name": "underlying_token_program"
+        },
+        {
+          "name": "wrapped_token_program"
+        }
+      ],
+      "args": [
+        {
+          "name": "amount",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "wrap",
+      "docs": [
+        "Wrap underlying tokens into d-tokens (KYC-wrapped).",
+        "User deposits underlying tokens (e.g., tUSDY) into the pool vault,",
+        "and receives an equal amount of d-tokens (e.g., dtUSDY) in return.",
+        "Requires the user to be KYC-whitelisted."
+      ],
+      "discriminator": [
+        178,
+        40,
+        10,
+        189,
+        228,
+        129,
+        186,
+        140
+      ],
+      "accounts": [
+        {
+          "name": "user",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "pool_config",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  111,
+                  111,
+                  108
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "pool_config.underlying_mint",
+                "account": "PoolConfig"
+              }
+            ]
+          }
+        },
+        {
+          "name": "underlying_mint",
+          "docs": [
+            "The underlying token mint (e.g., tUSDY). Must match pool_config."
+          ]
+        },
+        {
+          "name": "user_underlying_ata",
+          "docs": [
+            "User's token account for the underlying (source)."
+          ],
+          "writable": true
+        },
+        {
+          "name": "vault",
+          "docs": [
+            "Pool vault — token account for underlying, owned by pool PDA."
+          ],
+          "writable": true
+        },
+        {
+          "name": "dm_mint_config"
+        },
+        {
+          "name": "wrapped_mint",
+          "writable": true
+        },
+        {
+          "name": "dm_mint_authority"
+        },
+        {
+          "name": "whitelist_entry"
+        },
+        {
+          "name": "user_wrapped_ata",
+          "writable": true
+        },
+        {
+          "name": "delta_mint_program",
+          "address": "BKprvLqNUDCGrpxddppHHQ3UBhof8J5axyexDyctX1xy"
+        },
+        {
+          "name": "underlying_token_program"
+        },
+        {
+          "name": "wrapped_token_program"
+        }
+      ],
+      "args": [
+        {
+          "name": "amount",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "wrap_native",
+      "docs": [
+        "Wrap underlying (e.g. wSOL) → KYC wrapper (e.g. cSOL) 1:1.",
+        "Whitelist check fires inside delta-mint's `mint_to`."
+      ],
+      "discriminator": [
+        115,
+        7,
+        172,
+        233,
+        184,
+        33,
+        244,
+        46
+      ],
+      "accounts": [
+        {
+          "name": "user",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "pool_config",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  110,
+                  97,
+                  116,
+                  105,
+                  118,
+                  101,
+                  95,
+                  112,
+                  111,
+                  111,
+                  108
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "pool_config.wrapped_mint",
+                "account": "PoolConfig"
+              }
+            ]
+          }
+        },
+        {
+          "name": "underlying_mint",
+          "docs": [
+            "Underlying mint (e.g. wSOL)."
+          ]
+        },
+        {
+          "name": "user_underlying_ata",
+          "docs": [
+            "User's underlying ATA (source)."
+          ],
+          "writable": true
+        },
+        {
+          "name": "vault",
+          "docs": [
+            "Pool's underlying vault — token account owned by pool PDA. Created",
+            "externally before first wrap (associated token account is fine)."
+          ],
+          "writable": true
+        },
+        {
+          "name": "wrapped_mint",
+          "writable": true
+        },
+        {
+          "name": "dm_mint_config"
+        },
+        {
+          "name": "dm_mint_authority"
+        },
+        {
+          "name": "whitelist_entry"
+        },
+        {
+          "name": "user_wrapped_ata",
+          "writable": true
+        },
+        {
+          "name": "delta_mint_program",
+          "address": "BKprvLqNUDCGrpxddppHHQ3UBhof8J5axyexDyctX1xy"
+        },
+        {
+          "name": "underlying_token_program"
+        },
+        {
+          "name": "wrapped_token_program"
+        }
+      ],
+      "args": [
+        {
+          "name": "amount",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "wrap_with_jito_vault",
+      "docs": [
+        "Wrap underlying into d-tokens AND deposit the underlying into a",
+        "Jito Vault in the same transaction. The Jito Vault holds the",
+        "canonical backing (VRT minted to a pool-PDA-owned VRT vault); the",
+        "d-token (csSOL) is minted to the user 1:1 with the underlying as",
+        "a fungible KYC-gated claim against pool VRT. This replaces the",
+        "older `wrap`'s \"park wSOL in a pool ATA\" backing model.",
+        "",
+        "Flow:",
+        "1. Validate KYC (delta-mint::mint_to checks whitelist via CPI).",
+        "2. CPI Jito Vault MintTo. The pool PDA signs as `mintBurnAdmin`,",
+        "so the Vault's gate is satisfied without rotating it. User's",
+        "underlying ATA → vault's wSOL ATA. VRT → pool VRT vault.",
+        "3. CPI delta-mint::mint_to. Mints `amount` d-tokens to the user.",
+        "",
+        "Requires:",
+        "- Vault's `mintBurnAdmin` set to `pool_config` PDA",
+        "(one-time SetSecondaryAdmin during deploy).",
+        "- Pool VRT vault pre-created at ATA(vrt_mint, pool_pda, off_curve).",
+        "- User KYC-whitelisted on delta-mint."
+      ],
+      "discriminator": [
+        65,
+        83,
+        9,
+        27,
+        94,
+        204,
+        161,
+        84
+      ],
+      "accounts": [
+        {
+          "name": "user",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "pool_config",
+          "docs": [
+            "Pool config — keyed by underlying mint, signs CPIs as mintBurnAdmin",
+            "+ delta-mint authority. Marked mut because delta-mint::mint_to",
+            "expects the signer (us, via PDA) as a writable account."
+          ],
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  111,
+                  111,
+                  108
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "pool_config.underlying_mint",
+                "account": "PoolConfig"
+              }
+            ]
+          }
+        },
+        {
+          "name": "user_underlying_ata",
+          "docs": [
+            "User's underlying token account — source of wSOL transferred into",
+            "the Jito Vault during MintTo."
+          ],
+          "writable": true
+        },
+        {
+          "name": "jito_vault_program",
+          "address": "Vau1t6sLNxnzB7ZDsef8TLbPLfyZMYXH8WTNqUdm9g8"
+        },
+        {
+          "name": "jito_vault_config"
+        },
+        {
+          "name": "jito_vault",
+          "writable": true
+        },
+        {
+          "name": "vrt_mint",
+          "writable": true
+        },
+        {
+          "name": "vault_st_token_account",
+          "writable": true
+        },
+        {
+          "name": "user_vrt_token_account",
+          "docs": [
+            "`depositor_vrt.owner == depositor`, so VRT mints here first. The",
+            "next step in the same ix sweeps it to `pool_vrt_token_account`."
+          ],
+          "writable": true
+        },
+        {
+          "name": "pool_vrt_token_account",
+          "docs": [
+            "Final destination of the freshly-minted VRT. Pool holds the",
+            "canonical backing for csSOL supply."
+          ],
+          "writable": true
+        },
+        {
+          "name": "vault_fee_token_account",
+          "writable": true
+        },
+        {
+          "name": "spl_token_program"
+        },
+        {
+          "name": "dm_mint_config"
+        },
+        {
+          "name": "wrapped_mint",
+          "writable": true
+        },
+        {
+          "name": "dm_mint_authority"
+        },
+        {
+          "name": "whitelist_entry"
+        },
+        {
+          "name": "user_wrapped_ata",
+          "writable": true
+        },
+        {
+          "name": "delta_mint_program",
+          "address": "BKprvLqNUDCGrpxddppHHQ3UBhof8J5axyexDyctX1xy"
+        },
+        {
+          "name": "wrapped_token_program"
+        }
+      ],
+      "args": [
+        {
+          "name": "amount",
+          "type": "u64"
+        }
+      ]
+    }
+  ],
+  "accounts": [
+    {
+      "name": "AdminEntry",
+      "discriminator": [
+        253,
+        36,
+        78,
+        119,
+        205,
+        167,
+        16,
+        68
+      ]
+    },
+    {
+      "name": "PoolConfig",
+      "discriminator": [
+        26,
+        108,
+        14,
+        123,
+        116,
+        230,
+        129,
+        43
+      ]
+    },
+    {
+      "name": "WithdrawQueue",
+      "discriminator": [
+        172,
+        44,
+        207,
+        86,
+        230,
+        93,
+        40,
+        173
+      ]
+    }
+  ],
+  "events": [
+    {
+      "name": "BorrowRateCurveUpdated",
+      "discriminator": [
+        11,
+        87,
+        9,
+        76,
+        217,
+        189,
+        97,
+        11
+      ]
+    },
+    {
+      "name": "EnqueueWithdrawEvent",
+      "discriminator": [
+        94,
+        122,
+        242,
+        189,
+        34,
+        183,
+        136,
+        51
+      ]
+    },
+    {
+      "name": "MatureTicketEvent",
+      "discriminator": [
+        171,
+        96,
+        145,
+        222,
+        204,
+        246,
+        107,
+        34
+      ]
+    },
+    {
+      "name": "PoolCreatedEvent",
+      "discriminator": [
+        25,
+        94,
+        75,
+        47,
+        112,
+        99,
+        53,
+        63
+      ]
+    },
+    {
+      "name": "RedeemCsSolWtEvent",
+      "discriminator": [
+        133,
+        129,
+        66,
+        123,
+        84,
+        15,
+        152,
+        212
+      ]
+    },
+    {
+      "name": "SelfRegisterEvent",
+      "discriminator": [
+        124,
+        67,
+        187,
+        216,
+        94,
+        99,
+        37,
+        150
+      ]
+    },
+    {
+      "name": "UnwrapEvent",
+      "discriminator": [
+        73,
+        129,
+        203,
+        215,
+        50,
+        111,
+        179,
+        20
+      ]
+    },
+    {
+      "name": "UnwrapNativeEvent",
+      "discriminator": [
+        222,
+        75,
+        36,
+        206,
+        116,
+        160,
+        242,
+        146
+      ]
+    },
+    {
+      "name": "WrapEvent",
+      "discriminator": [
+        148,
+        134,
+        198,
+        142,
+        20,
+        51,
+        173,
+        180
+      ]
+    },
+    {
+      "name": "WrapNativeEvent",
+      "discriminator": [
+        119,
+        42,
+        15,
+        58,
+        123,
+        199,
+        151,
+        30
+      ]
+    },
+    {
+      "name": "WrapWithJitoVaultEvent",
+      "discriminator": [
+        64,
+        146,
+        247,
+        151,
+        91,
+        48,
+        226,
+        198
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "InvalidPoolStatus",
+      "msg": "Pool is not in the expected status for this operation"
+    },
+    {
+      "code": 6001,
+      "name": "PoolNotActive",
+      "msg": "Pool is not active — register lending market first"
+    },
+    {
+      "code": 6002,
+      "name": "Unauthorized",
+      "msg": "Signer is not the pool authority or an approved admin"
+    },
+    {
+      "code": 6003,
+      "name": "SelfRegisterDisabled",
+      "msg": "Self-registration is not enabled for this pool"
+    },
+    {
+      "code": 6004,
+      "name": "InvalidGatewayToken",
+      "msg": "Invalid or expired Civic gateway token"
+    },
+    {
+      "code": 6005,
+      "name": "ReserveMismatch",
+      "msg": "Reserve address does not match pool config"
+    },
+    {
+      "code": 6006,
+      "name": "MarketMismatch",
+      "msg": "Lending market does not match pool config"
+    },
+    {
+      "code": 6007,
+      "name": "InvalidCurve",
+      "msg": "Invalid borrow rate curve: must be sorted, bounded, start at 0% and end at 100%"
+    },
+    {
+      "code": 6008,
+      "name": "WithdrawQueueFull",
+      "msg": "Withdraw queue is at capacity — wait for matured tickets to be reaped before enqueueing more"
+    },
+    {
+      "code": 6009,
+      "name": "TicketNotFound",
+      "msg": "Withdrawal ticket is not in this pool's queue or already redeemed"
+    },
+    {
+      "code": 6010,
+      "name": "RedeemExceedsPending",
+      "msg": "Redeem amount exceeds the queue's currently-matured wSOL pool"
+    }
+  ],
+  "types": [
+    {
+      "name": "AdminEntry",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "pool",
+            "type": "pubkey"
+          },
+          {
+            "name": "wallet",
+            "type": "pubkey"
+          },
+          {
+            "name": "added_by",
+            "type": "pubkey"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "BorrowRateCurve",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "points",
+            "type": {
+              "array": [
+                {
+                  "defined": {
+                    "name": "CurvePoint"
+                  }
+                },
+                11
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "BorrowRateCurveUpdated",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "pool",
+            "type": "pubkey"
+          },
+          {
+            "name": "reserve",
+            "type": "pubkey"
+          },
+          {
+            "name": "reserve_type",
+            "type": {
+              "defined": {
+                "name": "ReserveType"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "CurvePoint",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "utilization_rate_bps",
+            "type": "u32"
+          },
+          {
+            "name": "borrow_rate_bps",
+            "type": "u32"
+          }
+        ]
+      }
+    },
+    {
+      "name": "EnqueueWithdrawEvent",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "pool",
+            "type": "pubkey"
+          },
+          {
+            "name": "user",
+            "type": "pubkey"
+          },
+          {
+            "name": "ticket",
+            "type": "pubkey"
+          },
+          {
+            "name": "cssol_burned",
+            "type": "u64"
+          },
+          {
+            "name": "cssol_wt_minted",
+            "type": "u64"
+          },
+          {
+            "name": "slot",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "MatureTicketEvent",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "pool",
+            "type": "pubkey"
+          },
+          {
+            "name": "ticket",
+            "type": "pubkey"
+          },
+          {
+            "name": "wsol_payout",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "NativePoolParams",
+      "docs": [
+        "Init params for a native-wrap pool (cSOL, cUSDC, …). Slimmer than",
+        "`PoolParams` because there's no klend market or borrow leg — just",
+        "a 1:1 KYC wrapper."
+      ],
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "underlying_oracle",
+            "type": "pubkey"
+          },
+          {
+            "name": "decimals",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ParticipantRole",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "Holder"
+          },
+          {
+            "name": "Liquidator"
+          },
+          {
+            "name": "Escrow"
+          }
+        ]
+      }
+    },
+    {
+      "name": "PoolConfig",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "authority",
+            "type": "pubkey"
+          },
+          {
+            "name": "underlying_mint",
+            "type": "pubkey"
+          },
+          {
+            "name": "underlying_oracle",
+            "type": "pubkey"
+          },
+          {
+            "name": "borrow_mint",
+            "type": "pubkey"
+          },
+          {
+            "name": "borrow_oracle",
+            "type": "pubkey"
+          },
+          {
+            "name": "wrapped_mint",
+            "type": "pubkey"
+          },
+          {
+            "name": "dm_mint_config",
+            "type": "pubkey"
+          },
+          {
+            "name": "lending_market",
+            "type": "pubkey"
+          },
+          {
+            "name": "collateral_reserve",
+            "type": "pubkey"
+          },
+          {
+            "name": "borrow_reserve",
+            "type": "pubkey"
+          },
+          {
+            "name": "decimals",
+            "type": "u8"
+          },
+          {
+            "name": "ltv_pct",
+            "type": "u8"
+          },
+          {
+            "name": "liquidation_threshold_pct",
+            "type": "u8"
+          },
+          {
+            "name": "status",
+            "type": {
+              "defined": {
+                "name": "PoolStatus"
+              }
+            }
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          },
+          {
+            "name": "gatekeeper_network",
+            "docs": [
+              "Civic gatekeeper network for self-registration. Pubkey::default() = disabled.",
+              "Added in v2 — must be at end for backwards compatibility with existing accounts."
+            ],
+            "type": "pubkey"
+          },
+          {
+            "name": "elevation_group",
+            "docs": [
+              "Klend elevation group this pool's reserves belong to. 0 = no group.",
+              "Added in v3 — appended after `gatekeeper_network` for backwards compatibility."
+            ],
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "PoolCreatedEvent",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "pool",
+            "type": "pubkey"
+          },
+          {
+            "name": "underlying_mint",
+            "type": "pubkey"
+          },
+          {
+            "name": "wrapped_mint",
+            "type": "pubkey"
+          },
+          {
+            "name": "authority",
+            "type": "pubkey"
+          }
+        ]
+      }
+    },
+    {
+      "name": "PoolParams",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "underlying_oracle",
+            "type": "pubkey"
+          },
+          {
+            "name": "borrow_mint",
+            "type": "pubkey"
+          },
+          {
+            "name": "borrow_oracle",
+            "type": "pubkey"
+          },
+          {
+            "name": "decimals",
+            "type": "u8"
+          },
+          {
+            "name": "ltv_pct",
+            "type": "u8"
+          },
+          {
+            "name": "liquidation_threshold_pct",
+            "type": "u8"
+          },
+          {
+            "name": "elevation_group",
+            "docs": [
+              "Klend elevation group for the reserve pair. 0 = no group."
+            ],
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "PoolStatus",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "Initializing"
+          },
+          {
+            "name": "Active"
+          },
+          {
+            "name": "Frozen"
+          }
+        ]
+      }
+    },
+    {
+      "name": "RedeemCsSolWtEvent",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "pool",
+            "type": "pubkey"
+          },
+          {
+            "name": "user",
+            "type": "pubkey"
+          },
+          {
+            "name": "cssol_wt_burned",
+            "type": "u64"
+          },
+          {
+            "name": "wsol_paid",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ReserveType",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "Collateral"
+          },
+          {
+            "name": "Borrow"
+          }
+        ]
+      }
+    },
+    {
+      "name": "SelfRegisterEvent",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "pool",
+            "type": "pubkey"
+          },
+          {
+            "name": "wallet",
+            "type": "pubkey"
+          },
+          {
+            "name": "gatekeeper_network",
+            "type": "pubkey"
+          }
+        ]
+      }
+    },
+    {
+      "name": "UnwrapEvent",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "pool",
+            "type": "pubkey"
+          },
+          {
+            "name": "user",
+            "type": "pubkey"
+          },
+          {
+            "name": "underlying_amount",
+            "type": "u64"
+          },
+          {
+            "name": "wrapped_amount",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "UnwrapNativeEvent",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "pool",
+            "type": "pubkey"
+          },
+          {
+            "name": "user",
+            "type": "pubkey"
+          },
+          {
+            "name": "underlying_amount",
+            "type": "u64"
+          },
+          {
+            "name": "wrapped_amount",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "WithdrawQueue",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "pool_config",
+            "docs": [
+              "Pool this queue belongs to."
+            ],
+            "type": "pubkey"
+          },
+          {
+            "name": "pending_wsol",
+            "docs": [
+              "wSOL currently sitting in `pool_pending_wsol_pool` that has been",
+              "matured from a Jito ticket but not yet redeemed by a csSOL-WT",
+              "burn. Mirrors `pool_pending_wsol_ata`'s real balance modulo",
+              "dust / on-chain rounding."
+            ],
+            "type": "u64"
+          },
+          {
+            "name": "total_cssol_wt_minted",
+            "docs": [
+              "Lifetime totals for analytics + reconciliation."
+            ],
+            "type": "u64"
+          },
+          {
+            "name": "total_cssol_wt_redeemed",
+            "type": "u64"
+          },
+          {
+            "name": "tickets",
+            "docs": [
+              "Bounded list of in-flight tickets. Capacity-checked in",
+              "`enqueue_withdraw_via_pool`. Redeemed entries are eagerly",
+              "drained from the head on `mature_withdrawal_tickets`."
+            ],
+            "type": {
+              "vec": {
+                "defined": {
+                  "name": "WithdrawTicket"
+                }
+              }
+            }
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "WithdrawTicket",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "ticket_pda",
+            "docs": [
+              "The Jito Vault `VaultStakerWithdrawalTicket` PDA we own."
+            ],
+            "type": "pubkey"
+          },
+          {
+            "name": "staker",
+            "docs": [
+              "The user who originally enqueued this ticket and is the",
+              "`base` + `staker` of the underlying Jito ticket. Required for",
+              "`mature_withdrawal_tickets` to satisfy Jito's check",
+              "`ticket.staker == provided_staker` (error 1042). Also lets the",
+              "playground UI filter \"your tickets\" without a per-ticket",
+              "extra RPC fetch."
+            ],
+            "type": "pubkey"
+          },
+          {
+            "name": "cssol_wt_amount",
+            "docs": [
+              "csSOL-WT minted to the requester at enqueue-time. wSOL payout",
+              "after Jito unlock will land 1:1 against this (less any vault",
+              "fees, which Jito takes inside its own ix and we do not",
+              "double-account here)."
+            ],
+            "type": "u64"
+          },
+          {
+            "name": "created_at_slot",
+            "docs": [
+              "Slot at which the ticket was enqueued. Useful for off-chain",
+              "\"should this be matured yet?\" reasoning; the on-chain unlock",
+              "gate is enforced by Jito Vault itself, not by us."
+            ],
+            "type": "u64"
+          },
+          {
+            "name": "redeemed",
+            "docs": [
+              "True once `mature_withdrawal_tickets` has redeemed this entry",
+              "against Jito (wSOL has flowed into our pending pool)."
+            ],
+            "type": "bool"
+          }
+        ]
+      }
+    },
+    {
+      "name": "WrapEvent",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "pool",
+            "type": "pubkey"
+          },
+          {
+            "name": "user",
+            "type": "pubkey"
+          },
+          {
+            "name": "underlying_amount",
+            "type": "u64"
+          },
+          {
+            "name": "wrapped_amount",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "WrapNativeEvent",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "pool",
+            "type": "pubkey"
+          },
+          {
+            "name": "user",
+            "type": "pubkey"
+          },
+          {
+            "name": "underlying_amount",
+            "type": "u64"
+          },
+          {
+            "name": "wrapped_amount",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "WrapWithJitoVaultEvent",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "pool",
+            "type": "pubkey"
+          },
+          {
+            "name": "user",
+            "type": "pubkey"
+          },
+          {
+            "name": "jito_vault",
+            "type": "pubkey"
+          },
+          {
+            "name": "pool_vrt_token_account",
+            "type": "pubkey"
+          },
+          {
+            "name": "underlying_amount",
+            "type": "u64"
+          },
+          {
+            "name": "wrapped_amount",
+            "type": "u64"
+          }
+        ]
+      }
+    }
+  ]
+}

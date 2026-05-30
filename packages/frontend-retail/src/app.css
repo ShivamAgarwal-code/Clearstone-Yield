@@ -1,0 +1,75 @@
+/* Brand fonts — must precede any other CSS so @import is valid. */
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..700&family=Geist:wght@300..700&family=Geist+Mono:wght@400..600&display=swap");
+@import "tailwindcss";
+@import "daisyui/daisyui.css" layer(base);
+@import "daisyui/themes.css" layer(base);
+@import "@clearstone/design-system/fonts.css";
+@import "@clearstone/design-system/theme.css";
+@import "@clearstone/design-system/styles.css";
+
+/* Tailwind v4 doesn't auto-scan workspace-symlinked sources — make
+ * design-system source explicit so utilities used inside DS components
+ * (alpha modifiers, arbitrary shadows, hover variants) land in the
+ * generated CSS. Same pattern frontend-institutional uses. */
+@source "../../frontend-design-system/src";
+
+/* ============================================================
+   Retail App — Global fixes for DaisyUI 5 sizing issues
+   ============================================================ */
+
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+/* DaisyUI 5 size fixes — card padding scales down to 0.5rem at xs
+ * which destroys readability in the deposit/withdraw cards. Force a
+ * sane floor. */
+.card-body {
+  padding: 1.5rem !important;
+  gap: 1rem !important;
+  font-size: 0.875rem !important;
+}
+
+.input, .select, .textarea {
+  min-height: 2.75rem;
+  font-size: 0.9rem;
+}
+
+.btn {
+  min-height: 2.5rem;
+  padding-inline: 1.25rem;
+}
+
+/* ---- Wallet Adapter — nav trigger button only ----
+ * Modal styling (overlay + visible card + list + dropdown) lives in
+ * the design-system stylesheet, which is imported above. Retail used
+ * to ship its own clone of those rules; that clone was a stale copy
+ * from before the design-system fixed its wrapper/container layout,
+ * and crucially it overrode `.wallet-adapter-modal-overlay` without
+ * `backdrop-filter`, killing the blur on this app. The clone has
+ * been removed so the design-system rules apply.
+ *
+ * The bare `.wallet-adapter-button` rule below is *not* in the design
+ * system — it styles the "Connect Wallet" trigger button in the nav.
+ * Other apps inherit the library default for that button; retail
+ * customises it to look like a primary-coloured pill. */
+.wallet-adapter-button {
+  background-color: oklch(var(--color-primary)) !important;
+  color: oklch(var(--color-primary-content)) !important;
+  border: none !important;
+  border-radius: 0.5rem !important;
+  font-weight: 600 !important;
+  height: 36px !important;
+  padding: 0 1rem !important;
+}
+.wallet-adapter-button:hover { filter: brightness(1.08); }
+
+/* ---- Smooth interactions ---- */
+button, a { transition: all 0.2s ease; }
+button:active:not(:disabled) { transform: scale(0.97); }
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background-color: oklch(var(--color-base-100)); }
+::-webkit-scrollbar-thumb { background-color: oklch(var(--color-base-300)); border-radius: 3px; }

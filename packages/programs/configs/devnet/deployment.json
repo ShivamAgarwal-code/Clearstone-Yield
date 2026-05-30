@@ -1,0 +1,35 @@
+{
+  "cluster": "devnet",
+  "rpc": "https://api.devnet.solana.com",
+  "authority": "AhKNmBmaeq6XrrEyGnSQne3WeU4SoN7hSAGieTiqPaJX",
+  "programs": {
+    "governor": "BrZYcbPBt9nW4b6xUSodwXRfAfRNZTCzthp1ywMG3KJh",
+    "deltaMint": "13Su8nR5NBzQ7UwFFUiNAH1zH5DQtLyjezhbwRREQkEn",
+    "usxProgram": "usxTTTgAJS1Cr6GTFnNRnNqtCbQKQXcUTvguz3UuwBD",
+    "yieldVault": "euxU8CnAgYk5qkRrSdqKoCM8huyexecRRWS67dz2FVr"
+  },
+  "pool": {
+    "poolConfig": "5dkknYzVfeVdwNSxR1gUXTz2mKoXEtFhZ8jnDCduFRpb",
+    "underlyingMint": "A1KLoBrKBde8Ty9qtNQUtq3C2ortoC3u7twggz7sEto6",
+    "wrappedMint": "ALqRkS5GdVYWUFLzsL3xbKCxkoMxe2p23UUP9Waddwfx",
+    "borrowMint": "8iBux2LRja1PhVZph8Rw4Hi45pgkaufNEiaZma5nTD5g",
+    "dmMintConfig": "C8XZRejf1vaLRpLWqCZSjegzyAFFdfpBZKXFhs7kSDLs",
+    "dmMintAuthority": "DWat3MjbT3HmHjwutDKqN9ooSNtVyFVgfTm3gs7drYS2"
+  },
+  "devnetMints": {
+    "USDC": "8iBux2LRja1PhVZph8Rw4Hi45pgkaufNEiaZma5nTD5g",
+    "USDT": "5dXXpWyZCCPhBHxmp79Du81t7t9oh7HacUW864ARFyft",
+    "USX": "7QC4zjrKA6XygpXPQCKSS9BmAsEFDJR6awiHSdgLcDvS",
+    "eUSX": "Gkt9h4QWpPBDtbaF5HvYKCc87H5WCRTUtMf77HdTGHBt",
+    "USDY": "A1KLoBrKBde8Ty9qtNQUtq3C2ortoC3u7twggz7sEto6"
+  },
+  "oracles": {
+    "usdyPythV2": "E4pitSrZV9MWSspahe2vr26Cwsn3podnvHvW3cuT74R4",
+    "usdcPythV2": "HSi8jh6q9XrbMrHi84G2QFafS3sfuo23hewTNBVPQ9EF"
+  },
+  "_nextSteps": [
+    "1. Create klend market + reserves (setup-devnet-market.ts)",
+    "2. Register lending market with governor (register_lending_market)",
+    "3. Add participants and start minting"
+  ]
+}

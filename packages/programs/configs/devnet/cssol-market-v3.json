@@ -1,0 +1,87 @@
+{
+  "cluster": "devnet",
+  "market": "EVw8B9WC2AX5ScCwkYJF2mZz6RdHLQZtoDeKChdMiz2E",
+  "reserves": {
+    "csSOL": "eCrKcmHytENDieb3Ff5YLY7ATsmduXB4EDT4u6dPX9w",
+    "csSOL_WT": "94UQxxQfEVPCCpQsh9uyakHsPX9QqPoCBZnjHz4RU4iw",
+    "cSOL": "7dRBLGfkzKBAR1MmGM3HfHQXufter8pC3cA3rPfzGYTg",
+    "ceUSX": "88XHsosaqq3bV9MW3gLtn3RozHuVKnvRcSbEq8fPcmXU",
+    "ceUSX_WT": "GCBFhWVCAN7rXxupwcZVLL5TBmifpagMe9eRWXbfEKSq",
+    "sUSDC": "78kkPNAjS7pq9yk59spMGKYcFLAA3m2xHvNBokk8BFy9",
+    "_retired_wSOL": {
+      "address": "CaPUL8sijx9Qw32Ao2PMdotEKqQLMneA5ZvRnvsa6VF8",
+      "_status": "Retired 2026-05-06. Was EG-2 debt; replaced by cSOL. On-chain status=Hidden, deposit_limit=0, borrow_limit=0, elevationGroups[]=[]. Account remains for legacy-position read paths."
+    }
+  },
+  "oracles": {
+    "csSOL": "3Sx8WJC7y1kokmsu7SoxfJW8nQJktkuQ5fKK8icxPw3P",
+    "csSOL_WT": "3Sx8WJC7y1kokmsu7SoxfJW8nQJktkuQ5fKK8icxPw3P",
+    "cSOL": "7UVimffxr9ow1uXYxsr4LHAcV58mLzhmwaeKvJ1pjLiE",
+    "wSOL": "7UVimffxr9ow1uXYxsr4LHAcV58mLzhmwaeKvJ1pjLiE",
+    "ceUSX": "3L8kkp8G6gxBmr7wdYJxvofEWxtUtUUAGJSokSLwzmyW",
+    "ceUSX_WT": "3L8kkp8G6gxBmr7wdYJxvofEWxtUtUUAGJSokSLwzmyW",
+    "sUSDC": "ETLQGfwHVfCYSqEG51ckf6h581e3k5CyoMnfz2WW45eD",
+    "_note": "cSOL reuses the wSOL Pyth feed (7UVim…) since it's a 1:1 KYC wrapper — no exchange-rate drift to track separately."
+  },
+  "elevationGroups": {
+    "1": {
+      "name": "Stables",
+      "ltv": 90,
+      "liqThreshold": 92,
+      "debtReserve": "78kkPNAjS7pq9yk59spMGKYcFLAA3m2xHvNBokk8BFy9",
+      "_debtReserveSymbol": "sUSDC",
+      "collateral": [
+        "ceUSX",
+        "ceUSX-WT"
+      ]
+    },
+    "2": {
+      "name": "LST/SOL",
+      "ltv": 90,
+      "liqThreshold": 92,
+      "debtReserve": "7dRBLGfkzKBAR1MmGM3HfHQXufter8pC3cA3rPfzGYTg",
+      "_debtReserveSymbol": "cSOL",
+      "_debtReserveMigratedAt": "2026-05-06",
+      "_debtReserveWas": "CaPUL8sijx9Qw32Ao2PMdotEKqQLMneA5ZvRnvsa6VF8 (wSOL — retired)",
+      "collateral": [
+        "csSOL",
+        "csSOL-WT"
+      ]
+    },
+    "3": {
+      "_status": "design locked, deploy pending — see docs/operations/MARGIN_PAIR.md",
+      "name": "Margin Long SOL",
+      "ltv": 65,
+      "liqThreshold": 85,
+      "maxReservesAsCollateral": 1,
+      "debtReserve": "78kkPNAjS7pq9yk59spMGKYcFLAA3m2xHvNBokk8BFy9",
+      "_debtReserveSymbol": "sUSDC",
+      "collateral": [
+        "7dRBLGfkzKBAR1MmGM3HfHQXufter8pC3cA3rPfzGYTg"
+      ],
+      "_collateralSymbol": "cSOL",
+      "rationale": "User deposits cSOL (KYC wrapper around wSOL), borrows plain sUSDC (the USD-side reuses the existing EG-1 reserve — no second wrap needed; gate flows through cSOL wrap-time whitelist). Conservative 65/85 reflects negative SOL/USD correlation — much wider liquidation buffer than EG-1/EG-2's 90/92 because no asset-pair correlation hedges the position."
+    },
+    "4": {
+      "_status": "design locked, deploy pending — see docs/operations/MARGIN_PAIR.md",
+      "name": "Margin Short SOL",
+      "ltv": 65,
+      "liqThreshold": 85,
+      "maxReservesAsCollateral": 1,
+      "debtReserve": "7dRBLGfkzKBAR1MmGM3HfHQXufter8pC3cA3rPfzGYTg",
+      "_debtReserveSymbol": "cSOL",
+      "collateral": [
+        "78kkPNAjS7pq9yk59spMGKYcFLAA3m2xHvNBokk8BFy9"
+      ],
+      "_collateralSymbol": "sUSDC",
+      "rationale": "Mirror of EG-3. User deposits sUSDC, borrows cSOL → unwraps to wSOL (KYC-required) → swaps wSOL → sUSDC → re-deposits for layered short exposure. Non-KYC wallets can technically deposit sUSDC and borrow cSOL but cannot unwrap, so the position is economically inert — the wrap/unwrap requirement is the de-facto gate."
+    }
+  },
+  "createdAt": "2026-04-30T18:56:51.516Z",
+  "marginPairAddedAt": "2026-05-04",
+  "wsolToCsolMigratedAt": "2026-05-06",
+  "marginPairDoc": "docs/operations/MARGIN_PAIR.md",
+  "_migrationNotes": [
+    "2026-05-06: EG-2 debt asset migrated wSOL → cSOL. Lending market's elevation_group[2].debt_reserve flipped via update_lending_market(mode=9, value=ElevationGroup{debt_reserve=cSOL,...}). cSOL reserve config completed (deposit_limit=1e15, borrow_limit=1e15, elevationGroups=[2,3,4]) before the swap. wSOL reserve drained (2 depositors withdrew via institutional UI, 0.04 wSOL borrower repaid), then status=Hidden + limits=0 + elevationGroups=[] applied. Frontend repointed: institutional credit-trade bundle now flash-borrows cSOL (with inline unwrap_native CPI for the Jito wrap step) and borrows cSOL as the persistent debt; PositionsPage BORROW_LEGS includes cSOL (Token-2022 mint); console RateCurvePanel + MarketPanel surface cSOL as the live EG-2 debt reserve."
+  ]
+}

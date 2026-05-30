@@ -1,0 +1,27 @@
+{
+  "cluster": "devnet",
+  "rpc": "https://api.devnet.solana.com",
+  "authority": "DiDbnkw2tYL8K1M5ndLdSHWaeXr53kcKyDyS7SiuDcFn",
+  "pool": {
+    "poolConfig": "QoR6KXoiyTfd3TRk9gds4pLWbaueFmTgagec9fAWD9e",
+    "underlyingMint": "So11111111111111111111111111111111111111112",
+    "underlyingOracle": "3Sx8WJC7y1kokmsu7SoxfJW8nQJktkuQ5fKK8icxPw3P",
+    "borrowMint": "So11111111111111111111111111111111111111112",
+    "borrowOracle": "7UVimffxr9ow1uXYxsr4LHAcV58mLzhmwaeKvJ1pjLiE",
+    "decimals": 9,
+    "ltvPct": 55,
+    "liquidationThresholdPct": 65,
+    "elevationGroup": 2
+  },
+  "cssolMint": "6qpu7yCkdKF2D8vnySUNQEQczo5tYGRxbVFfdd8S5Nxt",
+  "cssolAta": "AyqfnmwMU3PBovxfUiakGK3JYhQbE9cNH1QyyDvq1HZj",
+  "dmMintConfig": "FaBWmajcbEEnmep9wxx3jKcbjtWKkPbKHgusPxVZwDc2",
+  "dmMintAuthority": "Gyv1o28H98zZYnREBmaKq1pJJ5eHqd1wouJ6Km5fCTsT",
+  "seedAmountUnits": "1000000",
+  "completedAt": "2026-04-27T09:57:25.341Z",
+  "vault": "Hpdawr4ioFPqUMJYDxviWf4BRGdZAj3UgCdWemmhmoyx",
+  "poolVrtAta": "BvBy8orQZPXFwR6fgyCkLoyZfK1TBRteG5g4ipuqrEZp",
+  "depositLut": "BYhbgSt3QKJp8mduKnjsHiy4EubxRYsU2xxZzpojEF7y",
+  "withdrawQueue": "EgWUrxvEmZj16BhhC2TGty4V1z76PcTcSPgZgCtGrs9J",
+  "poolPendingWsolAccount": "5CMXpXEfy8BTe4DzT9xhc36HXYGNf3wDrr5wV5aoJis1"
+}

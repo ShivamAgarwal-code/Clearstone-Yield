@@ -1,0 +1,11 @@
+{
+  "name": "EUR Token",
+  "symbol": "tEUR",
+  "decimals": 6,
+  "price": 1.12,
+  "underlyingMint": "33ryBf82bn78vTxDBNkGrmCyABWL12CUMYrfSZ6yGq7Y",
+  "wrappedMint": "9cub1oL1w7985h3L9rd2FKGVeUeawvjVRtrHwcHhw5YC",
+  "pool": "21jHsskrLrEdqey9Q5KoB2cNSc6ygdmi9dFcyXX3UfkR",
+  "dmMintConfig": "FkAhz5EQsQGe5XWu2ys9kXx48ZADgNf53B33tkXV5uRa",
+  "createdAt": "2026-03-25T11:04:25.378Z"
+}

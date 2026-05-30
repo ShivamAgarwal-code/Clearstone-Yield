@@ -1,0 +1,28 @@
+[toolchain]
+anchor_version = "0.31.1"
+
+[features]
+resolution = true
+skip-lint = false
+
+[programs.devnet]
+delta_mint = "BKprvLqNUDCGrpxddppHHQ3UBhof8J5axyexDyctX1xy"
+governor = "6xqW3D1ebp5WjbYh4vwar7ponxrpEaQiVG6uhBYVZtJi"
+mock_oracle = "BbjcMyV2yQaxsgTZAdMFXxFiXSeaUWggoRJMLvZhYFzU"
+accrual_oracle = "8GjxQkJ82LrxpKPYkXw8hpbgCt17hDGk2rcYhqmeR3Ec"
+
+[programs.localnet]
+delta_mint = "BKprvLqNUDCGrpxddppHHQ3UBhof8J5axyexDyctX1xy"
+governor = "6xqW3D1ebp5WjbYh4vwar7ponxrpEaQiVG6uhBYVZtJi"
+mock_oracle = "BbjcMyV2yQaxsgTZAdMFXxFiXSeaUWggoRJMLvZhYFzU"
+accrual_oracle = "8GjxQkJ82LrxpKPYkXw8hpbgCt17hDGk2rcYhqmeR3Ec"
+
+[registry]
+url = "https://api.apr.dev"
+
+[provider]
+cluster = "localnet"
+wallet = "~/.config/solana/id.json"
+
+[scripts]
+test = "pnpm ts-mocha -p ./tsconfig.json -t 1000000 tests/**/*.ts"

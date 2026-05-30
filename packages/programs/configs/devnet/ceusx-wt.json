@@ -1,0 +1,12 @@
+{
+  "cluster": "devnet",
+  "rpc": "https://api.devnet.solana.com",
+  "mint": "DoHMuKFU4b2co2CBBcNjVzWf6yL3KG5H2N9FxkfFFN6A",
+  "decimals": 6,
+  "dmMintConfig": "852Tq2XMRxkNPGQ7sEQoi2dWZrK3sHmbLZ3QDapEEYng",
+  "dmMintAuthority": "6DBg4SjWuf2FYwvuTUuzv8JaHvdcD1TwwBRuSsj3Yjbv",
+  "mintConfigAuthority": "7LrzKp9UHfgR3AVqDtdWeB5N9CaxLdVUVJGTzNGcUAeQ",
+  "deltaMintProgram": "BKprvLqNUDCGrpxddppHHQ3UBhof8J5axyexDyctX1xy",
+  "hostPool": "7LrzKp9UHfgR3AVqDtdWeB5N9CaxLdVUVJGTzNGcUAeQ",
+  "completedAt": "2026-05-04T08:18:12.034Z"
+}

@@ -1,0 +1,38 @@
+{
+  "cluster": "devnet",
+  "market": "EVw8B9WC2AX5ScCwkYJF2mZz6RdHLQZtoDeKChdMiz2E",
+  "eg3": {
+    "id": 3,
+    "name": "Margin Long SOL",
+    "debtReserve": "3mPkFWN81i6ToGs5WJwSb9RTfbfkvEzZfLfSnb2DFjxe",
+    "_debtReserveSymbol": "cUSDC",
+    "ltvPct": 65,
+    "liqThresholdPct": 85,
+    "maxLiquidationBonusBps": 500,
+    "maxReservesAsCollateral": 1,
+    "allowNewLoans": 1,
+    "registered": true,
+    "_note": "Registered. Becomes borrowable once cSOL reserve's elevation_groups array includes 3 — pending the cSOL reserve's phase-2 update.",
+    "migratedAt": "2026-05-07T17:41:22.443Z"
+  },
+  "eg4": {
+    "id": 4,
+    "name": "Margin Short SOL",
+    "debtReserve": "7dRBLGfkzKBAR1MmGM3HfHQXufter8pC3cA3rPfzGYTg",
+    "_debtReserveSymbol": "cSOL",
+    "ltvPct": 65,
+    "liqThresholdPct": 85,
+    "maxLiquidationBonusBps": 500,
+    "maxReservesAsCollateral": 1,
+    "allowNewLoans": 1,
+    "registered": true,
+    "_note": "Registered. Becomes borrowable once sUSDC reserve's elevation_groups array includes 4 — pending the sUSDC reserve's mode-34 update."
+  },
+  "completedAt": "2026-05-04T19:30:00.000Z",
+  "eg1": {
+    "id": 1,
+    "debtReserve": "3mPkFWN81i6ToGs5WJwSb9RTfbfkvEzZfLfSnb2DFjxe",
+    "_debtReserveSymbol": "cUSDC",
+    "migratedAt": "2026-05-07T17:41:22.443Z"
+  }
+}

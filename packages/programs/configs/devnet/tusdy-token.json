@@ -1,0 +1,11 @@
+{
+  "name": "USDY Token",
+  "symbol": "tUSDY",
+  "decimals": 6,
+  "price": 1.08,
+  "underlyingMint": "F1SbMAUJUTsKwr7gp6tEuwGvxtqsBpoCcnk819vpsqia",
+  "wrappedMint": "6SV8ecHhfgWYHTiec2uDMPXHUXqqT2puNjR73gj6AvYu",
+  "pool": "7LyKDm9fq49ExBVWYEnjpxh13Z7jD8MJZXztY8uCrFY2",
+  "dmMintConfig": "9mFCzbnAUSM5fUgCbkvbSoKiXizpRePhWcCQr7RpyQMo",
+  "createdAt": "2026-03-25T11:04:16.089Z"
+}

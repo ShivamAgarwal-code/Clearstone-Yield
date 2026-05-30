@@ -1,0 +1,4 @@
+# Cloudflare Pages routing rules. The Solstice proxy lives in the
+# backend-edge Worker (`/solstice`) — see frontend-institutional's
+# _redirects header for the full reasoning.
+/*  /index.html  200

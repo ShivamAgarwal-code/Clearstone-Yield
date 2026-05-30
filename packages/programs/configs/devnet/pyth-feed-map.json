@@ -1,0 +1,3327 @@
+[
+  {
+    "address": "Frgjm5gEwFbsi3wXE3Xy8PemsPmQ8Hh6tJ6yCLCDZ6KA",
+    "price": 1.687e-7,
+    "expo": -10,
+    "slot": 310604797,
+    "bucket": "micro (<$0.01)"
+  },
+  {
+    "address": "6nACckK2kUbGN8yFKktsGQsNhHmytkmAF7WjPPAXP5ri",
+    "price": 1.9e-7,
+    "expo": -8,
+    "slot": 310604794,
+    "bucket": "micro (<$0.01)"
+  },
+  {
+    "address": "8tnKgZ6aSZDsEmXbEEMZpXYbaJa5XUnxB3XqfeMtcoek",
+    "price": 4.368e-7,
+    "expo": -10,
+    "slot": 304782149,
+    "bucket": "micro (<$0.01)"
+  },
+  {
+    "address": "GqFHp7WaFPTAZd17zjBxhQJ7LPYUsn1snjF9W7tH4TGn",
+    "price": 7.895e-7,
+    "expo": -10,
+    "slot": 310604797,
+    "bucket": "micro (<$0.01)"
+  },
+  {
+    "address": "2t675WpDeTsr1VJNUSLoWcDx6Jd4K4biGuiLVPvVst41",
+    "price": 0.0000014700000000000001,
+    "expo": -8,
+    "slot": 310604794,
+    "bucket": "micro (<$0.01)"
+  },
+  {
+    "address": "7YYCfbDjvZWZLheAQV7X4XrnNkq56KgUL3WfAU3gPdd6",
+    "price": 0.0000015205,
+    "expo": -10,
+    "slot": 310604797,
+    "bucket": "micro (<$0.01)"
+  },
+  {
+    "address": "Gz9RfgDeAFSsH7BHDGyNTgCik74rjNwsodJpsCizzmkj",
+    "price": 0.0000090641,
+    "expo": -10,
+    "slot": 310604797,
+    "bucket": "micro (<$0.01)"
+  },
+  {
+    "address": "7woD3UiyhS6c4TvDu7ygjDfTxmKi9FB4XEUzqYLYX2Dp",
+    "price": 0.000014055,
+    "expo": -10,
+    "slot": 322338250,
+    "bucket": "micro (<$0.01)"
+  },
+  {
+    "address": "Bj9toWJhmd6iaqQcj3EwNdDy3eNXzduDRpSdjte27qdz",
+    "price": 0.00002442,
+    "expo": -8,
+    "slot": 298015680,
+    "bucket": "micro (<$0.01)"
+  },
+  {
+    "address": "6bquU99ktV1VRiHDr8gMhDFt3kMfhCQo5nfNrg2Urvsn",
+    "price": 0.0000263445,
+    "expo": -10,
+    "slot": 310604797,
+    "bucket": "micro (<$0.01)"
+  },
+  {
+    "address": "8PugCXTAHLM9kfLSQWe2njE5pzAgUdpPk3Nx5zSm7BD3",
+    "price": 0.00008196000000000001,
+    "expo": -8,
+    "slot": 322338253,
+    "bucket": "micro (<$0.01)"
+  },
+  {
+    "address": "HuobqtT6QaJ8napVARKRxqZN33NqYzQJKLTKKrGy8Bvo",
+    "price": 0.0001052846,
+    "expo": -10,
+    "slot": 310604797,
+    "bucket": "micro (<$0.01)"
+  },
+  {
+    "address": "9qYj4xJkzUTk1txmWe6BvkEWSLmHeLxePfw12q2jsSpW",
+    "price": 0.0001093,
+    "expo": -8,
+    "slot": 304804337,
+    "bucket": "micro (<$0.01)"
+  },
+  {
+    "address": "6syZxg683i9ib1RmkQquseu65YyDzwBuCjgD8PuECPjS",
+    "price": 0.0001458919,
+    "expo": -10,
+    "slot": 310604797,
+    "bucket": "micro (<$0.01)"
+  },
+  {
+    "address": "92GQtDG7gfkRTzKRrqLj86VP1y1ydJcXrxD7qkC8mWxx",
+    "price": 0.00015475,
+    "expo": -8,
+    "slot": 310604800,
+    "bucket": "micro (<$0.01)"
+  },
+  {
+    "address": "CoMdbPqJYY7KiM4XwLyTkfu8DUGm96TM7FYAvjaoUyYA",
+    "price": 0.00027551,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "micro (<$0.01)"
+  },
+  {
+    "address": "E8FVUcfP1E8Kt7YvstsCFjMBbHwfNJvXNM7a8XALeviW",
+    "price": 0.0004128,
+    "expo": -8,
+    "slot": 322338247,
+    "bucket": "micro (<$0.01)"
+  },
+  {
+    "address": "5DpCmaGR72m4QhDaCdrykBeyVfGZqn9CFRH66PU1pkvQ",
+    "price": 0.00043565,
+    "expo": -8,
+    "slot": 322338247,
+    "bucket": "micro (<$0.01)"
+  },
+  {
+    "address": "E7h7Y7CJXWyyFPFVG23bAPP6SALB5x3oYQbAGf7u1PAi",
+    "price": 0.00054519,
+    "expo": -8,
+    "slot": 322338253,
+    "bucket": "micro (<$0.01)"
+  },
+  {
+    "address": "GPKi1L2NSyY1owYb1za46KuGkeLaGHfgk3PrAMqSv9sk",
+    "price": 0.0006095,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "micro (<$0.01)"
+  },
+  {
+    "address": "ExwdAbyPeiEY7Ypx2umaPxzp66jnrQsvqdE2aoDFWKJG",
+    "price": 0.00063203,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "micro (<$0.01)"
+  },
+  {
+    "address": "EfCD8rMxH7rUNo8A5AXmqvdXfgTCL5V8hAtSDW49KePb",
+    "price": 0.00087384,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "micro (<$0.01)"
+  },
+  {
+    "address": "5GDJSA5ZrthCDEMTyZ2bGfU2AgKaPNdcnKMv5hLpy8EZ",
+    "price": 0.00138202,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "micro (<$0.01)"
+  },
+  {
+    "address": "BmUdxoioVgoRTontomX8nBjWbnLevtxeuBYaLipP8GTQ",
+    "price": 0.00159416,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "micro (<$0.01)"
+  },
+  {
+    "address": "4WSN3XDSTfBX9A1YXGg8HJ7n2GtWMDNbtz1ab6aGGXfG",
+    "price": 0.00164145,
+    "expo": -8,
+    "slot": 322338250,
+    "bucket": "micro (<$0.01)"
+  },
+  {
+    "address": "Dzs6SE1cssUqBpWCKzE4jeS5PrmRK1Fp2Kw1WMaDCiVR",
+    "price": 0.00196945,
+    "expo": -8,
+    "slot": 322338247,
+    "bucket": "micro (<$0.01)"
+  },
+  {
+    "address": "J6FiCt4T837S3cjb8RcJZkfP9Y34UEFnTndioy86fpFp",
+    "price": 0.00252164,
+    "expo": -8,
+    "slot": 310604792,
+    "bucket": "micro (<$0.01)"
+  },
+  {
+    "address": "33ugpDWbC2mLrYSQvu1BHfykR8bt3MVc4S3YuuXMVRH3",
+    "price": 0.003339,
+    "expo": -8,
+    "slot": 322338245,
+    "bucket": "micro (<$0.01)"
+  },
+  {
+    "address": "2Gs8tWDF9EzsWMCgU7RRyQaKFzoofzG7FZUsYajxCg5A",
+    "price": 0.0035375100000000002,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "micro (<$0.01)"
+  },
+  {
+    "address": "Hdw6vyFAe7AkScsaotTCdy6SNKfz1jfh6JHbq2pGttoF",
+    "price": 0.00389042,
+    "expo": -8,
+    "slot": 322338245,
+    "bucket": "micro (<$0.01)"
+  },
+  {
+    "address": "A9r7BHsXJQ2w9B7cdJV8BkfRoBWkxRichVGm72vVS1s5",
+    "price": 0.00488495,
+    "expo": -8,
+    "slot": 322338256,
+    "bucket": "micro (<$0.01)"
+  },
+  {
+    "address": "H5kL3FN5t4QBLMx68QG5LvAvXfzTkWScBvRi65BGxsQ",
+    "price": 0.00533806,
+    "expo": -8,
+    "slot": 298016692,
+    "bucket": "micro (<$0.01)"
+  },
+  {
+    "address": "FdLgTGRJ15H4vsdGPjK2JkqALK9qnU2A9TUPd77Fhrwd",
+    "price": 0.00543953,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "micro (<$0.01)"
+  },
+  {
+    "address": "6Ukmvns6Uyf3nRVj3ErDBgx7BiZRNJrLyXe1nGQ7CUHA",
+    "price": 0.00571672,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "micro (<$0.01)"
+  },
+  {
+    "address": "G7dySNGaxZ8y2E89aX1K6rFeBt2ZnYBqXuCu1k2Y9MEe",
+    "price": 0.00624591,
+    "expo": -8,
+    "slot": 322338253,
+    "bucket": "micro (<$0.01)"
+  },
+  {
+    "address": "xkKbAdKDH4ox8ynsejqJjqdqfUG5Rkkv6HtnRftuTCK",
+    "price": 0.00687336,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "micro (<$0.01)"
+  },
+  {
+    "address": "GmoRwVaEN5jsdnnFqE7yQqyYBic76FLrYRVdfCcJcDov",
+    "price": 0.007335,
+    "expo": -8,
+    "slot": 322338245,
+    "bucket": "micro (<$0.01)"
+  },
+  {
+    "address": "8MPKw6bGzhms1ut9FQTBdWSieVHFEgxa789z85X4FJZH",
+    "price": 0.0077152,
+    "expo": -8,
+    "slot": 310604800,
+    "bucket": "micro (<$0.01)"
+  },
+  {
+    "address": "DEmEX28EgrdQEBwNXdfMsDoJWZXCHRS5pbgmJiTkjCRH",
+    "price": 0.00958467,
+    "expo": -8,
+    "slot": 292080865,
+    "bucket": "micro (<$0.01)"
+  },
+  {
+    "address": "9yhJhit4gkooL3DYqcqvbfY5g5KcDHfWRTw12hq3DXPJ",
+    "price": 0.01005517,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "jPcXRsoUvogtQGyUgrep75AEWRyiQQx4K1JJqNsCBmw",
+    "price": 0.01108479,
+    "expo": -8,
+    "slot": 322338245,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "BScN1mER6QJ2nFKpnP4PcqffQp97NXAvzAbVPjLKyRaF",
+    "price": 0.0116453,
+    "expo": -8,
+    "slot": 322338250,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "5Si2Pdm7B87ojYvkegg7ct8Y446RHJyEjeREAyZEZcAV",
+    "price": 0.0118,
+    "expo": -8,
+    "slot": 322310924,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "3uwrCNiVJrUU4AfUyoAABHLMGgdtzR6Fnk9LFrAudcUd",
+    "price": 0.01203,
+    "expo": -8,
+    "slot": 322338256,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "GNhBKt4a2Np9DkdVvkC3TXAGwEn1tNRbd9BUvcjJcJ7e",
+    "price": 0.01455158,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "DCNw5mwZgjfTcoNsSZWUiXqU61ushNvr3JRQJRi1Nf95",
+    "price": 0.01471835,
+    "expo": -8,
+    "slot": 322338256,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "3HpwPH71kkqybZtjav1NpKWru3BpRqLHnFBHfx1Cgd7T",
+    "price": 0.01538576,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "AUKjh1oVPZyudi3nzYSsdZxSjq42afUCvsdbKFc5CbD",
+    "price": 0.0158441,
+    "expo": -8,
+    "slot": 310604800,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "83rpA5t5s2oxPBx4TAYn9oBzjmWiankxTwFv4t4kfU7d",
+    "price": 0.01653752,
+    "expo": -8,
+    "slot": 310604794,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "4BDvhA5emySfqyyTHPHofTJqRw1cwDabK1yiEshetPv9",
+    "price": 0.016975,
+    "expo": -8,
+    "slot": 322338250,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "3LwroFUZoT5MBKLy3fxxe7LTTgywDEznTzRn6ouxxsoj",
+    "price": 0.017381360000000002,
+    "expo": -8,
+    "slot": 298013860,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "BiKfzJuJyHPkBJUZNjxmUUqcJsfBRV2EfmmcoxUPf4ma",
+    "price": 0.01845065,
+    "expo": -8,
+    "slot": 322338245,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "3GU3urY2oQJ9bkwcHxZg9Up4vYs5XJpxU7jvwtnfZgMB",
+    "price": 0.0188447,
+    "expo": -8,
+    "slot": 322338245,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "9sapByYTQNVv1zvLiqAjcKUVtKPcQkaQmcNtKK4wrcGR",
+    "price": 0.0188701,
+    "expo": -8,
+    "slot": 310604800,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "74NfmdNcKE38ikqY2cMUHjkW2GmybGgRJJmHex1iRsT5",
+    "price": 0.02137662,
+    "expo": -8,
+    "slot": 318841489,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "FeRPjPxfudprWNDpRrydSBfjgCMzxWDNvparUJs98tRr",
+    "price": 0.02315973,
+    "expo": -8,
+    "slot": 322338247,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "8Kr7A5C8EiafiNx6LrEW14Z8PGr9tkskzodKSDnbbCAE",
+    "price": 0.02429,
+    "expo": -8,
+    "slot": 322338253,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "6brxkxWXcLs1dbCD8Rinjs6mDcC5EAVjUX2zGKJitq4p",
+    "price": 0.025475,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "CsGLNsEErb6o43Ygx83o4W4GKPaXiTAXvWbLvt2Jotpp",
+    "price": 0.02847635,
+    "expo": -8,
+    "slot": 310604800,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "7myonvBWD5zfh6qfScRP5E4anEue4Bqnu8XS8cdtJTQx",
+    "price": 0.02880259,
+    "expo": -8,
+    "slot": 293916596,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "992moaMQKs32GKZ9dxi8keyM2bUmbrwBZpK4p2K6X5Vs",
+    "price": 0.02994999,
+    "expo": -8,
+    "slot": 322333596,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "WFUFBW8gimCBfrupKSzQvw8zZFKeCLqH11y9BoMjz2W",
+    "price": 0.030318150000000002,
+    "expo": -8,
+    "slot": 322338250,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "2NZzAodZog6pKgC1B2NaSvLJuHNdvprXjjXJwMetgPGr",
+    "price": 0.0305245,
+    "expo": -8,
+    "slot": 322338245,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "5TRnxoYbd1fqe8xhRdPeMsvCnUw6nSrzqZkbPG5pBZnv",
+    "price": 0.03687999,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "A8FmsT4QeYQPhDkgNKobdBAqRrdCSooim7oP39zAc8Du",
+    "price": 0.042775,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "FfGEmPBmEeXHjyphUQudJgzZA6N9oWNBULJxywfS5gWQ",
+    "price": 0.04334752,
+    "expo": -8,
+    "slot": 322338250,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "3MHgbooDXWGTCKA5DmDKmsvy82kfEBsBJftZGrxnuFLQ",
+    "price": 0.046652,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "HMKMroGXPih1XkGhNCWLfSrjvYZ5bn9rdfoax4kxJMpR",
+    "price": 0.0510744,
+    "expo": -8,
+    "slot": 322338245,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "89Vo3H7ZyZxHrJKwygSRyH7Hp3sFXr4E6sgogsAbvcKS",
+    "price": 0.05271559,
+    "expo": -8,
+    "slot": 304793921,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "8trBWncKLjyCeXhRhSzc7Fpjmk4TVGaLte1ZH5E7Q4DW",
+    "price": 0.052975,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "EgCFaKazieBrHE72hVtA7NH2TrozYKEPw7rXPfsUqpoM",
+    "price": 0.055091060000000004,
+    "expo": -8,
+    "slot": 322338224,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "qKoDStvNznD1ECS5N47jCdS6XHEZ3Y3X7S3ukwYkxwW",
+    "price": 0.05640849,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "BmDEUDMVghaGf5JwSM2LGpKSJ8Dki2DortyWNCgBYgS",
+    "price": 0.05765488,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "AzEX2WfegVmwy4DShw3oz9xLP2kWXc3pwGatXMbAFkC8",
+    "price": 0.05950332,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "FJ8d7rMRBj2pL6eekJEBoxG5bAVWAnonbN1qpDEkJrfe",
+    "price": 0.06439500000000001,
+    "expo": -8,
+    "slot": 322338250,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "25QpjouHSVPBYRxNVurVAvs51BmJwCcmg3GvWSDZGXFt",
+    "price": 0.06535567,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "3TSs6BiX2bD2EpdGM18Z6pbKFrfsn6hD9Z5XGKrR8J3X",
+    "price": 0.06645861,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "6VrSw4Vxg5zs9shfdCxLqfUy2qSD3NCS9AsdBQUgbjnt",
+    "price": 0.069497,
+    "expo": -8,
+    "slot": 298015782,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "6BmJozusMugAySsfNfMFsU1YRWcGwyP3oycNX9Pv9oCz",
+    "price": 0.07627842,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "5sGD8XhBNqN2MLSmqyufQLSQo46qbCXby3RMDrXixddy",
+    "price": 0.077,
+    "expo": -8,
+    "slot": 322338250,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "AvWVqWLEfTcrWLXWPVEdS9AykVnpfrLsJ12YUGx5zmsJ",
+    "price": 0.0807973,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "5oXfvwKrSLZuSHEe3NQjtgTRXmoajzUyk6Z9JFLj47mq",
+    "price": 0.08098,
+    "expo": -8,
+    "slot": 322338253,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "CjYErTBS8JX1Hyk8h4tjy9qH3Kc9eDzEQ4R8aKVshuQ2",
+    "price": 0.08767022000000001,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "RN35hUQZ5pTWn55tHfzdovy4demcwUUEe6oXbU3ffrq",
+    "price": 0.09858492,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "4L6YhY8VvUgmqG5MvJkUJATtzB2rFqdrJwQCmFLv4Jzy",
+    "price": 0.099442,
+    "expo": -8,
+    "slot": 322338245,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "GCK4aAQyuh9dVZGsSsf65gJCTPT1USHWprb3j53ScNJ8",
+    "price": 0.10147899,
+    "expo": -8,
+    "slot": 298018523,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "EX5YVxtsJtjWQW4ZGkkrDnECx1ac8njAbBjWbamfpebg",
+    "price": 0.10191297,
+    "expo": -8,
+    "slot": 322338224,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "NGNQ9v8LsVDhrqSJLM3uZqirD8qJygnoTU35GyVaFii",
+    "price": 0.10964997,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "C9px8Kh7MYctd2EB9Lqug99dXdNsWxBv7xfz1pjdfaEH",
+    "price": 0.11183724,
+    "expo": -8,
+    "slot": 310604800,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "Dxp7vob2NTGhmodyWyeEkqtNEpSfvSMoGKMYjmaY6pg1",
+    "price": 0.1144,
+    "expo": -8,
+    "slot": 322338253,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "GpMbCXknaJYgvL8gG7beKLV18dd8cm8S8xFxawXwBtxm",
+    "price": 0.118211,
+    "expo": -8,
+    "slot": 322338250,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "5PfVG9G9uVdg8LTLzv8PXLRFRZp9JNmYRUFBVDEiwUNM",
+    "price": 0.12405000000000001,
+    "expo": -8,
+    "slot": 322338250,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "EZy99wkoqohyyNxT1QCwW3epQtMQ1Dfqx4sXKqkHiSox",
+    "price": 0.1255485,
+    "expo": -8,
+    "slot": 322338250,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "c1A946dY5NHuVda77C8XXtXytyR3wK1SCP3eA9VRfC3",
+    "price": 0.1264813,
+    "expo": -8,
+    "slot": 322338236,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "6TK1GNrFmrYB4HQoNrhBsyi6d4zKyG4e3E8AHkDpWdk7",
+    "price": 0.1295607,
+    "expo": -8,
+    "slot": 322338256,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "AEDPsygwpvzYQWNCeyCdDgLFonMYo6LZagLb7Whpmx2Z",
+    "price": 0.1299006,
+    "expo": -8,
+    "slot": 310604794,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "Grp9rsTTCP9shKfbRQ78N4YxZMTGuvpcrjEDicRudbF6",
+    "price": 0.1363,
+    "expo": -8,
+    "slot": 322338250,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "6MHpTUHpRCtEsCUMhftDqwAs62FLTDMLDV4VyYMEeMNJ",
+    "price": 0.14249999,
+    "expo": -8,
+    "slot": 322338256,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "GiKEcLudJ3gv4kgDxNDmdVvKsbKWkBTJXXPjYEDZjE8E",
+    "price": 0.143848,
+    "expo": -8,
+    "slot": 322338258,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "BJYbzMFBUdUTaQRC4em3pKenSe1ttd9VjDKkSAxRTAwh",
+    "price": 0.146265,
+    "expo": -8,
+    "slot": 322338250,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "2axeaEqsJe9HPrK8QZWD2y9Y3zzdRRQXd9q5qVuuM3Pt",
+    "price": 0.14646565,
+    "expo": -8,
+    "slot": 322338245,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "6rnFD1YUmcKjvEcj8AY4c7imLSqrd82QYyRj7hQG3oLn",
+    "price": 0.15384672,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "BfrLgSZLBNpWvytEcurngBFdkbEP5YMyjTgs8gb9DLMM",
+    "price": 0.1547978,
+    "expo": -8,
+    "slot": 322338253,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "DspwfrfzKNv8bxbCLq9WZQXFJaR7jci6kc1m7swQ278Z",
+    "price": 0.1548477,
+    "expo": -8,
+    "slot": 322338250,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "78fVSDAeAhaDHz8mX31VWcyGsyrMakyipmAZYW5bsZrK",
+    "price": 0.15704751,
+    "expo": -8,
+    "slot": 322338247,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "5gbRCcSejn6NJx661EhgCiXoc6EapHjZh2wiLhwnWtr",
+    "price": 0.16006619,
+    "expo": -8,
+    "slot": 322338253,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "DoNuv5h9agVZqZeRCAWJvXmhE95Rnhuo51nK2Z3qfWng",
+    "price": 0.163,
+    "expo": -8,
+    "slot": 322338253,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "5dGbFFK6y6U3KhySjvMqYvH7fe9GH9U9t88PYHgsVfMB",
+    "price": 0.16470165,
+    "expo": -8,
+    "slot": 322338245,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "8TJft2tNzLPYTYi4yw5USPrUVJ3Fk99NnsUHL9ZsMscp",
+    "price": 0.16585389,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "4qLLU8SbbWL9RCxodb5X5cTjMWe4GHmWf2S7N2RkgmEU",
+    "price": 0.16745327000000002,
+    "expo": -8,
+    "slot": 322338256,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "DNdAmwQiNrMs4VDUoQStoSRYg84TGb5VzsxDWZfe5A1Z",
+    "price": 0.16966,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "8b7j9iCScdEcJPjd1hCR5HZypCYm5zYDxZWYrgtvNnoT",
+    "price": 0.1706975,
+    "expo": -8,
+    "slot": 322338224,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "5g4XtpqLynP6YUSQwncw6CrdAEoy5a7QNDevgAgLsfyC",
+    "price": 0.17672355,
+    "expo": -8,
+    "slot": 322338253,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "4TDUVhEcGiShCmHTnD4Q5M3wBwdnmyuoTyh943wkGnt4",
+    "price": 0.18070903,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "3ag5mWipr7RTiLzuLbBGbGbyGsm4dzQYVDhCnN2PkP53",
+    "price": 0.18534725,
+    "expo": -8,
+    "slot": 322338224,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "7Pmhcy42N7PFSxGRerbbjHPhSVxkXpja6A5ouiFV2iU",
+    "price": 0.19954703000000001,
+    "expo": -8,
+    "slot": 322338250,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "t16Mxf71w4ZDzHbvs75GfR6VD9AMVaCdympVaf1NUJt",
+    "price": 0.2080469,
+    "expo": -8,
+    "slot": 322338245,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "3F8r9yCVjD93V6jwtsJYTXWKzzPrFCfkS13bdhmX9N95",
+    "price": 0.222169,
+    "expo": -8,
+    "slot": 318841468,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "2KoMFTZMVQYZb4hE48z8jfcGvN7SaPooLtbCYw4ubAYJ",
+    "price": 0.22857002,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "7teETxN9Y8VK6uJxsctHEwST75mKLLwPH1jaFdvTQCpD",
+    "price": 0.2373965,
+    "expo": -8,
+    "slot": 322338245,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "2iRhuHfXDLmSqxSDo2Gyv59ZMaPDkensHHF2cJwWhaqW",
+    "price": 0.246395,
+    "expo": -8,
+    "slot": 322338245,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "E1kPK3xUjNoNJYgy1V2Cevzd6mibScq1F85gmKAhLSVk",
+    "price": 0.24844750000000002,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "55uBmdnVVse8TvJCLc9Y4q3N3XokbtSbZEN8Zf2Jdvzy",
+    "price": 0.26041286,
+    "expo": -8,
+    "slot": 310604800,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "AUPtZm4NSGE7xkgxmt2uKUywvswJPdQbQSnVw8pHBkG4",
+    "price": 0.272618,
+    "expo": -8,
+    "slot": 322338247,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "DpuGGiMxjMMwWYULFM6KW481QxLoUqY2oxn7wwvs3Xrr",
+    "price": 0.27385419,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "GoXhiGHRCqYpUsWznkV9t21dqMoVDWh1jNVDNXqMvVVc",
+    "price": 0.2753905,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "ELF78ZhSr8u4SCixA7YSpjdZHZoSNrAhcyysbavpC2kA",
+    "price": 0.2776878,
+    "expo": -8,
+    "slot": 322338250,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "B1cQ43JvVHqXA8u8D2LZyXbg1UhmWjEfnm6kGtY1NY5q",
+    "price": 0.28649641,
+    "expo": -8,
+    "slot": 322338258,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "A9665pJk2GAm7m3gA4f5qu99cWX8kDisDZtoSA9J4a3F",
+    "price": 0.29241462,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "7Db6Ln2zynvuXJH2kfkmD2H4u4ReoUQJP98fGSgiv2e5",
+    "price": 0.29317259,
+    "expo": -8,
+    "slot": 298019785,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "3LuSbvThg5STSvcqTFNG74pifPs9cz2kT6msLA7trkiz",
+    "price": 0.29694601,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "B6KVbgqTRY33yDgjAnc1mWw4ATS4W5544xghayQscdt7",
+    "price": 0.30464545,
+    "expo": -8,
+    "slot": 322338250,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "8LzAFDm7gMthXGrNqGdipUn7K53hJEd4ZHVtQsyrZz6J",
+    "price": 0.30623713,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "63P85wVMrVD4ZJRvCKJNWRc9faaBqo7k3c5KtLHops1m",
+    "price": 0.30720000000000003,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "DtiWGGQnySidv8hntZoCa5uMWCrHoFVg6H3YkabUhdES",
+    "price": 0.3156953,
+    "expo": -8,
+    "slot": 322338245,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "tumYmYB6CwSFyVfojFvF2ep9SRSaN2a84vRdha8dLjC",
+    "price": 0.32316838000000003,
+    "expo": -8,
+    "slot": 298098080,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "4BwstmwCNY4qCMkcuUPPuCsRovXTQcn6RKjKpKetUXMQ",
+    "price": 0.34680124,
+    "expo": -8,
+    "slot": 310604794,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "7xzCBiE2d9UwV9CYLV9vrbJPipJzMEaycPBoZg2LjhUf",
+    "price": 0.3536,
+    "expo": -8,
+    "slot": 322338247,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "FdQjffYgJyZWWa5Qo9Xo6wLk2b1fp6rzEeh46MFCm5vJ",
+    "price": 0.35430111000000003,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "8oGTURNmSQkrBS1AQ5NjB2p8qY34UVmMA9ojrw8vnHus",
+    "price": 0.3555,
+    "expo": -8,
+    "slot": 322338256,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "9grPmt24B4bGxG7mR9j4VrUiT9U2x7p3t4sSt9P1er6F",
+    "price": 0.37094448,
+    "expo": -8,
+    "slot": 322338245,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "3g5BEM6cqJyXwy2VVgdynCpJAHqFMQnGqQdiVNvEyvpc",
+    "price": 0.3751,
+    "expo": -8,
+    "slot": 308157171,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "Fd79wzepSPLpj4KwZBCMdPnM6j4Mg1Ftacd7sy5nQoE6",
+    "price": 0.404545,
+    "expo": -8,
+    "slot": 322338245,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "CkHTGkLkTLcb4dASq5qWshwGqnJz9YQWCQ3qac6G24Rt",
+    "price": 0.41735236000000003,
+    "expo": -8,
+    "slot": 310604794,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "FBirwuDFuRAu4iSGc7RGxN5koHB7EJM1wbCmyPuQoGur",
+    "price": 0.4225,
+    "expo": -8,
+    "slot": 322338245,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "BVBNeJ1t8JzcSSKnS3gN3GvPadSpAm8HJKba2cTyBjMF",
+    "price": 0.42550369,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "BTwrLU4so1oJMViWA3BTzh8YmFwiLZ6CL4U3JryG7Q5S",
+    "price": 0.425636,
+    "expo": -8,
+    "slot": 322338250,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "7BtBfekBPE1bXTvfdNqdNVSfecbH8nwjL99HfJcEhcgu",
+    "price": 0.44038,
+    "expo": -8,
+    "slot": 322338247,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "CdTeotBBfP6R6oLh2A7FyEXDg9abWz6RWDp8X8s37RCW",
+    "price": 0.441573,
+    "expo": -8,
+    "slot": 322338256,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "Cy6m6QsoVXZu1r2Fz9VPpDkX1Gxpi8WuEQqMM7iaXmZ4",
+    "price": 0.44380003,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "3WXP4WzjJPBD7ez55TbMLRoXcgF2sQRdjhNXjNpe1Vzy",
+    "price": 0.44551534,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "FtwKARNAnZK2Nx1W4KVXzbyDzuRJqmApHRBtQpZ49HDv",
+    "price": 0.4486195,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "CWV3a7oGoFCrccwkMBe1EbmdqJcsxufGZB9VLtkZrAWS",
+    "price": 0.45370340000000003,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "Ga8WJj8tqktTM3x4Ykq7v5CxezLdDZvvGPwG2tUmpJCB",
+    "price": 0.4587,
+    "expo": -8,
+    "slot": 322338250,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "NFrT2vpNGkCxaRqj7QcazSLRgHtfNKwncfgVKLBsHfn",
+    "price": 0.48362206,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "6XPCNJW6EuBYTkYubSo3R8vXwfnB5CSggRLGkwTY8hjz",
+    "price": 0.4843855,
+    "expo": -8,
+    "slot": 322338239,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "3xuKKuE1TVYJTxSdHE2sqdjwChYUBwL1CE3LvhFsR3XS",
+    "price": 0.4972226,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "FcKSH8mu8qNBn2pbQ6CrpqSuyWtJsRdR2Ndit9CVqavc",
+    "price": 0.49825518,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "4mRGHzjGerQNWKXyQAmr9kWqb9saPPHKqo1xziXGQ5Dh",
+    "price": 0.515655,
+    "expo": -8,
+    "slot": 322338225,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "CAxXTbnssgR1MFQ5Dxycf5XPko92xQKjxnq7b3iPTQUV",
+    "price": 0.51789253,
+    "expo": -8,
+    "slot": 322338247,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "8jtEWQ2nbwa7kEBPiXoKZtY5kpufVZ84Pm4ysr4MVWvs",
+    "price": 0.54271875,
+    "expo": -8,
+    "slot": 322338250,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "AgppyZWcW2cjoyWG5PN9RetfKBsBJHrCieTTENDZyCRr",
+    "price": 0.55029993,
+    "expo": -8,
+    "slot": 322338245,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "CUByfiuPpDSXqHr6jNu1NMjnMWLdq5kr9h1qxZoWfUmx",
+    "price": 0.5545,
+    "expo": -8,
+    "slot": 322338250,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "3CFFmbCCU7P2MeRwLeQdp6jJSrEh75x783hEkHLgws9k",
+    "price": 0.55738198,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "DuG45Td6dgJBe64Ebymb1WjBys16L1VTQdoAURdsviqN",
+    "price": 0.56277095,
+    "expo": -8,
+    "slot": 322338253,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "HKL1bGufndEdsVk2CqNBrELSdkRWihk8cgfnNhzLgNJS",
+    "price": 0.5699845,
+    "expo": -8,
+    "slot": 322338250,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "AS2jNDwbD9vQfAqseTox4xynayp9qgX4eanBeuRDsmei",
+    "price": 0.58231763,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "HSRzVZSM1CCXEraT2R4qE1pTT92khiadJ37zfN9uqznh",
+    "price": 0.5985,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "FHxHqdXh4dU8rN7eEGJfKJ9FegKxhkVV3sPsCzJZXjjz",
+    "price": 0.5986602,
+    "expo": -8,
+    "slot": 322338250,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "EfnLcrwxCgwALc5vXr4cwPZMVcmotZAuqmHa8afG8zJe",
+    "price": 0.62149999,
+    "expo": -8,
+    "slot": 322338253,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "FUkkjDVtdBpQrzSuYQfcwLAFXRd4YqA3HkKj56w7xZWY",
+    "price": 0.6258100000000001,
+    "expo": -5,
+    "slot": 322331356,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "64mezfvhjvvWtg1NvrjEozkWuFpv9A5YnVNScB8acEWN",
+    "price": 0.65730566,
+    "expo": -8,
+    "slot": 310604800,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "3aR6kTksEFb2GsCHGBNtpvUpUJ1XzeA41RTnS4APD8oG",
+    "price": 0.67986,
+    "expo": -5,
+    "slot": 322331444,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "7z6bL5GsuzPhmaZNvwaBzVtGVMj6k62cFd1PHJoEAWVA",
+    "price": 0.68111258,
+    "expo": -8,
+    "slot": 322338228,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "3FQNEpFYuSZAdKjVS3SQDMydxWdhJisaBkHeHMGA2tM7",
+    "price": 0.68674075,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "89i9VN7cXGqjx8TG6AL8HGqzNm11iP8PX5dVXvL62GyR",
+    "price": 0.700042,
+    "expo": -8,
+    "slot": 298025288,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "CZEVc5FbHXzREk1JE5ZPRD61fdM8CJRM5QK3KKt64TGV",
+    "price": 0.74448118,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "9KqfWaLjNBVet1ukwxke7vDMbYmabZRft8vNuH2X24Sj",
+    "price": 0.74945585,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "F94CmnUuELaJyVdqRvQbjKXnM9aDuDuaSktf9nWGWt1q",
+    "price": 0.7513724900000001,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "DHEnsxn5ainGimgoX5CJmgotQYBoHF5JGyTHsumMM3FE",
+    "price": 0.75285522,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "E8k6cbnrw1zgKVU1NLDGK7131W6sJ3871KDGKh6T5dy2",
+    "price": 0.756135,
+    "expo": -8,
+    "slot": 322338253,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "7X3UJgftWJBqrdPVWCUSJ4pjVZ9qEKT1CNxhoYy8zb5m",
+    "price": 0.75923999,
+    "expo": -8,
+    "slot": 322338250,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "Gh9hscza9YaCzr84tNV1NZQfpqoL3csYnWDygDkQmBU2",
+    "price": 0.78817834,
+    "expo": -8,
+    "slot": 310604800,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "Aut1JWGK7MBos2K5yBf5icduDAFrnRQ1g5wbjA8ZuVcW",
+    "price": 0.7998836500000001,
+    "expo": -8,
+    "slot": 322338247,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "6SK9vS8eMSSj3LUX2dPku93CrNv8xLCp9ng39F39h7A5",
+    "price": 0.80681494,
+    "expo": -8,
+    "slot": 322338256,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "9AzrhXCy2deJjX4ngNxDpLTCz44DSbtWHqah5q4UfFwx",
+    "price": 0.8473600000000001,
+    "expo": -5,
+    "slot": 322331328,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "7Kf9vKVfbhmHGg8gTFkB36crFRSir7whn5XBJ3Ww2C7C",
+    "price": 0.87242825,
+    "expo": -8,
+    "slot": 322338253,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "phZ7L3k7AVaWtzU8TdT6fkfpoYKX1vAKCK6rxSom3n9",
+    "price": 0.875,
+    "expo": -8,
+    "slot": 322338253,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "6gjXF3HiCQFUB7asd1GmiYB9hUWRdFiafWum6bren78z",
+    "price": 0.92154005,
+    "expo": -8,
+    "slot": 322338247,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "GaQdZ52BKyG1yvMBcPNtLYfKTHjHBir1zUpH9gMp3HR1",
+    "price": 0.92334648,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "P6gkTgR3e13tmcSc4iuNBhUhpTGYMQKc8kHLGLRBjNh",
+    "price": 0.94348599,
+    "expo": -8,
+    "slot": 322338250,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "FJ2XxiBFhY6H6XihPbLKihXAETD2UJ2VWpKtUTDsCCff",
+    "price": 0.94539384,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "sub-dollar"
+  },
+  {
+    "address": "CVWPgBzdrf4c9bVr6bmoaRPegaGodzBsuFEt76CgKew9",
+    "price": 0.9868687,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "stablecoin (~$1)"
+  },
+  {
+    "address": "C4m9eT9VKEvodFd5auX7fdPq4exVeLMuiVkcQEv3VRxQ",
+    "price": 0.996862,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "stablecoin (~$1)"
+  },
+  {
+    "address": "7JXyCc6ZRa4s4cKzZ7uXDcVW7PjD6VjKH4LCfefyDgfT",
+    "price": 0.9981407,
+    "expo": -8,
+    "slot": 310604800,
+    "bucket": "stablecoin (~$1)"
+  },
+  {
+    "address": "CpqsuwFBXPebKbeDNjuWDzpag6CBwwKYALtUtpHRDydF",
+    "price": 0.99823522,
+    "expo": -8,
+    "slot": 322338225,
+    "bucket": "stablecoin (~$1)"
+  },
+  {
+    "address": "4if7YH5T8cQBjpQv1PdnHstSewidJvAHE9oPyJVZj1Bd",
+    "price": 0.99893505,
+    "expo": -8,
+    "slot": 322338250,
+    "bucket": "stablecoin (~$1)"
+  },
+  {
+    "address": "6nWG5LMBFWAN18zs4Q8t2gywxn82F6ph92Qaha9fBHzN",
+    "price": 0.99923997,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "stablecoin (~$1)"
+  },
+  {
+    "address": "GfCb6mTARMR5pZrmU2fNqFVNGKbRqS6Y1vKeHhRnxLDo",
+    "price": 0.99933425,
+    "expo": -8,
+    "slot": 298025367,
+    "bucket": "stablecoin (~$1)"
+  },
+  {
+    "address": "8Jn2YcMc5UhpDiHbqpd2GeYRzmjbFNve8WvtUQYsTEKi",
+    "price": 0.9993861900000001,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "stablecoin (~$1)"
+  },
+  {
+    "address": "BAEjKR7BDchdqJMALzPUM4HGv5pk17USfM9W7QMBM5qM",
+    "price": 0.99947542,
+    "expo": -8,
+    "slot": 310604794,
+    "bucket": "stablecoin (~$1)"
+  },
+  {
+    "address": "2sbXow64dSbktGM6gG9FpszwVu7GNhr6Qi2WHRCP9ULn",
+    "price": 0.999635,
+    "expo": -8,
+    "slot": 322338250,
+    "bucket": "stablecoin (~$1)"
+  },
+  {
+    "address": "B7KQPiH3abtwUstZtUzaVZGFdgZ1rVC9apYRe9bZdrXx",
+    "price": 0.99963948,
+    "expo": -8,
+    "slot": 310604794,
+    "bucket": "stablecoin (~$1)"
+  },
+  {
+    "address": "6X1eHnjQCDNNZoXeABVrFqiHvYUKmgXSB78EDmHmWYhF",
+    "price": 0.99965,
+    "expo": -8,
+    "slot": 310604792,
+    "bucket": "stablecoin (~$1)"
+  },
+  {
+    "address": "5SSkXsEKQepHHAewytPVwdej4epN1nxgLVM84L4KXgy7",
+    "price": 0.99976,
+    "expo": -8,
+    "slot": 322338224,
+    "bucket": "stablecoin (~$1)"
+  },
+  {
+    "address": "TRrB75VTpiojCy99S5BHmYkjARgtfBqZKk5JbeouUkV",
+    "price": 0.99976014,
+    "expo": -8,
+    "slot": 272926687,
+    "bucket": "stablecoin (~$1)"
+  },
+  {
+    "address": "A8XFp1YSUqyDDvTwRXM1vmhPHCLxzncG45t1ZH9CMYq7",
+    "price": 0.9997805000000001,
+    "expo": -8,
+    "slot": 322338256,
+    "bucket": "stablecoin (~$1)"
+  },
+  {
+    "address": "DDwzo3aAjgYk8Vn8D3Zbxo62rTmBVdJv1WjaKQseiHKk",
+    "price": 0.9998355,
+    "expo": -8,
+    "slot": 322338250,
+    "bucket": "stablecoin (~$1)"
+  },
+  {
+    "address": "J8GYxgpuwD2kAetT5W87PU2LWB3UCRxnFaMJRtLcpJ8z",
+    "price": 0.99992133,
+    "expo": -8,
+    "slot": 298025923,
+    "bucket": "stablecoin (~$1)"
+  },
+  {
+    "address": "38xoQ4oeJCBrcVvca2cGk7iV1dAfrmTR1kmhSCJQ8Jto",
+    "price": 0.999985,
+    "expo": -8,
+    "slot": 322338256,
+    "bucket": "stablecoin (~$1)"
+  },
+  {
+    "address": "6v31AVWXZF32Q9R2kdr4zdYJ4L2i8cttR9nPz9wxTWZg",
+    "price": 1.00007757,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "stablecoin (~$1)"
+  },
+  {
+    "address": "3L86JP9fRig56fghpGxM2YD4XC2ZsdY4wcrPD4cn2Xpi",
+    "price": 1.00036852,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "stablecoin (~$1)"
+  },
+  {
+    "address": "Ch65tvBao8VawWcdDkJ1apHiZo7n8PH1kD96VESnpqtd",
+    "price": 1.00060518,
+    "expo": -8,
+    "slot": 310604800,
+    "bucket": "stablecoin (~$1)"
+  },
+  {
+    "address": "4ouMZpGpsfRtVNGxfYzgJ2WG1L9jbKu6VfboF6kau53R",
+    "price": 1.0011674,
+    "expo": -8,
+    "slot": 298025316,
+    "bucket": "stablecoin (~$1)"
+  },
+  {
+    "address": "j9i5hPRULFg3WwSiXevAPfcJ3E9DgHq5wsfG4qqz7Zd",
+    "price": 1.0087971900000001,
+    "expo": -8,
+    "slot": 310604794,
+    "bucket": "stablecoin (~$1)"
+  },
+  {
+    "address": "4HAaMG2ZSw8iiuNeVayPao1BPLzhFcrdnx6mpNzoHm9M",
+    "price": 1.00974745,
+    "expo": -8,
+    "slot": 298017940,
+    "bucket": "stablecoin (~$1)"
+  },
+  {
+    "address": "AP6okoh2Y9tehXZm2yWWaTMHb7BdMpaKRGaNbj2De4p2",
+    "price": 1.00998499,
+    "expo": -8,
+    "slot": 322338245,
+    "bucket": "stablecoin (~$1)"
+  },
+  {
+    "address": "87i84LJaqWvU33ch1ty1FBWoDbkdJs1g6TytWFycyp5p",
+    "price": 1.056335,
+    "expo": -8,
+    "slot": 322338247,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "C4FSVzHE38qse1Dq25bDQRzwso63LbWucxzLufn7SrkY",
+    "price": 1.0759914,
+    "expo": -8,
+    "slot": 298014296,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "5KcR8gdBYFA1uad1w8h6Rwyp1Ec5rhs7zj6x3yZLUJS9",
+    "price": 1.07691529,
+    "expo": -8,
+    "slot": 298014356,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "Gsucrfpo1Gh6kTep72YgRzeQaUt63swvVgmy9cVPTr6W",
+    "price": 1.0790757,
+    "expo": -8,
+    "slot": 322338245,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "9wBNdENrbtkyQrN6Nf9Umvnya1NxaSF4f83oKP72L3qM",
+    "price": 1.08112735,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "ARfCthFNiQV9vdrnUQMkQnwSxSpBLZUsvH5NSGSFyjuA",
+    "price": 1.0815000000000001,
+    "expo": -8,
+    "slot": 322338247,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "2tQ4P9ojoWhxqPkFuNDsXephm3HxaTJm6Cs1F2HgZZVp",
+    "price": 1.08254075,
+    "expo": -8,
+    "slot": 310604792,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "Anc1Ax89BYtuFf5TZkMit3pKhJsuV8YnaKD1zLeoReBF",
+    "price": 1.0826,
+    "expo": -8,
+    "slot": 298997052,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "CpGmJWgFBrk2wcgebeLuFhd8QVVuDCwmxPy5rVZxUgTn",
+    "price": 1.08499999,
+    "expo": -8,
+    "slot": 310604800,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "6mdaWUuSySQeFsBjmpze3JFpXicqY1PisRgG8PdPqw14",
+    "price": 1.09497373,
+    "expo": -8,
+    "slot": 310604794,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "E36MyBbavhYKHVLWR79GiReNNnBDiHj6nWA7htbkNZbh",
+    "price": 1.10772,
+    "expo": -5,
+    "slot": 322331592,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "Ej5ms6zd9GxJKMSyG93Z9ckqNer7TKMZvtKuCMUi364q",
+    "price": 1.10968634,
+    "expo": -8,
+    "slot": 298025964,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "6vivTRs5ZPeeXbjo7dfburfaYDWoXjBtdtuYgQRuGfu",
+    "price": 1.19067353,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "Gtv6hAoifrmrUXkwELgA7YecCdsN7rSCsQg9DLW8s1H8",
+    "price": 1.216485,
+    "expo": -8,
+    "slot": 322338256,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "4LT7Wu435VN1RNpQLxijBhZUCJRrcbfZ4YEzqEvHnkU9",
+    "price": 1.223,
+    "expo": -8,
+    "slot": 322338245,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "CWtssrjPgb3d9w4q9BGLhQKkixb6TXmohWTxmQW5kYfM",
+    "price": 1.2354130700000001,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "3Jr1TrJjrit9KaGhSWvcWVw1u5Qbh6f213aTRUCjsFfZ",
+    "price": 1.278,
+    "expo": -8,
+    "slot": 322338250,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "7csi4gj91mycrtkhjdiKjJwoxavP84PMxnrtkqGafkVZ",
+    "price": 1.30284,
+    "expo": -5,
+    "slot": 322330784,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "DhmUMEyq1hmEAGpifaH8HzfG1NqipvrVhBZgBog7NCb6",
+    "price": 1.3168000000000002,
+    "expo": -5,
+    "slot": 322331619,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "DLs1QkLjp92HGRU899J6eNjBn7VK3cLGg8NhMpqfJMjU",
+    "price": 1.3484800000000001,
+    "expo": -5,
+    "slot": 322331592,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "GhrcvS4g3TSJR4jd2GJePWWtNpJR7HoMDE1GiZXJNwoq",
+    "price": 1.36348,
+    "expo": -8,
+    "slot": 322338256,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "E61NJ4ZEiwr7D91oMRaNyym2xpLyMmQP45PGa1njVKo8",
+    "price": 1.38965315,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "2A68amTMiTsRaMYz216RVktLYa14MFRuB3HRH3cM4Kdg",
+    "price": 1.399,
+    "expo": -8,
+    "slot": 322338236,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "9uB8CPErGSmLBttVUjEah3FJHYDrF4Qwf8JEtGoA5r8F",
+    "price": 1.4000000000000001,
+    "expo": -8,
+    "slot": 322338250,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "8ctSiDhA7eJoii4TkKV8Rx4KFdz3ycsA1FXy9wq56quG",
+    "price": 1.42017875,
+    "expo": -8,
+    "slot": 322338245,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "9EYhRadLTofhD7co5H2CfYRb5pBMPdHNU1KqYsm6UANJ",
+    "price": 1.45855003,
+    "expo": -8,
+    "slot": 322338228,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "G7MAqFrVi9bowSGy1MQLKRffDFABMkb9sX7Ja4sRjqE9",
+    "price": 1.4635,
+    "expo": -8,
+    "slot": 322338253,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "SJQphMYZNFCdzdrFaQ4y5PzAZuWMS7TA7NuvvztWERp",
+    "price": 1.472,
+    "expo": -8,
+    "slot": 322338250,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "8tboavAYH4pGF6KwoR3h47LFKRhKyZ1VEg19eRrbWZhA",
+    "price": 1.48852361,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "87tBQbpwcKFNJSteADZ99L88podsPLgaenRfUsYL13vH",
+    "price": 1.49647771,
+    "expo": -8,
+    "slot": 322338250,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "EhgAdTrgxi4ZoVZLQx1n93vULucPpiFi2BQtz9RJr1y6",
+    "price": 1.596476,
+    "expo": -8,
+    "slot": 322338250,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "DXTrwVyVyAAkLewD2UbB42CZBHtFV7vLAUiJnvZkExob",
+    "price": 1.6255,
+    "expo": -8,
+    "slot": 322338253,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "5i1sz2QQjCQt9PnhuPvqbiYUAYCgjdRnza1JbiH2qRCo",
+    "price": 1.70914977,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "5LpFeatMGRGdL4vL1anYNdMtYEQu9WfMP9F9PyzmgBjY",
+    "price": 1.7335,
+    "expo": -8,
+    "slot": 322338250,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "5DcE5KDEN44w6gqqMvfBQXXD18nJ6Zm54o2j1BEtn24b",
+    "price": 1.803,
+    "expo": -8,
+    "slot": 322338250,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "96nKPoDrNh7wzrqRQcv6BhwfkojXodn2yNAr6haMRfXk",
+    "price": 1.85,
+    "expo": -8,
+    "slot": 322338253,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "HNCfETDg1MvaJpVS9R1Np3UUXd2KWTmxHWfvyUYiaPUf",
+    "price": 1.89697,
+    "expo": -8,
+    "slot": 322338250,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "6AWLWun6Ak8GZy4gj9xAyfYr5qgCbHRYuc94cJi8WQKT",
+    "price": 1.905,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "Cb2NWrGFuGnYUeJgZwcR5PcnKiCcsoQPP1g1o5LDmXT5",
+    "price": 1.93431099,
+    "expo": -8,
+    "slot": 322338245,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "y8Bjy8GQS9NhoDox2vgwzxCrJeQivpL4BifF4wFbnHF",
+    "price": 1.955,
+    "expo": -8,
+    "slot": 322338253,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "6E1qVfWpYuVDPWX3YUTz5R3zQKYfD5kRQR91rF3PDd3W",
+    "price": 2.00999999,
+    "expo": -8,
+    "slot": 322338250,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "8UnMavdLbiSvktd36PvAMrk3NUs9rzbv7HqJrPZbKMA8",
+    "price": 2.03943898,
+    "expo": -8,
+    "slot": 322338250,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "FDjF7mnNWbpXf9CNCWEMCq1S6VKnZv47QbE6X94gC5fo",
+    "price": 2.04302474,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "A1WttWF7X3Rg6ZRpB2YQUFHCRh1kiXV8sKKLV3S9neJV",
+    "price": 2.0446505,
+    "expo": -8,
+    "slot": 322338247,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "5Qz1ayDLUQ1VeW4hc18FEAF3qwUg5rqmgMzCz3o72usT",
+    "price": 2.07893745,
+    "expo": -8,
+    "slot": 322338245,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "CD5ZQfSHv26sdixQcEuenvCJLpbgdVDvw63WAxMg3WxR",
+    "price": 2.07926191,
+    "expo": -8,
+    "slot": 298014716,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "GeqANUp7Naehk7neQPSXoS8XNKbVBPzia8iQ5dkRfkqn",
+    "price": 2.0857,
+    "expo": -8,
+    "slot": 298023430,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "E5xjm6QV8duYJxW9kweiyqmUWhMmBs3JzRaynuFZVRW",
+    "price": 2.113,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "52b9fd2gSBBmtAZeRECXNnJ6E5A7FaDxa5BuhQ7g353M",
+    "price": 2.18415648,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "8DHbtE72LPN3QoRvejACY3UbXnHrhdYzMy3y4DbCYgCb",
+    "price": 2.23298732,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "9FUjsTnUmJyF7zMkc6cKSzfgwmwyvS5YpUXkvCA1epCN",
+    "price": 2.323,
+    "expo": -8,
+    "slot": 322338236,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "29xQnTzyyuRtgJ7RtSKEgBWwRzZqtrrKmyQQ5m3x629f",
+    "price": 2.3373987,
+    "expo": -8,
+    "slot": 322338245,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "4JnBkEHGCS86CkrLSkZiLWYFfVtsvUhXGd7BYF1pQk2T",
+    "price": 2.44496499,
+    "expo": -8,
+    "slot": 322338245,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "EVYUnWPTD1GGSbS9K72DpZLfMgjcYoaZ8d8Qsi8HSBsH",
+    "price": 2.9004553200000003,
+    "expo": -8,
+    "slot": 310604792,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "7gkPonHMUN4XjZBG3JobN13MmkKMwt6cEq2udq4AbmkB",
+    "price": 2.96375,
+    "expo": -8,
+    "slot": 315481716,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "E2EcFcNgx1ty3m4YaAMFL2zePBYE21ChwB9EvddJciU6",
+    "price": 3.0135,
+    "expo": -8,
+    "slot": 322338239,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "5nRpHqDjkdNxB6znCZyKuABuCrSmFQzk5V1ca2AuSykB",
+    "price": 3.06778371,
+    "expo": -8,
+    "slot": 308157168,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "J9FcFxZPx2HL3TAVBrNfF23oCpZxHdHikjXLHCKo151o",
+    "price": 3.35519139,
+    "expo": -8,
+    "slot": 322338245,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "7obRNMDMSoyrJBRNbyoQXC7JUuToz42pVEsyks3h2tDo",
+    "price": 3.60999999,
+    "expo": -8,
+    "slot": 298997528,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "DD3d2X4Zzmmh8fpqpfpivjCdsQH67rR4YyYa7Bx1hbMQ",
+    "price": 3.658,
+    "expo": -8,
+    "slot": 322338253,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "CEa7LBoU7TRHr9dWraAt7ihbGiMpDouCVSPZLg1XdLmy",
+    "price": 3.77195091,
+    "expo": -8,
+    "slot": 298024543,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "Cp2592zhQ9pXYdYKZsbxLwPjGXAoFVhjFHqAjr6wGvoB",
+    "price": 3.99700004,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "CeZErjVKmtg1YQoi9fG9vZNSd5gk26q2mMYAXhejU1VH",
+    "price": 4.17826904,
+    "expo": -8,
+    "slot": 322338250,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "3gnSbT7bhoTdGkFVZc1dW1PvjreWzpUNUD5ppXwv1N59",
+    "price": 4.212,
+    "expo": -8,
+    "slot": 322338258,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "4dqq5VBpN4EwYb7wyywjjfknvMKu7m78j9mKZRXTj462",
+    "price": 4.228,
+    "expo": -8,
+    "slot": 322338250,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "7YAze8qFUMkBnyLVdKT4TFUUFui99EwS5gfRArMcrvFk",
+    "price": 4.5875,
+    "expo": -8,
+    "slot": 322338224,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "D4MDtMcBT44Ef5poHZA6KBVVfnE2mkzvBZu64j27RXme",
+    "price": 4.697,
+    "expo": -8,
+    "slot": 322338250,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "E4m5GPq53mayAxMSH8NwPuC75m83mQ47zpdtNDtxVzPf",
+    "price": 4.880000000000001,
+    "expo": -5,
+    "slot": 322310929,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "GA7DjupAkT8dSmbEfFd2qoEuB3Xu4TWV7a1KqfvGgjiX",
+    "price": 4.88584292,
+    "expo": -8,
+    "slot": 299000619,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "14Cdda23otoaEo9c3QsyRMHwDsMMbPzn3jPTLxEbAdDW",
+    "price": 4.88776663,
+    "expo": -8,
+    "slot": 299003380,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "4BF9zspvPmAskE8DsPqF8v6dnK6sYEizbdo3ARGgiaN1",
+    "price": 4.90632896,
+    "expo": -8,
+    "slot": 299004674,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "HMcjUJmp7qa3ihVKaudbvSieU3KTHZdx3njLz7djDDYq",
+    "price": 5.05179494,
+    "expo": -8,
+    "slot": 299002423,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "JAgX86b3DESnKRtNYfzKvUtB252RNiQLfNduZ9ZWga1t",
+    "price": 5.28337086,
+    "expo": -8,
+    "slot": 299002077,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "8aSdHsay72qhAaczqFrATFLB4Hi56PCd8epGeF8xSofX",
+    "price": 5.40192031,
+    "expo": -8,
+    "slot": 299003451,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "4RtA5Y8ZCWuqmpM1bStDmbB5DJMULxQAHQW5GHDU6y98",
+    "price": 5.42052254,
+    "expo": -8,
+    "slot": 299003122,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "9Hg1EixMBdKZ3wzeKh35pbUhnub6mt3WWqu4r59jFXXY",
+    "price": 5.42734,
+    "expo": -6,
+    "slot": 310604800,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "5yXdbeJvozXMEyiciugQb3HwwpaiT9dkZe9tpwELbCSE",
+    "price": 5.4329234,
+    "expo": -8,
+    "slot": 299001240,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "7n1mRzea1BFA2pRhepkwvnWSzM6YZjxv26JRcM97XepZ",
+    "price": 5.802193,
+    "expo": -8,
+    "slot": 322338253,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "BDFYXRoanhJ35DCSpNTT3SeZcgRVVCGxoo5fL6XxAHKb",
+    "price": 5.83788198,
+    "expo": -8,
+    "slot": 322338256,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "EUCAhaqUEBazvtUSsjaqDXpNXzzLEjSgM66wWYXYdPPx",
+    "price": 6.00107983,
+    "expo": -8,
+    "slot": 310604792,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "C2QvUPBiU3fViSyqA4nZgGyYqLgYf9PRpd8B8oLoo48w",
+    "price": 6.46700271,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "8Y4jhVcQvQZWjMarM855NMkVuua78FS8Uwy58TjcnUWs",
+    "price": 6.6545000000000005,
+    "expo": -8,
+    "slot": 322338250,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "5d2QJ6u2NveZufmJ4noHja5EHs3Bv1DUMPLG5xfasSVs",
+    "price": 6.7410000000000005,
+    "expo": -8,
+    "slot": 322338253,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "EShsgFi7KN3T9zV9AjC9GcfpoaPneoypadYrpjN41r9f",
+    "price": 7.094600000000001,
+    "expo": -5,
+    "slot": 322331313,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "6Eg8YdfFJQF2HHonzPUBSCCmyUEhrStg9VBLK957sBe6",
+    "price": 7.14365,
+    "expo": -8,
+    "slot": 322338253,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "4GiL1Y6u6JkPb7ckakzJgc414h6P7qoYnEKFcd1YtSB9",
+    "price": 7.30746959,
+    "expo": -8,
+    "slot": 310604800,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "2hsrGu1CLET6CMvyg3sGXmpaDUT59nyQyeT7qfzMRLAJ",
+    "price": 7.37050005,
+    "expo": -8,
+    "slot": 310604800,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "H9oXZSncvSD4o19WxpvAVS4ystSf3nDDvj8p8WzqfcQ5",
+    "price": 7.492787320000001,
+    "expo": -8,
+    "slot": 322338253,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "BWrZ9FrNynKUne45iVRMceS24PoyArsZAvdvZs9HtTUA",
+    "price": 7.496,
+    "expo": -8,
+    "slot": 310604794,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "FgAQMNtBVLgFekqKc2r1cexchSzWFgKH62ojwiHx3Upz",
+    "price": 7.7982128500000005,
+    "expo": -8,
+    "slot": 322338245,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "FPt3saZ3o2rTxh4qvS53J4eqkcsesr5x7hXQG15wALtQ",
+    "price": 7.79853,
+    "expo": -5,
+    "slot": 322329260,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "Fjpyhr366TCWdj9rJhLgZ824WknfazeWcNhWKfr5AbXy",
+    "price": 8.06643002,
+    "expo": -8,
+    "slot": 308157171,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "CbhUT7mfnHSr1GRg95RuDWiE3BkGq1hXpcgT8XqjKXqT",
+    "price": 9.05496377,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "AKne67zyJpVGFuSdfdTcZuZP3V97TKbEECaqNTsoakSt",
+    "price": 9.16999999,
+    "expo": -8,
+    "slot": 298019828,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "3RRhkZTBHJk21cAE3Aaoc6hUpVKhEfGLxTpA4BciGajS",
+    "price": 9.27999999,
+    "expo": -8,
+    "slot": 298023488,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "DoMYjWTBcVmhFPAm9wg6yYxgW3UgJVfNsU9qLkdHGZXp",
+    "price": 9.360000000000001,
+    "expo": -5,
+    "slot": 322310911,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "5pwhqPjcskwR7R7vxDvUcgheVAA9SL8AwzxW4UPWJKSt",
+    "price": 9.55763293,
+    "expo": -8,
+    "slot": 298021660,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "32tdAZrmutz2evB9D4nFgL8vdWTrAELDAFSomnrxnen3",
+    "price": 9.770000000000001,
+    "expo": -5,
+    "slot": 298875729,
+    "bucket": "$1-$10"
+  },
+  {
+    "address": "CTTHnWEM7WRQVp9gTZL2SDT1vtGrgu9hYEgtJhjwhDHx",
+    "price": 10.22544,
+    "expo": -5,
+    "slot": 322330866,
+    "bucket": "$10-$100"
+  },
+  {
+    "address": "8ndSqeaP1bNKuk2QWvGiGtsoMZZevBmQ36Yd9ut61zN4",
+    "price": 10.47454253,
+    "expo": -8,
+    "slot": 298021053,
+    "bucket": "$10-$100"
+  },
+  {
+    "address": "6xPGkdpB8AWT9udb5gr68bwYxzf6asBWnyVPwBVmSPLt",
+    "price": 10.503150000000002,
+    "expo": -5,
+    "slot": 322330835,
+    "bucket": "$10-$100"
+  },
+  {
+    "address": "BDkQii15kgNuYeiQkjDYQZCm8WMUtSsnpJG9RkPBSgCy",
+    "price": 10.650086400000001,
+    "expo": -8,
+    "slot": 298018464,
+    "bucket": "$10-$100"
+  },
+  {
+    "address": "9sGidS4qUXS2WvHZFhzw4df1jNd5TvUGZXZVsSjXo7UF",
+    "price": 10.9385,
+    "expo": -8,
+    "slot": 322338245,
+    "bucket": "$10-$100"
+  },
+  {
+    "address": "5iPAWewec8RSF5xsnsnLCPtYn4dn5K791xXbZbr4K6PQ",
+    "price": 11.140206730000001,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "$10-$100"
+  },
+  {
+    "address": "CiG6Y5WZJEDuUrhJ8gXg9L7MejWJixdcQ1QpNqefyVuD",
+    "price": 11.64,
+    "expo": -8,
+    "slot": 298020304,
+    "bucket": "$10-$100"
+  },
+  {
+    "address": "BX4ws7LBMc3oto5gvgNa7RdszyothoGw4QFCmdhkuQGb",
+    "price": 14.51,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "$10-$100"
+  },
+  {
+    "address": "FdNZvcYiWdbySq5dbL3urETEucL7utJf8C4NAjBWEgNj",
+    "price": 14.58081357,
+    "expo": -8,
+    "slot": 304762007,
+    "bucket": "$10-$100"
+  },
+  {
+    "address": "8cxoS463SCZjXLhXdebPD3cqubzaiALyXxWtQ5fhawcv",
+    "price": 16.16,
+    "expo": -5,
+    "slot": 322272520,
+    "bucket": "$10-$100"
+  },
+  {
+    "address": "BJtJCzBeE4MfJdmkwT2Lqt1oprQTGVfCwV3i5rhCree5",
+    "price": 16.69,
+    "expo": -5,
+    "slot": 322310928,
+    "bucket": "$10-$100"
+  },
+  {
+    "address": "44uRsNnT35kjkscSu59MxRr9CfkLZWf6gny8bWqUbVxE",
+    "price": 17.54475,
+    "expo": -8,
+    "slot": 322338250,
+    "bucket": "$10-$100"
+  },
+  {
+    "address": "JAe1wPF7HgueCbqVcM5qfjskmURgyDhptKhTnC1PahaW",
+    "price": 17.76169,
+    "expo": -5,
+    "slot": 322331457,
+    "bucket": "$10-$100"
+  },
+  {
+    "address": "AJhy3UoG9QsuXYJ2tAd9cVbw9nEP4CQ1TJ4XUoHTHQgJ",
+    "price": 18.07,
+    "expo": -5,
+    "slot": 298875731,
+    "bucket": "$10-$100"
+  },
+  {
+    "address": "7zjxsY1AhJQFH9wJFYAdrYnqi9csF7aoSchV1nMutRaA",
+    "price": 18.340055,
+    "expo": -8,
+    "slot": 322338245,
+    "bucket": "$10-$100"
+  },
+  {
+    "address": "FWAKMLXNJAFHEJP4QUp8NxYYmRY3c4ybVnTTw4WxNbtz",
+    "price": 18.54471999,
+    "expo": -8,
+    "slot": 322338247,
+    "bucket": "$10-$100"
+  },
+  {
+    "address": "Df7y1TrMWhSUPsRqmsgcz6KoAyWZ5cvYNZQUQ1MSb3gV",
+    "price": 18.68953663,
+    "expo": -8,
+    "slot": 322338250,
+    "bucket": "$10-$100"
+  },
+  {
+    "address": "E1n8HR9SLEqp5SxhGg2K5MuYMJNL3rvY8HS2TqvRjWpc",
+    "price": 19.84785,
+    "expo": -5,
+    "slot": 322331328,
+    "bucket": "$10-$100"
+  },
+  {
+    "address": "2nmoHQy91g119E2i8UC96KSZNWUmQEagYewe6wwwdTRN",
+    "price": 20.200000000000003,
+    "expo": -5,
+    "slot": 322310929,
+    "bucket": "$10-$100"
+  },
+  {
+    "address": "BBSBCUeAQFXPNXka3Ju5SGUq4EK57Ku2qzEJ5J54zGKq",
+    "price": 22.020000000000003,
+    "expo": -5,
+    "slot": 322310929,
+    "bucket": "$10-$100"
+  },
+  {
+    "address": "CbemEDzti5Vdh5JdT6Vj7cGEDfSLvvVyNRPveMGrt45z",
+    "price": 22.03317093,
+    "expo": -8,
+    "slot": 322338224,
+    "bucket": "$10-$100"
+  },
+  {
+    "address": "EZ6EEiTsSZ31siLYophZMGD9iM2TkjciMTVFunbZWZoj",
+    "price": 22.16,
+    "expo": -5,
+    "slot": 322310929,
+    "bucket": "$10-$100"
+  },
+  {
+    "address": "81q6rTtqrgFpocGqAGrqsC7pojEosyMdTDfNkBkxePwi",
+    "price": 22.7819995,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "$10-$100"
+  },
+  {
+    "address": "Bzw1YpxDtDHVdYBrNUY61TRF4N2wK4R6qD9DZg9hZvgr",
+    "price": 23.060000000000002,
+    "expo": -5,
+    "slot": 322310929,
+    "bucket": "$10-$100"
+  },
+  {
+    "address": "FVb5h1VmHPfVb1RfqZckchq18GxRv4iKt8T4eVTQAqdz",
+    "price": 23.148,
+    "expo": -8,
+    "slot": 322338245,
+    "bucket": "$10-$100"
+  },
+  {
+    "address": "6ic1J6v1RjjtqVLfqeqsM2XJkVUY2VCMARnGAeAArb7Z",
+    "price": 23.3,
+    "expo": -5,
+    "slot": 322306974,
+    "bucket": "$10-$100"
+  },
+  {
+    "address": "657C82yUJBvq85PwAv2mWvr3CegT4hUAB93twtDhgz9S",
+    "price": 25.740000000000002,
+    "expo": -8,
+    "slot": 322338232,
+    "bucket": "$10-$100"
+  },
+  {
+    "address": "4Eid3xrND87TJ4Gv8ZyDqByzj3C88YFT5xh1MhhcPFwE",
+    "price": 29.13956645,
+    "expo": -8,
+    "slot": 322338245,
+    "bucket": "$10-$100"
+  },
+  {
+    "address": "4NbqLAy4LjhZ7imWbyTuHo4EMSAVWTVDFS6Kpwz15Kyc",
+    "price": 29.419500000000003,
+    "expo": -5,
+    "slot": 322335786,
+    "bucket": "$10-$100"
+  },
+  {
+    "address": "3v1tp9D97MY8K72PeKVvZxjpYLDMHiaZYFhoSDuhLCet",
+    "price": 31.27821861,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "$10-$100"
+  },
+  {
+    "address": "TSa64eCc6kPtguHo8iApKEvuJdhCM8DGM53mw24wMKA",
+    "price": 32.190000000000005,
+    "expo": -5,
+    "slot": 322310929,
+    "bucket": "$10-$100"
+  },
+  {
+    "address": "8j9ueucTNDvgzKyepAvdby7ERtTcSF7sArmCTNsN2s8n",
+    "price": 33.650000000000006,
+    "expo": -5,
+    "slot": 322310928,
+    "bucket": "$10-$100"
+  },
+  {
+    "address": "FyTHMGDVvwiwX1hz6KtTViZziRwBmQqsAsRBgPngGrfJ",
+    "price": 34.18,
+    "expo": -5,
+    "slot": 322310916,
+    "bucket": "$10-$100"
+  },
+  {
+    "address": "EAHMaiPwt7zXVqwrG4E3SDc58GNVANY6AQw9FP2N8KMB",
+    "price": 36.98900514,
+    "expo": -8,
+    "slot": 322338256,
+    "bucket": "$10-$100"
+  },
+  {
+    "address": "AKDSqn3L2NsP2p5HVzHFqRVQspRoAirUpK5sRhNezkLS",
+    "price": 40.069999620000004,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "$10-$100"
+  },
+  {
+    "address": "6Qh4JDSttnKdB4uAAY9zStv4zfbzemYxabQr7U935vK9",
+    "price": 41.36392,
+    "expo": -5,
+    "slot": 298875792,
+    "bucket": "$10-$100"
+  },
+  {
+    "address": "DEN1gydDzTwfvi2CqcETD47BzyYZbyHbTGW7Y5PrYuut",
+    "price": 41.410000000000004,
+    "expo": -5,
+    "slot": 322310929,
+    "bucket": "$10-$100"
+  },
+  {
+    "address": "48AUy2tdzzTpaPrXYTjNp7XNPRTyRgGoMsy9Gp4cfeiw",
+    "price": 42.407705,
+    "expo": -8,
+    "slot": 322338247,
+    "bucket": "$10-$100"
+  },
+  {
+    "address": "6tW26Ya2iABA6T5grMkpNTdCed4wL98u6R7jEbYrXVvS",
+    "price": 43.315000000000005,
+    "expo": -5,
+    "slot": 322310929,
+    "bucket": "$10-$100"
+  },
+  {
+    "address": "6FnzHuB86M4FVp4UPzgYHb9xi9SxhFcpd1YFnmKKSzhh",
+    "price": 44.8663,
+    "expo": -8,
+    "slot": 322338256,
+    "bucket": "$10-$100"
+  },
+  {
+    "address": "J3h1L2Xqe2sK3wiMtzk4jAYKwKpRsny4aoZ2GBm6stvU",
+    "price": 44.96,
+    "expo": -5,
+    "slot": 322310929,
+    "bucket": "$10-$100"
+  },
+  {
+    "address": "8u6Bv99YnmTEr4R5fZ3UGdNjX2HeUbuZD82a52n2Dmuk",
+    "price": 47.120000000000005,
+    "expo": -5,
+    "slot": 322310929,
+    "bucket": "$10-$100"
+  },
+  {
+    "address": "HDrnPhVLaAgmTQrefJCbYwTfu4MZCDwKkBLpER3FZ2kQ",
+    "price": 50.290000000000006,
+    "expo": -5,
+    "slot": 322310929,
+    "bucket": "$10-$100"
+  },
+  {
+    "address": "J8ffpe6hZCrfxfBJ9oSsy9zms1zcfVwdWXYMGMB3DxCK",
+    "price": 50.385000000000005,
+    "expo": -5,
+    "slot": 310531592,
+    "bucket": "$10-$100"
+  },
+  {
+    "address": "A3MRMVjhRzM8u9hyUKhEs1srzeyXAqWwxtgUSKGMdDCM",
+    "price": 51.660000000000004,
+    "expo": -5,
+    "slot": 322310929,
+    "bucket": "$10-$100"
+  },
+  {
+    "address": "BnyjtXG8X74Xrx8yxky48qbEhFM4dmJw1FF1CcKUoYzH",
+    "price": 52.370000000000005,
+    "expo": -5,
+    "slot": 298875797,
+    "bucket": "$10-$100"
+  },
+  {
+    "address": "8t7n5haxnX8g2VxELaB77SVkCdkAHV2q7XDBTXGbZg24",
+    "price": 53.900000000000006,
+    "expo": -5,
+    "slot": 322310929,
+    "bucket": "$10-$100"
+  },
+  {
+    "address": "FFNXBawhPpriR1YDYhNnwj3CH5GAc1Z3yEBsXDusxoW1",
+    "price": 58.910000000000004,
+    "expo": -5,
+    "slot": 322310928,
+    "bucket": "$10-$100"
+  },
+  {
+    "address": "CgAfciuDPcYF8o8mif3eJdwPtjFcvh9Ezf2TFwkUfLc7",
+    "price": 59.050000000000004,
+    "expo": -5,
+    "slot": 322310928,
+    "bucket": "$10-$100"
+  },
+  {
+    "address": "BLArYBCUYhdWiY8PCUTpvFE21iaJq85dvxLk9bYMobcU",
+    "price": 61.98395,
+    "expo": -8,
+    "slot": 322338256,
+    "bucket": "$10-$100"
+  },
+  {
+    "address": "6RuXkXi4QLZEBneJCo8JUbWvC8igQbYM5uCdoKPUXvKE",
+    "price": 63.290000000000006,
+    "expo": -5,
+    "slot": 322307142,
+    "bucket": "$10-$100"
+  },
+  {
+    "address": "3a2ARusqxk37vHeS5LJdb5KAwdRNQrdX3VV1HTWancMo",
+    "price": 66.09663,
+    "expo": -5,
+    "slot": 310531491,
+    "bucket": "$10-$100"
+  },
+  {
+    "address": "Go6GtmKjh5Qw2RGNZREfULUnXdHYBK9LX7HGgvtqTeSx",
+    "price": 66.414,
+    "expo": -5,
+    "slot": 310531488,
+    "bucket": "$10-$100"
+  },
+  {
+    "address": "3ZQMnoTi8266XDAu7nngJR78BGcbL5tvN49ZQ6BYVwiT",
+    "price": 66.76,
+    "expo": -5,
+    "slot": 322310929,
+    "bucket": "$10-$100"
+  },
+  {
+    "address": "C4rQqSB2bW954g9bgNoJGPGnGWwwLmvU4otCohomu4bY",
+    "price": 71.44999984,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "$10-$100"
+  },
+  {
+    "address": "4DLRht87QYhvbx6hYRBRnUstcHohLXnMinR2Jeuces3z",
+    "price": 71.85000000000001,
+    "expo": -5,
+    "slot": 322310929,
+    "bucket": "$10-$100"
+  },
+  {
+    "address": "5YH2hNaD6jCuSRNKbrhhpMXMBWTy5CxMSZPNEX9ffTGL",
+    "price": 74.77,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "$10-$100"
+  },
+  {
+    "address": "GAeCwqMt8DCYX4AixQy9RUJxvV12XAHq8z9VuAr9C3W4",
+    "price": 76.18,
+    "expo": -5,
+    "slot": 322310929,
+    "bucket": "$10-$100"
+  },
+  {
+    "address": "FPCoifPLv8RfgSuTQcmgaYTnZfWXhTyEbmhEuyajpg1n",
+    "price": 76.75,
+    "expo": -5,
+    "slot": 322310929,
+    "bucket": "$10-$100"
+  },
+  {
+    "address": "GQhbCpDBXCAViMs4YGYZRDeVh91wmVFVp1k8LTCnoXEf",
+    "price": 79.27000000000001,
+    "expo": -5,
+    "slot": 322310929,
+    "bucket": "$10-$100"
+  },
+  {
+    "address": "sZWXaJ2jU89QgaKEwbuBTBeNxv58FtHmeYE3tFwMmnY",
+    "price": 82.83000000000001,
+    "expo": -5,
+    "slot": 322310929,
+    "bucket": "$10-$100"
+  },
+  {
+    "address": "GPxBnZoc2WqBdJhNikMcgriYX6QVjCLY23vXaibHwqmZ",
+    "price": 83.4,
+    "expo": -5,
+    "slot": 322310929,
+    "bucket": "$10-$100"
+  },
+  {
+    "address": "7RZYwSMLR8wHNpfwSnpZ6C4xFpBPyLHzVgk61VkzVenS",
+    "price": 89.83000000000001,
+    "expo": -5,
+    "slot": 322310929,
+    "bucket": "$10-$100"
+  },
+  {
+    "address": "DetPjz3K5xBo2MStZi4UF5Ma33jaogjfXJ1XXh3NVp3D",
+    "price": 90.84500000000001,
+    "expo": -5,
+    "slot": 322310929,
+    "bucket": "$10-$100"
+  },
+  {
+    "address": "37Jkc4aBEJtLbP3rJwCVNBeD1YWkmPedBAxEZRNXCeNy",
+    "price": 97.52000000000001,
+    "expo": -5,
+    "slot": 322310929,
+    "bucket": "$10-$100"
+  },
+  {
+    "address": "D6UGger74kdJDV2TopcD9YghWdfbtKRJNs5yx28F4SnU",
+    "price": 100.59,
+    "expo": -5,
+    "slot": 321822933,
+    "bucket": "$100-$1K"
+  },
+  {
+    "address": "Cwq6zX5n2EnH671mp7mZecyPwAKTaiZgPcCQkn9GhyPj",
+    "price": 105.135,
+    "expo": -5,
+    "slot": 298875792,
+    "bucket": "$100-$1K"
+  },
+  {
+    "address": "5XBvJGLwihTCncAjt9YfBJqNfqn2Z2nUdoKreZmfCZQC",
+    "price": 110.38000000000001,
+    "expo": -5,
+    "slot": 319991757,
+    "bucket": "$100-$1K"
+  },
+  {
+    "address": "3ghUfTfZYRSmYFTpRuupsyDvR1vxcPnV5pD2gBeyuF9s",
+    "price": 111.18,
+    "expo": -5,
+    "slot": 310474553,
+    "bucket": "$100-$1K"
+  },
+  {
+    "address": "HJKsd62dvgfU4BvTAfeQQmBD3qCSmMmPrp5oLLhYsZis",
+    "price": 117.58000000000001,
+    "expo": -5,
+    "slot": 322310929,
+    "bucket": "$100-$1K"
+  },
+  {
+    "address": "2YMBRePLqbF85mnhtqB7tXUjzM7gzfJcfWhzAep6tzHb",
+    "price": 118.17000000000002,
+    "expo": -5,
+    "slot": 322310928,
+    "bucket": "$100-$1K"
+  },
+  {
+    "address": "EJ2spggXRaVMMskCDuw73EuoFo8HApQ1wHMBfxpoWzYK",
+    "price": 118.76802190000001,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "$100-$1K"
+  },
+  {
+    "address": "38ewq4YS41VGPReJL1T7c3drtjVdCTZ5J9WuFAHbis1J",
+    "price": 120.24018000000001,
+    "expo": -5,
+    "slot": 298875794,
+    "bucket": "$100-$1K"
+  },
+  {
+    "address": "FT7Cup6ZiFDF14uhFD3kYS3URMCf2RZ4iwfNEVUgndHW",
+    "price": 124.08975000000001,
+    "expo": -8,
+    "slot": 322338245,
+    "bucket": "$100-$1K"
+  },
+  {
+    "address": "nKXgP4XfYfDT3ygTdLhoridYM7ndQTx5JonLoHdqe66",
+    "price": 131.88000000000002,
+    "expo": -5,
+    "slot": 322310929,
+    "bucket": "$100-$1K"
+  },
+  {
+    "address": "AwSQFLEue9ziFwuSPSNnA5H63B1ZRYvUaWYa1rWCU7GA",
+    "price": 132.55,
+    "expo": -5,
+    "slot": 322310929,
+    "bucket": "$100-$1K"
+  },
+  {
+    "address": "J83w4HKfqxwcq3BEMMkPFSppX3gqekLyLJBexebFVkix",
+    "price": 139.81741499,
+    "expo": -8,
+    "slot": 322338250,
+    "bucket": "$100-$1K"
+  },
+  {
+    "address": "3CVi3EEprs1zeKhv5kw9EpRDv1hNfvpunQ98gex27Prd",
+    "price": 145.01500000000001,
+    "expo": -3,
+    "slot": 322331444,
+    "bucket": "$100-$1K"
+  },
+  {
+    "address": "3RUWFnHTwwHZ1MxZt6HvvwmUxD5Z49GBcQRmQCKeeCVL",
+    "price": 147.60000000000002,
+    "expo": -5,
+    "slot": 322310929,
+    "bucket": "$100-$1K"
+  },
+  {
+    "address": "CJMkDnam31wzjTCiwrM83rQNrj5KhQGwYYbUPpTt5oC3",
+    "price": 155.06373382,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "$100-$1K"
+  },
+  {
+    "address": "FNm8XJvqgYdSxv9dMBDhuBtXrQHFMyPhsTPuUfg8NxXe",
+    "price": 157.9857387,
+    "expo": -8,
+    "slot": 322338253,
+    "bucket": "$100-$1K"
+  },
+  {
+    "address": "3d4eLK2TF6UdpSjKvS5ZUnDY1uZq2sEj9Tk3cujpUaAk",
+    "price": 158.60806051,
+    "expo": -8,
+    "slot": 310604794,
+    "bucket": "$100-$1K"
+  },
+  {
+    "address": "7H5pYG1Lp8QraB4AGeyQVttuq4Y1cwRvmXhFS6NvHtYP",
+    "price": 161.3622784,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "$100-$1K"
+  },
+  {
+    "address": "CZDpZ7KeMansnszdEGZ55C4HjGsMSQBzxPu6jqRm6ZrU",
+    "price": 162.82000000000002,
+    "expo": -5,
+    "slot": 322310929,
+    "bucket": "$100-$1K"
+  },
+  {
+    "address": "3S7ZFF93xahoVyDHos5wHQxdAvgc6UqUWEZLTiZ4jyQV",
+    "price": 164.3,
+    "expo": -5,
+    "slot": 322310929,
+    "bucket": "$100-$1K"
+  },
+  {
+    "address": "2LwhbcswZekofMNRtDRMukZJNSRUiKYMFbqtBwqjDfke",
+    "price": 166.94345538000002,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "$100-$1K"
+  },
+  {
+    "address": "9a6RNx3tCu1TSs6TBSfV2XRXEPEZXQ6WB7jRojZRvyeZ",
+    "price": 168.51126,
+    "expo": -8,
+    "slot": 322338250,
+    "bucket": "$100-$1K"
+  },
+  {
+    "address": "FpgfS3xTFhPAa2UR6HXzdX3vmZQ9L9CfwRPUT6Gc5LT9",
+    "price": 170.04000000000002,
+    "expo": -5,
+    "slot": 322310929,
+    "bucket": "$100-$1K"
+  },
+  {
+    "address": "dZsHZaX1xYQE35pNNdnDYTYMkU6q1abz1xKw2sSg1XU",
+    "price": 171.65,
+    "expo": -5,
+    "slot": 322310929,
+    "bucket": "$100-$1K"
+  },
+  {
+    "address": "BykNmNUdryuuttvNBUk7Fuoyh95gMq6CGXYGXxV6q7Az",
+    "price": 171.98123888,
+    "expo": -8,
+    "slot": 310604800,
+    "bucket": "$100-$1K"
+  },
+  {
+    "address": "5NarBS1WWZMSwAz4xZsqzx9QWVNjCRrhjmV2ZYG2PFoH",
+    "price": 172.9,
+    "expo": -5,
+    "slot": 322310929,
+    "bucket": "$100-$1K"
+  },
+  {
+    "address": "8kXZ9q1Gg3k1rgLeixXbEKgrb9cLT9M2DgshAe6ev6VL",
+    "price": 173.56,
+    "expo": -5,
+    "slot": 322310929,
+    "bucket": "$100-$1K"
+  },
+  {
+    "address": "5Jz2UA35DEbvB1iCwegj2usm78HSFFMhBpC64b3ADJ7A",
+    "price": 186.31003443,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "$100-$1K"
+  },
+  {
+    "address": "BwkRMkWjfMvWeFLqfQzwhumQan4CxNtyQRbKxtkV4yzi",
+    "price": 189.17000000000002,
+    "expo": -5,
+    "slot": 322310929,
+    "bucket": "$100-$1K"
+  },
+  {
+    "address": "AAF9kiRhWb2NKYrma7SpVncv24KqfsXTxjj8YhJU3bDg",
+    "price": 199.61,
+    "expo": -5,
+    "slot": 322310929,
+    "bucket": "$100-$1K"
+  },
+  {
+    "address": "C4Xg88mgqGNP1fSNCZqFxHsGjpUBJYJgMmPabRFVVvYB",
+    "price": 207.3,
+    "expo": -5,
+    "slot": 322310929,
+    "bucket": "$100-$1K"
+  },
+  {
+    "address": "9TaWcpX3kdfdWQQdNtAjW12fNEKdiicmVXuourqn3xJh",
+    "price": 207.35000000000002,
+    "expo": -5,
+    "slot": 322310929,
+    "bucket": "$100-$1K"
+  },
+  {
+    "address": "HoDAYYYhFvCNQNFPui51H8qvpcdz6KuVtq77ZGtHND2T",
+    "price": 217.52791313,
+    "expo": -8,
+    "slot": 292080404,
+    "bucket": "$100-$1K"
+  },
+  {
+    "address": "78GDGyJGroqL726VJAWieAkcgFMVr5DyVkrbXg9dweCf",
+    "price": 219.39000000000001,
+    "expo": -5,
+    "slot": 322310929,
+    "bucket": "$100-$1K"
+  },
+  {
+    "address": "JJvHkTEfMmF9aPJtGUgwNqHPfuYWn2YyQ6C3e72hrAe",
+    "price": 222.05,
+    "expo": -5,
+    "slot": 322310929,
+    "bucket": "$100-$1K"
+  },
+  {
+    "address": "9PXGiz8ahi1LHTvTuM94TgyuLGiJ3tDCq1N1En21uoLg",
+    "price": 225.87,
+    "expo": -5,
+    "slot": 322310929,
+    "bucket": "$100-$1K"
+  },
+  {
+    "address": "CqFJLrT4rSpA46RQkVYWn8tdBDuQ7p7RXcp6Um76oaph",
+    "price": 230.56000000000003,
+    "expo": -5,
+    "slot": 322310929,
+    "bucket": "$100-$1K"
+  },
+  {
+    "address": "H4d916mbpUkBWEdJ9ipPaiuyP694UrdNiwYeopvgPDev",
+    "price": 233.02,
+    "expo": -5,
+    "slot": 322310929,
+    "bucket": "$100-$1K"
+  },
+  {
+    "address": "8nuyt3WAXd9T9rueVvW1xYnU4gefq5z462d5eSMLGybQ",
+    "price": 257.76557926,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "$100-$1K"
+  },
+  {
+    "address": "uK6nqaNG4ZS5uXvPGtkpBmgfs5rQLiwaf7SDa8YS6Ka",
+    "price": 257.81,
+    "expo": -5,
+    "slot": 322310929,
+    "bucket": "$100-$1K"
+  },
+  {
+    "address": "8fEYTwagmuDiyGUt23F84ZvrHLJWV5k3n8KLU11GbUN",
+    "price": 258.47,
+    "expo": -5,
+    "slot": 322310929,
+    "bucket": "$100-$1K"
+  },
+  {
+    "address": "8KwdpgEWHiaDnzdW1wuFK9ucBtpBtMY6mdoekEZKYVT5",
+    "price": 274.22,
+    "expo": -5,
+    "slot": 322310929,
+    "bucket": "$100-$1K"
+  },
+  {
+    "address": "7V6bwJz4GRmxt1MULdJZJNXzfPRrbhMCGzrZWC8BwGDC",
+    "price": 288.03000000000003,
+    "expo": -5,
+    "slot": 322310929,
+    "bucket": "$100-$1K"
+  },
+  {
+    "address": "FuLX3h5nywfCuY2VRNieQ5MqSMkHegzWHikHBnRuZL1L",
+    "price": 295,
+    "expo": -8,
+    "slot": 154370392,
+    "bucket": "$100-$1K"
+  },
+  {
+    "address": "4sLi9W1qGkKjghgJ6Mr6VAHHNzs9xCgG5AztUx9dG7Wz",
+    "price": 298.66235,
+    "expo": -8,
+    "slot": 322338239,
+    "bucket": "$100-$1K"
+  },
+  {
+    "address": "4EQrNZYk5KR1RnjyzbaaRbHsv8VqZWzSUtvx58wLsZbj",
+    "price": 321.3808,
+    "expo": -8,
+    "slot": 322338256,
+    "bucket": "$100-$1K"
+  },
+  {
+    "address": "3qxiWQuHTtY3e4FpcRdG6MhLraLdy9aHXLEM9qXaxNCy",
+    "price": 331.24,
+    "expo": -5,
+    "slot": 322310929,
+    "bucket": "$100-$1K"
+  },
+  {
+    "address": "8QTGRtWJmd9gSV4n2YpsRgMAf91VMWX3t43vcsq5QDxo",
+    "price": 353.04,
+    "expo": -5,
+    "slot": 322310929,
+    "bucket": "$100-$1K"
+  },
+  {
+    "address": "3DwrDkTKGa2C91RBGuUCfkQDMeXQHsec73hT36si9gV4",
+    "price": 368.00000000000006,
+    "expo": -5,
+    "slot": 322310929,
+    "bucket": "$100-$1K"
+  },
+  {
+    "address": "6oGH2tZNeRfeTZM1jU3RLmZ8QvusDzjXoyL4C6zs2uNP",
+    "price": 392.94000000000005,
+    "expo": -5,
+    "slot": 310531724,
+    "bucket": "$100-$1K"
+  },
+  {
+    "address": "6Fj4ax5EvAyP3EuR8y2gJwN8UzExeRwJhLbn2xF46f7k",
+    "price": 413.51000000000005,
+    "expo": -5,
+    "slot": 322310929,
+    "bucket": "$100-$1K"
+  },
+  {
+    "address": "Hz23MhJM1Fnw2n7SZFBrucvJHFeiLXq36GCWD7UfeNDt",
+    "price": 471.15000000000003,
+    "expo": -5,
+    "slot": 322310929,
+    "bucket": "$100-$1K"
+  },
+  {
+    "address": "BiPig4ifaDzKNSfWzXWEB58FVRRqRG7XrZjUeGyJpxC2",
+    "price": 507.79,
+    "expo": -5,
+    "slot": 322310928,
+    "bucket": "$100-$1K"
+  },
+  {
+    "address": "9g6c6KiNSRYNjeHWuQwXMSjCfK2PV84pqjYCzEK8rNgz",
+    "price": 513.4000000000001,
+    "expo": -5,
+    "slot": 322310929,
+    "bucket": "$100-$1K"
+  },
+  {
+    "address": "HWJ7dZ7TGJQTnuqjNKUfEH9E7VzkvgTA2ZmqwJmXnUp9",
+    "price": 518,
+    "expo": -8,
+    "slot": 154370392,
+    "bucket": "$100-$1K"
+  },
+  {
+    "address": "NPmDKQn2TbHhfJqMzHELwuubKbFvM2NNo11Esr3CMFG",
+    "price": 518.01,
+    "expo": -5,
+    "slot": 322310929,
+    "bucket": "$100-$1K"
+  },
+  {
+    "address": "GwzBgrXb4PG59zjce24SF2b9JXbLEjJJTBkmytuEZj1b",
+    "price": 536.39055,
+    "expo": -8,
+    "slot": 322338253,
+    "bucket": "$100-$1K"
+  },
+  {
+    "address": "8roWq2uTkiJ5iQDwfDJ7TNpDv6Dq3v9HB17dbrswWv1j",
+    "price": 550.4956000000001,
+    "expo": -5,
+    "slot": 298875792,
+    "bucket": "$100-$1K"
+  },
+  {
+    "address": "3rsRDArjTfGS1sF2rYYHqUTXYFgHNQnomf7xmdkMjsvb",
+    "price": 553,
+    "expo": -8,
+    "slot": 154370392,
+    "bucket": "$100-$1K"
+  },
+  {
+    "address": "Epqu3qYZXJtnsH6r61wUj6LGJ2pp11VtpE3SbdqmHffD",
+    "price": 558.6800000000001,
+    "expo": -5,
+    "slot": 322310929,
+    "bucket": "$100-$1K"
+  },
+  {
+    "address": "6tJaf1587zMFKe4YkDCXfvHagRv8LSF6y9KpJ35wDZx6",
+    "price": 561.6400000000001,
+    "expo": -5,
+    "slot": 322310929,
+    "bucket": "$100-$1K"
+  },
+  {
+    "address": "6tVRq4g3KLDHj4krTffA8BSaDWJMgim9RXhY3DFH69bB",
+    "price": 590.6,
+    "expo": -5,
+    "slot": 322310929,
+    "bucket": "$100-$1K"
+  },
+  {
+    "address": "SR3xGdQzPR41bFQftLPPcSh8hfhp5MHkriZ8hkNDJid",
+    "price": 594.71994813,
+    "expo": -8,
+    "slot": 298019813,
+    "bucket": "$100-$1K"
+  },
+  {
+    "address": "ARDsFc7UJZ1xdzKbPDwE88DFRQGvvoWQcU3kp9dgfJ7p",
+    "price": 614.51420278,
+    "expo": -8,
+    "slot": 298021636,
+    "bucket": "$100-$1K"
+  },
+  {
+    "address": "DAZZnJknkFE7huTuXmWeP3T99BNvxJbrRJbhQzTPwX9w",
+    "price": 655,
+    "expo": -8,
+    "slot": 154370392,
+    "bucket": "$100-$1K"
+  },
+  {
+    "address": "2GKGJcWifPeYzficudqwgef6NaEcP8E9ZxumfMEg2Qe4",
+    "price": 691.4200000000001,
+    "expo": -5,
+    "slot": 322310928,
+    "bucket": "$100-$1K"
+  },
+  {
+    "address": "HWEwQeyighQE6pUpMJXLGKc4vYENQLfxLoxNNhEZS9Bm",
+    "price": 762.59932976,
+    "expo": -8,
+    "slot": 318841489,
+    "bucket": "$100-$1K"
+  },
+  {
+    "address": "Bjhqvm8Cru7VroDNmPQp9SNfMvZEx6cicBrEChaqyxLa",
+    "price": 893.82,
+    "expo": -5,
+    "slot": 322310929,
+    "bucket": "$100-$1K"
+  },
+  {
+    "address": "E12SiEHBxLUzAJC7VZ477CxReEWWp6ViCuSgKHw7mPsR",
+    "price": 959,
+    "expo": -8,
+    "slot": 154370392,
+    "bucket": "$100-$1K"
+  },
+  {
+    "address": "EKuzGbrdk59WtrVcKPZiFgko4gxM6DyZzmrhe6CzsdmL",
+    "price": 1371,
+    "expo": -8,
+    "slot": 154370392,
+    "bucket": "$1K-$10K"
+  },
+  {
+    "address": "EFRLWkgxcqYRmgcfkF2b2d53KmNreBy1fowptJJ3sqjc",
+    "price": 1770.0505,
+    "expo": -8,
+    "slot": 322338256,
+    "bucket": "$1K-$10K"
+  },
+  {
+    "address": "HYEgRDsZVSzPzZor1RaeUicaKBQcGGxgf1MCn9KUtaqA",
+    "price": 2507.67997058,
+    "expo": -8,
+    "slot": 322338228,
+    "bucket": "$1K-$10K"
+  },
+  {
+    "address": "4GqTjGm686yihQ1m1YdTsSvfm4mNfadv6xskzgCYWNC5",
+    "price": 2521.33,
+    "expo": -3,
+    "slot": 322336017,
+    "bucket": "$1K-$10K"
+  },
+  {
+    "address": "DMyZyzfNR1uhqYcFGrNftirkveCbyNVLnCB8HgShYz4V",
+    "price": 2528.7200000000003,
+    "expo": -8,
+    "slot": 322338250,
+    "bucket": "$1K-$10K"
+  },
+  {
+    "address": "EdVCmQ9FSPcVe5YySXDPCRmc8aDQLKJ9xvYBMZPie1Vw",
+    "price": 2529.67,
+    "expo": -8,
+    "slot": 322338250,
+    "bucket": "$1K-$10K"
+  },
+  {
+    "address": "7oWirnCTxgqbvJLnXFNxPaFuXp9Phom1hbbKCyRE1Xrp",
+    "price": 2728.765,
+    "expo": -8,
+    "slot": 322338245,
+    "bucket": "$1K-$10K"
+  },
+  {
+    "address": "HyShqBUTtwAaCas9Dnib3ut6GmEDk9hTdKsrNfRffX8E",
+    "price": 2887.77,
+    "expo": -8,
+    "slot": 316338880,
+    "bucket": "$1K-$10K"
+  },
+  {
+    "address": "7RmZY4tADizfbPJ5xRsNQvhbQeXkxNxN4y7C6AgkbGFB",
+    "price": 2909.57209365,
+    "expo": -8,
+    "slot": 298013876,
+    "bucket": "$1K-$10K"
+  },
+  {
+    "address": "9sHwFvDSec2FoLYD6ompwYqpZajL6Gk6NpHojxp8E3C8",
+    "price": 3048.32695151,
+    "expo": -8,
+    "slot": 310604800,
+    "bucket": "$1K-$10K"
+  },
+  {
+    "address": "DPFtEAe19LepgLRPkFmD75eG3W21YDTbwWdB977U9mH6",
+    "price": 3069.5,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "$1K-$10K"
+  },
+  {
+    "address": "8ZEgdpuZVVgpoE3fkjqZQVnGnH6mfS48fwHDSXz1S5sH",
+    "price": 3071.3399480000003,
+    "expo": -8,
+    "slot": 310604794,
+    "bucket": "$1K-$10K"
+  },
+  {
+    "address": "4LgXzi6wPuNJahrKk7w2Ypgw741LDFrr2iqF4Vc2u91j",
+    "price": 3082.74963866,
+    "expo": -8,
+    "slot": 310604788,
+    "bucket": "$1K-$10K"
+  },
+  {
+    "address": "3QsU93DKJ8KKKScetBAp5yjSFkYsH7HYaTzUedK5srHq",
+    "price": 3113.62748077,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "$1K-$10K"
+  },
+  {
+    "address": "CfZJQzkPfpBJUgEms9FjzLcLKVjHsXb8rWc57HvzQH7t",
+    "price": 3115.13928262,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "$1K-$10K"
+  },
+  {
+    "address": "E18MpLmwHiZNw1PAE1vG2XYQz9fbUM2XoPmKMbaubmNX",
+    "price": 3136.38999999,
+    "expo": -8,
+    "slot": 310604792,
+    "bucket": "$1K-$10K"
+  },
+  {
+    "address": "JB52yr4hmL1wygKfvpFxrho3J4ofWmmRGyYtYMjteoh4",
+    "price": 3184.58511572,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "$1K-$10K"
+  },
+  {
+    "address": "36hKQRgxhMryGadCeuamAkKRagyiBGHB542jDH75jAok",
+    "price": 3195.2246023000002,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "$1K-$10K"
+  },
+  {
+    "address": "HSNzyTYwRfQaNaM8SmrbggJURcNfy7mcf8JjpULXub2r",
+    "price": 3261.46460651,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "$1K-$10K"
+  },
+  {
+    "address": "7XcEQ3VLi8i36PtA8hg79tRPwvckodiMv5LrMspZoofT",
+    "price": 3438.8749009900002,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "$1K-$10K"
+  },
+  {
+    "address": "Hatx3shzYMKjqUrErsd3Sf7jwNhji8ZttXbedB9YD3WK",
+    "price": 3602.00741284,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "$1K-$10K"
+  },
+  {
+    "address": "Eag4Uc8nrEfwyXykuoBwCaigW1oQu9DkuiAwr6qkw9QK",
+    "price": 5780.86853355,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": "$1K-$10K"
+  },
+  {
+    "address": "GxZnb9KnT2NjkwbsxDLyHvV3s1gvNodEh8cmQVTgFXWC",
+    "price": 57422.63381215,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": ">$10K"
+  },
+  {
+    "address": "GkWFRYWcxEz8b5WbjLYesTcFHapcPB9Q8oBvdrtRck4U",
+    "price": 58112.39,
+    "expo": -8,
+    "slot": 310604797,
+    "bucket": ">$10K"
+  },
+  {
+    "address": "HovQMDrbAgAYPCmHVSrezcSmkMtXSSUsLDFANExrZh2J",
+    "price": 59553.475,
+    "expo": -8,
+    "slot": 322338256,
+    "bucket": ">$10K"
+  },
+  {
+    "address": "2BXKsQwPM8THon8gispTtzmwzsDZFhCpYycBoDMoBRjU",
+    "price": 60870,
+    "expo": -8,
+    "slot": 298017132,
+    "bucket": ">$10K"
+  }
+]

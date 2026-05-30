@@ -1,0 +1,22 @@
+[package]
+name = "governor"
+version = "0.1.0"
+description = "Governor for KYC-gated lending pools — orchestrates delta-mint and Kamino market setup"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "governor"
+
+[features]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+cpi = ["no-entrypoint"]
+default = []
+idl-build = ["anchor-lang/idl-build", "anchor-spl/idl-build", "delta-mint/idl-build"]
+
+[dependencies]
+anchor-lang = { workspace = true }
+anchor-spl = { workspace = true }
+delta-mint = { path = "../delta-mint", features = ["cpi"] }

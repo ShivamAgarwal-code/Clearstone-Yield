@@ -1,0 +1,20 @@
+[package]
+name = "accrual-oracle"
+version = "0.1.0"
+description = "Wraps a base Pyth Receiver feed with a time-based accrual index and writes the result to a klend-compatible PriceUpdateV2 account."
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "accrual_oracle"
+
+[features]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+cpi = ["no-entrypoint"]
+default = []
+idl-build = ["anchor-lang/idl-build"]
+
+[dependencies]
+anchor-lang = "0.31.1"

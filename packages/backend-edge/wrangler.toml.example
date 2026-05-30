@@ -1,0 +1,39 @@
+name = "clearstone-backend-edge"
+main = "src/index.ts"
+compatibility_date = "2024-12-01"
+
+# Create KV namespaces with:
+#   wrangler kv namespace create AUDIT_KV
+#   wrangler kv namespace create WHITELIST_CACHE
+# Then paste the generated IDs below.
+
+[[kv_namespaces]]
+binding = "AUDIT_KV"
+id = "<your-kv-namespace-id>"
+
+[[kv_namespaces]]
+binding = "WHITELIST_CACHE"
+id = "<your-kv-namespace-id>"
+
+# For local dev, wrangler uses in-memory KV automatically.
+# Set SOLANA_RPC_URL as a secret:
+#   wrangler secret put SOLANA_RPC_URL
+
+[vars]
+SOLANA_RPC_URL = "https://api.devnet.solana.com"
+
+# MARKET_REGISTRY — JSON array of fixed-yield markets surfaced via
+# /fixed-yield/markets. Source-of-truth list lives at
+# `packages/backend-edge/configs/devnet/market-registry.json`. Pipe it
+# through `jq -c` to compact for env, or use a wrangler secret:
+#
+#   wrangler secret put MARKET_REGISTRY < configs/devnet/market-registry.json
+#
+# Each entry's `accounts` block is fully resolved by
+# `scripts/resolve-market-registry.ts` (reads vault + market accounts
+# on-chain to populate every PDA). Re-run when a new market lands.
+#
+# When MARKET_REGISTRY is empty / unset, /fixed-yield/markets falls
+# through to the static fixture so the retail UI stays renderable
+# during dev / preview deploys.
+# MARKET_REGISTRY = "<paste compacted JSON here, or use wrangler secret>"

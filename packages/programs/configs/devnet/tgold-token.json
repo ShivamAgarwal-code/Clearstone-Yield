@@ -1,0 +1,11 @@
+{
+  "name": "Gold Token",
+  "symbol": "tGOLD",
+  "decimals": 8,
+  "price": 2400,
+  "underlyingMint": "HfjzJvuu9jiGYnjtjVEMQ6hbbepp1LW6Rfi5HTnCxrW1",
+  "wrappedMint": "5H4beLqk7axM73SCzXAfWjeTGTPmHUnfLhVMC4ZQUQhG",
+  "pool": "64fC8ZTjrEuLimkgzQsgtF7ZwDPkDZAZXNjzkhzDNHdU",
+  "dmMintConfig": "93Ep7aetCtCBtSnBBtSudSPMJU4w9FjsdRG3xN9xYpcy",
+  "createdAt": "2026-03-25T11:04:34.320Z"
+}

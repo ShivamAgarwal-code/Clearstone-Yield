@@ -1,0 +1,17 @@
+# Cloudflare Pages routing rules.
+#
+# We DO NOT proxy /api/solstice externally here. Cloudflare Pages
+# compiles external-URL rewrites into a synthetic Pages Function under
+# the hood, and that pipeline currently fails with
+#   "Failed to publish your Function. Got error: Unknown internal error"
+# on monorepo deploys (no functions dir, just an external rewrite in
+# _redirects). The Solstice proxy now lives in the backend-edge Worker
+# at `/solstice` — set VITE_EDGE_URL in the Pages dashboard so the
+# frontend calls `${VITE_EDGE_URL}/solstice` instead. See
+# `packages/backend-edge/src/index.ts` and
+# `packages/frontend-institutional/src/lib/lib/solsticeApi.ts`.
+
+# SPA fallback — every unknown path serves index.html so client-side
+# refresh-mid-route works. Vite's hashed /assets/<hash>.{js,css}
+# filenames mean this won't shadow real assets.
+/*  /index.html  200

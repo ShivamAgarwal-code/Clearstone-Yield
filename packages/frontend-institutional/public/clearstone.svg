@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" fill="none">
+  <!-- Iso-projected cube. Outer hexagon corners:
+         T=(240,80)  TR=(400,170)  BR=(400,350)
+         B=(240,440) BL=(80,350)   TL=(80,170)
+       3 visible outer faces meet at C=(240,260).
+       The bottom-left (front) face is bent inward to vertex V=(220,290),
+       splitting that face into 4 sub-trapezoids around V. -->
+
+  <!-- 1. Top face -->
+  <polygon points="240,80 400,170 240,260 80,170" fill="#E8ECF2"/>
+
+  <!-- 2. Right face -->
+  <polygon points="400,170 400,350 240,440 240,260" fill="#B8C3D2"/>
+
+  <!-- 3. Bottom-left face, NW quadrant (TL → M1 → V → M4) -->
+  <polygon points="80,170 160,215 220,290 80,260" fill="#A2AFC1"/>
+
+  <!-- 4. Bottom-left face, NE quadrant (M1 → C → M2 → V) — bent ridge facing into shadow -->
+  <polygon points="160,215 240,260 240,350 220,290" fill="#5E6E89"/>
+
+  <!-- 5. Bottom-left face, SW quadrant (M4 → V → M3 → BL) -->
+  <polygon points="80,260 220,290 160,395 80,350" fill="#7B8AA2"/>
+
+  <!-- 6. Bottom-left face, SE quadrant (V → M2 → B → M3) — deepest shadow -->
+  <polygon points="220,290 240,350 240,440 160,395" fill="#2A3850"/>
+</svg>

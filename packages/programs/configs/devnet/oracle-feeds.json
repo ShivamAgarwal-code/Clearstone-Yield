@@ -1,0 +1,47 @@
+{
+  "_comment": "Pyth V2 oracle feeds for Solana devnet",
+  "_pyth_v2_program": "gSbePebfvPy7tRqimPoVecS2UsBvYv46ynrzWocc92s",
+  "_pyth_push_program": "pythWSnswVUd12oZpeFP8e9CVaEqJg25g1Vtc2biRsT",
+
+  "feeds": {
+    "USDY/USD": {
+      "v2_price_account": "E4pitSrZV9MWSspahe2vr26Cwsn3podnvHvW3cuT74R4",
+      "v2_product_account": "J1HL5jWkbi2rSJrL4NxZhpe8uy7xU187GASaGfrcY9pW",
+      "push_feed_account": "9VxAH1GnCgDRm2L6F4ikpm2wdNeq6S731LxXPHsWHAG2",
+      "hermes_feed_id": "0xe393449f6aff8a4b6d3e1165a7c9ebec103685f3b41e60db4277b5b6d10e7326",
+      "decimals": 6,
+      "description": "Ondo USDY / US Dollar"
+    },
+    "USDC/USD": {
+      "v2_price_account": null,
+      "v2_product_account": null,
+      "push_feed_account": "Dpw1EAVrSB1ibxiDQyTAW6Zip3J4Btk2x4SgApQCeFbX",
+      "hermes_feed_id": "0xeaa020c61cc479712813461ce153894a96a6c00b21ed0cfc2798d1f9a9e9c94a",
+      "decimals": 6,
+      "description": "USDC / US Dollar — NO V2 feed on devnet, must use mock or DAI proxy",
+      "_mock_strategy": "Copy USDY V2 oracle data into a new account with USDC address"
+    },
+    "DAI/USD": {
+      "v2_price_account": "A8XFp1YSUqyDDvTwRXM1vmhPHCLxziv9FWFkPpLY",
+      "v2_product_account": "2vF5sfo3o5GLbPWKxu1U3jswyhLDRSF5vW7QbZfi2NW3",
+      "push_feed_account": null,
+      "hermes_feed_id": null,
+      "decimals": 18,
+      "description": "DAI / US Dollar — backup stablecoin feed"
+    },
+    "SOL/USD": {
+      "v2_price_account": "J83w4HKfqxwcq3BEMMkPFSppX3gqekLyLJBexebFVkix",
+      "v2_product_account": "4uQeYHdCWXPd8nt2EfbTVHYthA43ZfBo3LTa3qVybSF",
+      "push_feed_account": null,
+      "hermes_feed_id": null,
+      "decimals": 9,
+      "description": "SOL / US Dollar — reference feed for gas cost estimation"
+    }
+  },
+
+  "mainnet_reference": {
+    "USDY/USD": "BkN8hYgRjhyH18aBsuzvMSyMTBRkDrGs1PTgMbBFpnLb",
+    "USDC/USD": "Gnt27xtC473ZT2Mw5u8wZ68Z3gULkSTb5DuxJy7eJotD",
+    "_pyth_v2_program": "FsJ3A3u2vn5cTVofAjvy6y5kwABJAqYWpe4975bi2epH"
+  }
+}

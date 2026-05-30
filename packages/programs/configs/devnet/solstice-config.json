@@ -1,0 +1,79 @@
+{
+  "description": "Solstice USX/eUSX integration config for Delta lending market",
+  "api": {
+    "endpoint": "https://instructions.solstice.finance/v1/instructions",
+    "apiKey": "SET_VIA_ENV_VAR"
+  },
+  "tokens": {
+    "USDT": {
+      "mint": "5dXXpWyZCCPhBHxmp79Du81t7t9oh7HacUW864ARFyft",
+      "decimals": 6,
+      "price": 1.00,
+      "program": "Token",
+      "note": "Solstice devnet USDT (NOT Circle)"
+    },
+    "USDC": {
+      "mint": "8iBux2LRja1PhVZph8Rw4Hi45pgkaufNEiaZma5nTD5g",
+      "decimals": 6,
+      "price": 1.00,
+      "program": "Token",
+      "note": "Solstice devnet USDC (NOT Circle)"
+    },
+    "USX": {
+      "mint": "7QC4zjrKA6XygpXPQCKSS9BmAsEFDJR6awiHSdgLcDvS",
+      "decimals": 6,
+      "price": 1.00,
+      "program": "Token",
+      "note": "Solstice stablecoin (1:1 backed by USDC/USDT)"
+    },
+    "eUSX": {
+      "mint": "Gkt9h4QWpPBDtbaF5HvYKCc87H5WCRTUtMf77HdTGHBt",
+      "decimals": 6,
+      "price": 1.08,
+      "program": "Token",
+      "note": "Yield-bearing staked USX (~8-12% APY)"
+    },
+    "USDG": {
+      "mint": "HLwjxqGBrZPN7hehv7e9RXnqBr4AHJ9YMczFpw9AZu7r",
+      "decimals": 6,
+      "price": 1.00,
+      "program": "Token-2022",
+      "note": "Solstice devnet USDG"
+    }
+  },
+  "wrappedTokens": {
+    "ceUSX": {
+      "wrappedMint": "8Uy7rmtAZvnQA1SuYZJKKBXFovHDPEYXiYH3H6iQMRwT",
+      "underlyingMint": "Gkt9h4QWpPBDtbaF5HvYKCc87H5WCRTUtMf77HdTGHBt",
+      "pool": "5TbEz3YEsaMzzRPgUL6paz6t12Bk19fFkgHYDfMsXFxj",
+      "dmMintConfig": "JC7tZGUahP99HZ8NwmvZWGvnXJjLg5edyYPAnTBFquDD",
+      "oracle": "FxqhozocW9JAb8zyXfSeXvXGqeebjET6V8R68NxSPXD6",
+      "price": 1.08,
+      "note": "KYC-wrapped eUSX — yield-bearing collateral"
+    },
+    "cUSX": {
+      "wrappedMint": "2ftH31xFwoSFDRXVD8bCNYYpFyfAzJJgg8yZBg9QgqS4",
+      "underlyingMint": "7QC4zjrKA6XygpXPQCKSS9BmAsEFDJR6awiHSdgLcDvS",
+      "pool": "DC3Cnrz84qS9p2PtBhAkgbsAnJXG2amgbsaxpAE4NT8u",
+      "dmMintConfig": "GjKooeks153zrhHSyxjnigWukHANbg2ydKZ8qMrY9SAg",
+      "oracle": "8BsWwTtgVKtcCTrB3FNyTfgy4KjzDFnzFdVDDTJYXDGY",
+      "price": 1.00,
+      "note": "KYC-wrapped USX — stablecoin collateral"
+    }
+  },
+  "programs": {
+    "usxProgram": "usxTTTgAJS1Cr6GTFnNRnNqtCbQKQXcUTvguz3UuwBD",
+    "yieldVaultProgram": "euxU8CnAgYk5qkRrSdqKoCM8huyexecRRWS67dz2FVr"
+  },
+  "whitelistedWallets": {
+    "achthar_phantom": {
+      "address": "J4vmoD6gQe4YyX9Qc8Z7euVwnimmrxUX5JMhfwbEhuB7",
+      "status": "whitelisted",
+      "balances": "3000 USDT + 3000 USDC"
+    },
+    "authority": {
+      "address": "AhKNmBmaeq6XrrEyGnSQne3WeU4SoN7hSAGieTiqPaJX",
+      "status": "needs_whitelisting_by_solstice"
+    }
+  }
+}

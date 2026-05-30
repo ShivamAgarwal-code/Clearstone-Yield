@@ -1,0 +1,24 @@
+{
+  "name": "keeper-cloud",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "description": "Cloudflare Worker that polls Pyth Hermes and refreshes the csSOL accrual oracle on Solana devnet.",
+  "scripts": {
+    "dev": "wrangler dev --test-scheduled",
+    "deploy": "wrangler deploy",
+    "secret:keypair": "wrangler secret put DEPLOY_KEYPAIR_JSON",
+    "trigger": "curl --silent http://localhost:8787/__scheduled?cron=*+*+*+*+*",
+    "typecheck": "tsc --noEmit",
+    "types": "wrangler types"
+  },
+  "dependencies": {
+    "@solana/web3.js": "^1.98.4"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.0.0",
+    "@types/node": "^20.19.37",
+    "typescript": "^5.5.0",
+    "wrangler": "^4.0.0"
+  }
+}

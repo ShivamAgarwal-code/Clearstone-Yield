@@ -1,0 +1,23 @@
+/* Brand fonts — must precede any other CSS so @import is valid. */
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..700&family=Geist:wght@300..700&family=Geist+Mono:wght@400..600&display=swap");
+@import "tailwindcss";
+@import "daisyui/daisyui.css" layer(base);
+@import "daisyui/themes.css" layer(base);
+@import "@clearstone/design-system/fonts.css";
+@import "@clearstone/design-system/theme.css";
+@import "@clearstone/design-system/styles.css";
+
+/* Tailwind v4 auto-detects sources via Vite's module graph, but workspace
+ * packages resolved through pnpm's symlink in node_modules fall outside
+ * the default scan heuristics. Make the design-system source explicit so
+ * every utility used inside Button/Input/Stat/TokenAmountInput/etc.
+ * lands in the generated CSS. Without this, alpha modifiers
+ * (bg-info/10), arbitrary shadows (shadow-[var(--shadow-stone-md)]),
+ * and hover utilities silently drop. */
+@source "../../frontend-design-system/src";
+
+/* Wallet-adapter (Phantom etc.) styles live in the design-system's
+ * styles.css — imported above. The earlier per-app block here used
+ * `oklch(var(--color-base-200))` which expanded to `oklch(#FFFFFF)`
+ * (invalid → transparent dropdown). The DS version uses the vars
+ * directly + color-mix for alpha. */

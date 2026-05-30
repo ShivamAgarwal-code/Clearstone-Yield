@@ -1,0 +1,27 @@
+{
+  "name": "backend-edge",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy --name clearstone-backend-edge",
+    "types": "wrangler types",
+    "typecheck": "tsc --noEmit",
+    "build:test": "tsc -p tsconfig.test.json",
+    "test": "pnpm run build:test && node --test 'dist-test/test/**/*.test.js'"
+  },
+  "dependencies": {
+    "@noble/ed25519": "^3.0.1",
+    "@noble/hashes": "^2.0.1",
+    "@solana/web3.js": "^1.98.4",
+    "bs58": "^6.0.0",
+    "hono": "^4.7.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.0.0",
+    "@types/node": "^20.19.37",
+    "typescript": "^5.5.0",
+    "wrangler": "^4.0.0"
+  }
+}

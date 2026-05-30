@@ -1,0 +1,28 @@
+{
+  "_comment": "Klend elevation groups for the Clearstone market. Group 0 is reserved by klend as 'no group' and cannot be defined here. Each non-zero group must have exactly one debt_reserve and a whitelist of collateral reserves.",
+
+  "groups": [
+    {
+      "id": 1,
+      "name": "stables",
+      "debtReserveSymbol": "USDC",
+      "collateralReserveSymbols": ["cUSDY"],
+      "ltvPct": 75,
+      "liquidationThresholdPct": 82,
+      "maxLiquidationBonusBps": 500,
+      "maxReservesAsCollateral": 1,
+      "allowNewLoans": 1
+    },
+    {
+      "id": 2,
+      "name": "lst-sol",
+      "debtReserveSymbol": "wSOL",
+      "collateralReserveSymbols": ["csSOL"],
+      "ltvPct": 90,
+      "liquidationThresholdPct": 92,
+      "maxLiquidationBonusBps": 100,
+      "maxReservesAsCollateral": 1,
+      "allowNewLoans": 1
+    }
+  ]
+}

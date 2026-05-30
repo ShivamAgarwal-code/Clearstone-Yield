@@ -1,0 +1,18 @@
+[
+  {
+    "symbol": "USDY",
+    "name": "Ondo US Dollar Yield",
+    "pythPriceFeed": "BkN8hYgRjhyH18aBsuzvMSyMTBRkDrGs1PTgMbBFpnLb",
+    "decimals": 6,
+    "mint": "A1KLoBrKBde8Ty9qtNQUtq3C2ortoC3u7twggz7sEto6",
+    "note": "Pyth USDY/USD push oracle — address may not exist on-chain (Pyth v2 pull); mock used in test-validator"
+  },
+  {
+    "symbol": "USDC",
+    "name": "USD Coin",
+    "pythPriceFeed": "Gnt27xtC473ZT2Mw5u8wZ68Z3gULkSTb5DuxJy7eJotD",
+    "decimals": 6,
+    "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+    "note": "Pyth USDC/USD push oracle — verified on mainnet"
+  }
+]

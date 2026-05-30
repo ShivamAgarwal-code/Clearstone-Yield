@@ -1,0 +1,94 @@
+{
+  "_comment": "ceUSX-WT (withdraw ticket) collateral reserve. Underlying = eUSX queued for unstaking via Solstice YieldVault, redeemable for USX after the YieldVault's unlock window (then RequestRedeem+ConfirmRedeem → USDC). Configured identically to ceUSX inside elevation group 1 (90% LTV, 92% liquidation threshold via the group override) so atomic collateral swaps ceUSX ↔ ceUSX-WT preserve LTV. Mirror of delta_csSOL_WT_reserve.json — only the elevation group, name, and price feed differ.",
+  "_oracle_note": "ceUSX-WT price = min(ceUSX_price * (1 - eUSX_unlock_period_discount), pool.queued_usx_total / ceusx_wt_supply). Pythconfiguration.price below is the accrual-oracle OUTPUT account that script init-ceusx-wt-oracle.ts will create — currently set to the ceUSX accrual oracle as a fallback (1:1 with eUSX value pre-yield, which is true on devnet).",
+  "_flash_loan_note": "borrowLimit > 0 so klend's flash_borrow path can pull liquidity from the seed; flashLoanFee = 0 (verified on-chain on ceUSX + sUSDC reserves). The reserve is bootstrap-seeded with treasury-minted ceUSX-WT (one-time) so the very first user collateral-swap has flash liquidity available; users then flash-repay with their freshly-minted WT, rotating the seed in place.",
+
+  "status": 0,
+  "assetTier": 0,
+
+  "loanToValuePct": 55,
+  "liquidationThresholdPct": 65,
+  "minLiquidationBonusBps": 200,
+  "maxLiquidationBonusBps": 500,
+  "badDebtLiquidationBonusBps": 99,
+  "protocolLiquidationFeePct": 10,
+  "protocolOrderExecutionFeePct": 0,
+  "protocolTakeRatePct": 10,
+
+  "depositLimit": "1000000000000",
+  "borrowLimit": "1000000000000",
+
+  "borrowRateCurve": {
+    "points": [
+      { "utilizationRateBps": 0,     "borrowRateBps": 0 },
+      { "utilizationRateBps": 10000, "borrowRateBps": 0 },
+      { "utilizationRateBps": 10000, "borrowRateBps": 0 },
+      { "utilizationRateBps": 10000, "borrowRateBps": 0 },
+      { "utilizationRateBps": 10000, "borrowRateBps": 0 },
+      { "utilizationRateBps": 10000, "borrowRateBps": 0 },
+      { "utilizationRateBps": 10000, "borrowRateBps": 0 },
+      { "utilizationRateBps": 10000, "borrowRateBps": 0 },
+      { "utilizationRateBps": 10000, "borrowRateBps": 0 },
+      { "utilizationRateBps": 10000, "borrowRateBps": 0 },
+      { "utilizationRateBps": 10000, "borrowRateBps": 0 }
+    ]
+  },
+
+  "tokenInfo": {
+    "name": "ceUSX-WT",
+    "heuristic": { "exp": "0", "lower": "0", "upper": "0" },
+    "maxTwapDivergenceBps": "4050",
+    "maxAgePriceSeconds": "600",
+    "maxAgeTwapSeconds": "1200",
+    "scopeConfiguration": {
+      "priceFeed": "11111111111111111111111111111111",
+      "priceChain": [65535, 65535, 65535, 65535],
+      "twapChain": [65535, 65535, 65535, 65535]
+    },
+    "switchboardConfiguration": {
+      "priceAggregator": "11111111111111111111111111111111",
+      "twapAggregator": "11111111111111111111111111111111"
+    },
+    "pythConfiguration": {
+      "price": "3L8kkp8G6gxBmr7wdYJxvofEWxtUtUUAGJSokSLwzmyW"
+    },
+    "blockPriceUsage": 0
+  },
+
+  "fees": {
+    "borrowFee": "0",
+    "flashLoanFee": "0",
+    "padding": [0, 0, 0, 0, 0, 0, 0, 0]
+  },
+
+  "depositWithdrawalCap": {
+    "configCapacity": "500000000000",
+    "currentTotal": "0",
+    "lastIntervalStartTimestamp": "0",
+    "configIntervalLengthSeconds": "86400"
+  },
+  "debtWithdrawalCap": {
+    "configCapacity": "0",
+    "currentTotal": "0",
+    "lastIntervalStartTimestamp": "0",
+    "configIntervalLengthSeconds": "86400"
+  },
+
+  "borrowFactorPct": "100",
+  "multiplierSideBoost": [1, 1],
+  "multiplierTagBoost": [1, 1, 1, 1, 1, 1, 1, 1],
+  "elevationGroups": [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+  "autodeleverageEnabled": 1,
+  "deleveragingBonusIncreaseBpsPerDay": 100,
+  "deleveragingThresholdDecreaseBpsPerDay": "24",
+  "deleveragingMarginCallPeriodSecs": "604800",
+  "disableUsageAsCollOutsideEmode": 1,
+  "utilizationLimitBlockBorrowingAbovePct": 100,
+  "hostFixedInterestRateBps": 0,
+  "borrowLimitOutsideElevationGroup": "18446744073709551615",
+  "borrowLimitAgainstThisCollateralInElevationGroup": [
+    "0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0",
+    "0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0"
+  ],
+  "reserved1": [0, 0]
+}

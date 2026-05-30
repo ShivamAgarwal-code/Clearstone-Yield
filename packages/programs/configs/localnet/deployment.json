@@ -1,0 +1,20 @@
+{
+  "cluster": "localnet",
+  "rpc": "http://localhost:8899",
+  "authority": "AhKNmBmaeq6XrrEyGnSQne3WeU4SoN7hSAGieTiqPaJX",
+  "mints": {
+    "usdc": "5V74r6ycNRTmR5kUacdE1S7oHktU4sh5fTQprcUhrKo4",
+    "usdy": "2jNyQG69SYw8xpCgk88n3P5mYhKw5VHpAqNe2gREjfnu",
+    "dUsdy": "DizoLvgzxbLAqty1HjGbic9SbsSQg4E8FVTh37P5gKf9"
+  },
+  "pool": {
+    "poolConfig": "2nzmhvVaEnKPofpZfBAkVqvUWfr336jTrwpyuvVDBgEu",
+    "dmMintConfig": "Caoyr2JfE5ahjHWGebCcpwUfNCS6krE3xYn8VsFJBXQp",
+    "dmMintAuthority": "789L8TYAdPuPvtJgiMKbHm9bwznVgQ5mnE4seoo5mnBH"
+  },
+  "market": {
+    "lendingMarket": "3Ep2bbbqBYc8wA4NYAWYvA9WWfMPxRGUCFN1tEAxbAkP",
+    "usdcReserve": "bbapxkajaBhixkaRSZaTaqJbHFPr25QmHNTez2stbE7",
+    "usdcOracle": "Gnt27xtC473ZT2Mw5u8wZ68Z3gULkSTb5DuxJy7eJotD"
+  }
+}

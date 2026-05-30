@@ -1,0 +1,93 @@
+{
+  "_comment": "USDC borrow reserve — DEVNET config",
+  "_oracle_note": "No Pyth V2 USDC/USD on devnet — setup script creates a mock oracle account",
+
+  "status": 0,
+  "assetTier": 0,
+
+  "loanToValuePct": 0,
+  "liquidationThresholdPct": 0,
+  "minLiquidationBonusBps": 200,
+  "maxLiquidationBonusBps": 500,
+  "badDebtLiquidationBonusBps": 99,
+  "protocolLiquidationFeePct": 10,
+  "protocolOrderExecutionFeePct": 0,
+  "protocolTakeRatePct": 10,
+
+  "depositLimit": "100000000000",
+  "borrowLimit": "75000000000",
+
+  "borrowRateCurve": {
+    "points": [
+      { "utilizationRateBps": 0,     "borrowRateBps": 1 },
+      { "utilizationRateBps": 7000,  "borrowRateBps": 400 },
+      { "utilizationRateBps": 8500,  "borrowRateBps": 600 },
+      { "utilizationRateBps": 9000,  "borrowRateBps": 1000 },
+      { "utilizationRateBps": 9300,  "borrowRateBps": 2000 },
+      { "utilizationRateBps": 9600,  "borrowRateBps": 4000 },
+      { "utilizationRateBps": 10000, "borrowRateBps": 8000 },
+      { "utilizationRateBps": 10000, "borrowRateBps": 8000 },
+      { "utilizationRateBps": 10000, "borrowRateBps": 8000 },
+      { "utilizationRateBps": 10000, "borrowRateBps": 8000 },
+      { "utilizationRateBps": 10000, "borrowRateBps": 8000 }
+    ]
+  },
+
+  "tokenInfo": {
+    "name": "USDC",
+    "heuristic": { "exp": "0", "lower": "0", "upper": "0" },
+    "maxTwapDivergenceBps": "250",
+    "maxAgePriceSeconds": "120",
+    "maxAgeTwapSeconds": "240",
+    "scopeConfiguration": {
+      "priceFeed": "11111111111111111111111111111111",
+      "priceChain": [65535, 65535, 65535, 65535],
+      "twapChain": [65535, 65535, 65535, 65535]
+    },
+    "switchboardConfiguration": {
+      "priceAggregator": "11111111111111111111111111111111",
+      "twapAggregator": "11111111111111111111111111111111"
+    },
+    "pythConfiguration": {
+      "price": "MOCK_USDC_ORACLE_DEVNET"
+    },
+    "blockPriceUsage": 0
+  },
+
+  "fees": {
+    "borrowFee": "0",
+    "flashLoanFee": "0",
+    "padding": [0, 0, 0, 0, 0, 0, 0, 0]
+  },
+
+  "depositWithdrawalCap": {
+    "configCapacity": "50000000000",
+    "currentTotal": "0",
+    "lastIntervalStartTimestamp": "0",
+    "configIntervalLengthSeconds": "86400"
+  },
+  "debtWithdrawalCap": {
+    "configCapacity": "50000000000",
+    "currentTotal": "0",
+    "lastIntervalStartTimestamp": "0",
+    "configIntervalLengthSeconds": "86400"
+  },
+
+  "borrowFactorPct": "100",
+  "multiplierSideBoost": [1, 1],
+  "multiplierTagBoost": [1, 1, 1, 1, 1, 1, 1, 1],
+  "elevationGroups": [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+  "autodeleverageEnabled": 1,
+  "deleveragingBonusIncreaseBpsPerDay": 100,
+  "deleveragingThresholdDecreaseBpsPerDay": "24",
+  "deleveragingMarginCallPeriodSecs": "604800",
+  "disableUsageAsCollOutsideEmode": 0,
+  "utilizationLimitBlockBorrowingAbovePct": 80,
+  "hostFixedInterestRateBps": 0,
+  "borrowLimitOutsideElevationGroup": "18446744073709551615",
+  "borrowLimitAgainstThisCollateralInElevationGroup": [
+    "0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0",
+    "0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0"
+  ],
+  "reserved1": [0, 0]
+}

@@ -1,0 +1,13 @@
+{
+  "usdc": {
+    "address": "EnxhdYTXnWJnkDwp29G1nWHz2dNfv297Zisgc5HV23AH",
+    "value": "1"
+  },
+  "dusdy": {
+    "address": "54dkrZRbtXC2pPJYgwwFSqJcGC4nE9D3bnapsgsfKC2u",
+    "value": "1.08"
+  },
+  "queue": "CWgkXc5yVjPLpzB1VmHfcr5sgVfbpT9nVWdqZ8ztAcnS",
+  "oracle": "2XpDzScqAnRk8ZGJmUkFvNUj5hrvrMTwQt6tNbaSVcku",
+  "owner": "SW1TCH7qEPTdLsDHRgPuMQjbQxKdH2aBStViMFnt64f"
+}

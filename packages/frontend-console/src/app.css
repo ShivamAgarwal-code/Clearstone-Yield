@@ -1,0 +1,196 @@
+/* Brand fonts — must precede any other CSS so @import is valid. */
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..700&family=Geist:wght@300..700&family=Geist+Mono:wght@400..600&display=swap");
+@import "tailwindcss";
+@import "daisyui/daisyui.css" layer(base);
+@import "daisyui/themes.css" layer(base);
+@import "@clearstone/design-system/fonts.css";
+@import "@clearstone/design-system/theme.css";
+@import "@clearstone/design-system/styles.css";
+
+/* Force Tailwind v4 to scan workspace-symlinked design-system source
+ * (see frontend-institutional/src/index.css for the same fix). */
+@source "../../frontend-design-system/src";
+
+/* ============================================================
+   Console App — Global fixes for DaisyUI 5 sizing
+   ============================================================ */
+
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: oklch(var(--color-base-100)) !important;
+  color: oklch(var(--color-base-content)) !important;
+}
+
+/* ---- Panel — visibly lift cards off the page ----
+   The design-system `.panel` falls back to base-200 (white) on a near-
+   white page bg, which renders as "barely there" in light mode. Bump
+   the shadow tier and tighten the border so legacy panels in pages we
+   haven't migrated to <Card> still read as elevated surfaces. */
+.panel {
+  background: var(--color-base-200);
+  border: 1px solid var(--color-base-300);
+  border-radius: 1rem;
+  box-shadow: var(--shadow-stone-md);
+}
+
+/* ---- DaisyUI 5 size fixes ---- */
+.card-body {
+  padding: 1.5rem !important;
+  gap: 1rem !important;
+  font-size: 0.875rem !important;
+}
+
+.alert {
+  padding: 0.875rem 1.25rem !important;
+}
+
+/* ---- Inputs — match the design-system Input visual language ----
+   Field height + radius + focus ring + recessed shadow so legacy
+   `<input class="input ...">` lines up with <Input> from the DS. */
+.input, .select, .textarea {
+  min-height: 2.5rem;
+  font-size: 0.875rem;
+  border-radius: 0.5rem !important;
+  border: 1px solid oklch(var(--color-base-300)) !important;
+  background-color: oklch(var(--color-base-200)) !important;
+  color: oklch(var(--color-base-content)) !important;
+  box-shadow: inset 0 1px 2px rgba(31,45,72,0.05) !important;
+  transition: border-color 150ms ease-out, box-shadow 150ms ease-out !important;
+}
+.input:focus, .input:focus-within,
+.select:focus, .textarea:focus {
+  border-color: color-mix(in oklab, oklch(var(--color-primary)) 70%, transparent) !important;
+  box-shadow: inset 0 1px 2px rgba(31,45,72,0.05),
+              0 0 0 3px rgba(31,45,72,0.10) !important;
+  outline: none !important;
+}
+
+/* ---- Buttons — match the design-system Button look + feel ----
+   Daisy's defaults render flat and chunky against the new elevated
+   panels. Adopt the DS shadow/lift pattern so toolbar rows in legacy
+   pages read with the same polish. */
+.btn {
+  min-height: 2.5rem;
+  padding-inline: 1rem;
+  border-radius: 0.5rem !important;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  transition: transform 150ms ease-out, box-shadow 150ms ease-out,
+              background-color 150ms ease-out, border-color 150ms ease-out !important;
+}
+.btn-primary {
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.10),
+    0 1px 2px rgba(31,45,72,0.18),
+    0 4px 14px -2px rgba(31,45,72,0.42) !important;
+}
+.btn-primary:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.16),
+    0 2px 4px rgba(31,45,72,0.24),
+    0 10px 22px -4px rgba(31,45,72,0.55) !important;
+}
+.btn-primary:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: inset 0 2px 3px rgba(0,0,0,0.22) !important;
+}
+.btn-secondary {
+  background-color: oklch(var(--color-base-200)) !important;
+  color: oklch(var(--color-base-content)) !important;
+  border-color: oklch(var(--color-base-300)) !important;
+  box-shadow: 0 1px 2px rgba(31,45,72,0.06) !important;
+}
+.btn-secondary:hover:not(:disabled) {
+  background-color: oklch(var(--color-base-300)) !important;
+  transform: translateY(-1px);
+  box-shadow:
+    0 2px 6px rgba(31,45,72,0.10),
+    0 4px 14px -4px rgba(31,45,72,0.18) !important;
+}
+.btn-ghost {
+  background-color: transparent !important;
+  border-color: transparent !important;
+  color: color-mix(in oklab, oklch(var(--color-base-content)) 75%, transparent) !important;
+  box-shadow: none !important;
+}
+.btn-ghost:hover:not(:disabled) {
+  background-color: rgba(31,45,72,0.07) !important;
+  color: oklch(var(--color-base-content)) !important;
+}
+.btn-success {
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.12),
+    0 1px 2px rgba(46,125,91,0.20),
+    0 4px 14px -2px rgba(46,125,91,0.42) !important;
+}
+
+/* Tables — proper row height */
+.table th, .table td {
+  padding: 0.75rem 0.5rem !important;
+}
+
+/* ---- Dropdown / Select / Option fixes ---- */
+/* Use extremely high specificity to beat DaisyUI's @layer rules */
+html[data-theme] .dropdown-content,
+html[data-theme] .menu:not(.menu-horizontal) {
+  background-color: oklch(var(--color-base-200)) !important;
+  border: 1px solid oklch(var(--color-base-300)) !important;
+}
+
+html[data-theme] select,
+html[data-theme] .select,
+html[data-theme] .select select {
+  background-color: oklch(var(--color-base-200)) !important;
+  color: oklch(var(--color-base-content)) !important;
+}
+
+html[data-theme] select option,
+html[data-theme] .select option {
+  background-color: oklch(var(--color-base-200)) !important;
+  color: oklch(var(--color-base-content)) !important;
+}
+
+html[data-theme] select:focus,
+html[data-theme] .select:focus {
+  background-color: oklch(var(--color-base-200)) !important;
+  outline-color: oklch(var(--color-primary)) !important;
+}
+
+/* Also fix inputs that might have transparent bg */
+html[data-theme] input,
+html[data-theme] .input,
+html[data-theme] textarea,
+html[data-theme] .textarea {
+  background-color: oklch(var(--color-base-200)) !important;
+  color: oklch(var(--color-base-content)) !important;
+}
+
+/* Fix any remaining transparent backgrounds on interactive elements */
+html[data-theme] .btn-ghost {
+  background-color: transparent !important;
+}
+html[data-theme] .btn-ghost:hover {
+  background-color: oklch(var(--color-base-content) / 0.1) !important;
+}
+
+/* Wallet-adapter (Phantom etc.) styles live in the design-system's
+ * styles.css — imported above. The earlier block here used
+ * `oklch(var(--color-base-200))` which expanded to `oklch(#FFFFFF)`
+ * (invalid → transparent dropdown). The DS version uses the vars
+ * directly + color-mix for alpha. */
+
+/* ---- Subtle global enhancements ---- */
+button, a, input, select {
+  transition: all 0.15s ease;
+}
+button:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background-color: oklch(var(--color-base-100)); }
+::-webkit-scrollbar-thumb { background-color: oklch(var(--color-base-300)); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background-color: oklch(var(--color-primary) / 0.5); }

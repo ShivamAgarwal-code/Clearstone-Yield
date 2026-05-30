@@ -1,0 +1,30 @@
+{
+  "name": "frontend-deck",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port 3100",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview --port 3100",
+    "deploy": "pnpm build && npx wrangler pages deploy dist --project-name clearstone-fusion-deck"
+  },
+  "dependencies": {
+    "@clearstone/design-system": "workspace:*",
+    "dom-to-pptx": "^1.1.9",
+    "modern-screenshot": "^4.7.0",
+    "pptxgenjs": "^4.0.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.0",
+    "@types/react": "^18.3.28",
+    "@types/react-dom": "^18.3.5",
+    "@vitejs/plugin-react": "^4.3.4",
+    "daisyui": "^5.5.19",
+    "tailwindcss": "^4.1.0",
+    "typescript": "^5.5.0",
+    "vite": "^6.0.0"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "name": "keeper-auto-roll",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "description": "Auto-roll keeper for clearstone curator vaults. Signs with the curator hot-key. See /KEEPER_PERMISSIONS.md.",
+  "main": "dist/index.js",
+  "bin": {
+    "clearstone-keeper": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx src/index.ts",
+    "start": "node dist/index.js",
+    "typecheck": "tsc --noEmit",
+    "build:test": "tsc -p tsconfig.test.json",
+    "test": "pnpm run build:test && node --test 'dist-test/test/**/*.test.js'"
+  },
+  "dependencies": {
+    "@delta/calldata-sdk-solana": "workspace:*",
+    "@solana/spl-token": "^0.4.14",
+    "@solana/web3.js": "^1.98.0",
+    "bn.js": "^5.2.1"
+  },
+  "devDependencies": {
+    "@types/bn.js": "^5.1.5",
+    "@types/node": "^20.19.37",
+    "tsx": "^4.21.0",
+    "typescript": "^5.5.0"
+  }
+}

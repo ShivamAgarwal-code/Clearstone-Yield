@@ -1,0 +1,22 @@
+{
+  "cluster": "devnet",
+  "market": "EVw8B9WC2AX5ScCwkYJF2mZz6RdHLQZtoDeKChdMiz2E",
+  "elevationGroup": 2,
+  "reserves": {
+    "csSOL": {
+      "address": "eCrKcmHytENDieb3Ff5YLY7ATsmduXB4EDT4u6dPX9w",
+      "role": "collateral",
+      "oracle": "3Sx8WJC7y1kokmsu7SoxfJW8nQJktkuQ5fKK8icxPw3P"
+    },
+    "wSOL": {
+      "address": "CaPUL8sijx9Qw32Ao2PMdotEKqQLMneA5ZvRnvsa6VF8",
+      "role": "borrow",
+      "oracle": "7UVimffxr9ow1uXYxsr4LHAcV58mLzhmwaeKvJ1pjLiE"
+    }
+  },
+  "governor": {
+    "poolConfig": "QoR6KXoiyTfd3TRk9gds4pLWbaueFmTgagec9fAWD9e",
+    "authority": "DiDbnkw2tYL8K1M5ndLdSHWaeXr53kcKyDyS7SiuDcFn"
+  },
+  "completedAt": "2026-04-30T18:56:51.516Z"
+}

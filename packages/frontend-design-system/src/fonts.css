@@ -1,0 +1,13 @@
+/* Clearstone Fusion typography
+   - Manrope:    wordmark / display (elegant humanist, used at light weights)
+   - Geist:      UI body (modern grotesque, neutral)
+   - Geist Mono: tabular numbers, addresses, hashes
+
+   The actual `@import url(...)` for Google Fonts now lives at the TOP of
+   each consumer CSS (before `@import "tailwindcss"`). CSS specs require
+   `@import` statements to precede every other rule; bundling fonts.css
+   *after* tailwind / daisyui imports placed it later in the cascade,
+   which produced "@import must precede all other statements" warnings
+   across the stack. This file is kept as a documentation marker so
+   `@import "@clearstone/design-system/fonts.css"` doesn't 404 in any
+   consumer that still references it. */

@@ -1,0 +1,35 @@
+{
+  "_doc": "Bundle of every MintConfig a Holder should be whitelisted on. whitelist-wallet.ts iterates every pool, then every entry within, and emits one ix per MintConfig that doesn't already have a whitelist PDA on-chain. Add new MintConfigs here whenever a new wrap-token / withdraw-ticket pair ships so retail + institutional + playground stay in lockstep.",
+  "pools": {
+    "csSOL": {
+      "poolConfig": "QoR6KXoiyTfd3TRk9gds4pLWbaueFmTgagec9fAWD9e",
+      "poolConfigJson": "configs/devnet/cssol-pool.json",
+      "mintConfigs": [
+        {
+          "label": "csSOL",
+          "address": "FaBWmajcbEEnmep9wxx3jKcbjtWKkPbKHgusPxVZwDc2",
+          "ix": "addParticipantViaPool",
+          "comment": "Primary wrap-token MintConfig — pinned by pool_config.dm_mint_config; whitelisted via the standard add_participant_via_pool path."
+        },
+        {
+          "label": "csSOL-WT",
+          "address": "BQ4cqyRgJkhwfF477uUJsXhY7ga2Jp9VoKS2XsxfhtT4",
+          "ix": "addWtParticipantViaPool",
+          "comment": "Withdraw-ticket MintConfig — owned by the same pool PDA but lives outside pool_config.dm_mint_config, so requires the wt-specific governor ix added in 2026-05."
+        }
+      ]
+    },
+    "cSOL": {
+      "poolConfig": "7LrzKp9UHfgR3AVqDtdWeB5N9CaxLdVUVJGTzNGcUAeQ",
+      "poolConfigJson": "configs/devnet/csol-pool.json",
+      "mintConfigs": [
+        {
+          "label": "cSOL",
+          "address": "GJTRSUzfsXaroq4z4praK2Pu9VDZSmAkaj6h6XftEf3B",
+          "ix": "addParticipantNativeViaPool",
+          "comment": "KYC wrapper around wSOL. Uses the native_pool seed shape (governor's add_participant_native_via_pool ix) — earlier the bundle was set to addParticipantViaPool, which derives the pool PDA from [\"pool\", underlying_mint] and trips ConstraintSeeds 2006 against the native pool's actual PDA derived from [\"native_pool\", wrapped_mint]. Now it's collateral in EG-3 (long SOL), debt in EG-4 (short SOL), AND debt in EG-2 (LST/SOL — replaced wSOL after 2026-05-06 migration). All three flows route through delta-mint's whitelist gate, so every Holder needs this entry."
+        }
+      ]
+    }
+  }
+}

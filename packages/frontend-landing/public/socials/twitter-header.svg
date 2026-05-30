@@ -1,0 +1,99 @@
+<svg width="1500" height="500" viewBox="0 0 1500 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="bg" cx="60%" cy="50%" r="80%">
+      <stop offset="0%"   stop-color="#D6DEE8"/>
+      <stop offset="55%"  stop-color="#BCC9DA"/>
+      <stop offset="100%" stop-color="#9DACC2"/>
+    </radialGradient>
+    <radialGradient id="halo" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"   stop-color="#3F506E" stop-opacity="0.14"/>
+      <stop offset="55%"  stop-color="#3F506E" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#3F506E" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Isometric lattice that echoes the faceted logo language without repeating it -->
+    <pattern id="iso" width="60" height="34.64" patternUnits="userSpaceOnUse">
+      <path d="M0 34.64 L30 0 L60 34.64 M0 0 L30 34.64 L60 0"
+            fill="none" stroke="#3F506E" stroke-opacity="0.07" stroke-width="0.5"/>
+    </pattern>
+
+    <!-- Subtle horizon grid -->
+    <pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse">
+      <path d="M 80 0 L 0 0 0 80" fill="none" stroke="#3F506E" stroke-opacity="0.05" stroke-width="0.5"/>
+    </pattern>
+
+    <!-- Decorative facet gradients (echo the logo palette but as abstract shapes) -->
+    <linearGradient id="facet-a" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%"   stop-color="#7E8EA7" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#1F2D48" stop-opacity="0.10"/>
+    </linearGradient>
+    <linearGradient id="facet-b" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%"   stop-color="#3A4D6E" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#0F1A33" stop-opacity="0.0"/>
+    </linearGradient>
+    <linearGradient id="facet-c" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#9DACC2" stop-opacity="0.30"/>
+      <stop offset="100%" stop-color="#9DACC2" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Fade on the left so the PFP overlap area stays calm -->
+    <linearGradient id="leftFade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#9DACC2" stop-opacity="0.45"/>
+      <stop offset="35%"  stop-color="#9DACC2" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Base -->
+  <rect width="1500" height="500" fill="url(#bg)"/>
+  <rect width="1500" height="500" fill="url(#grid)"/>
+  <rect width="1500" height="500" fill="url(#iso)"/>
+
+  <!-- Halo behind the wordmark block -->
+  <circle cx="780" cy="250" r="380" fill="url(#halo)"/>
+
+  <!-- Abstract faceted accents on the right (no full logo — header complements PFP) -->
+  <g opacity="0.9">
+    <!-- Large diamond facet -->
+    <path d="M1200 90 L1380 250 L1200 410 L1020 250 Z"
+          fill="url(#facet-a)" stroke="#6F8099" stroke-opacity="0.35" stroke-width="1"/>
+    <!-- Inner highlight strip on the diamond -->
+    <path d="M1200 90 L1200 410" stroke="#E2E7EF" stroke-opacity="0.18" stroke-width="0.8"/>
+    <!-- Smaller triangular facet behind -->
+    <path d="M1380 250 L1470 170 L1470 330 Z"
+          fill="url(#facet-b)" stroke="#6F8099" stroke-opacity="0.25" stroke-width="1"/>
+    <!-- Crescent-style edge highlight on the diamond -->
+    <path d="M1020 250 L1200 90" stroke="url(#facet-c)" stroke-width="2" fill="none"/>
+  </g>
+
+  <!-- Soft fade so the bottom-left PFP overlap zone is calm -->
+  <rect width="1500" height="500" fill="url(#leftFade)"/>
+
+  <!-- Wordmark, vertically centered, left of the facets -->
+  <g font-family="Manrope, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+    <text x="430" y="225" font-size="116" font-weight="300" fill="#1F2D48" letter-spacing="-2">clearstone</text>
+    <text x="432" y="282" font-size="42" font-weight="200" fill="#3F506E" letter-spacing="14">fusion</text>
+
+    <line x1="430" y1="318" x2="600" y2="318" stroke="#3F506E" stroke-opacity="0.55" stroke-width="1"/>
+
+    <text x="430" y="362" font-size="26" font-weight="500" fill="#1F2D48" letter-spacing="-0.2">
+      Institutional credit. Compliant savings.
+    </text>
+    <text x="430" y="396" font-size="20" font-weight="400" fill="#3F506E" letter-spacing="0.2">
+      KYC &amp; KYB-gated. On public DeFi rails.
+    </text>
+  </g>
+
+  <!-- Top-right brand mark -->
+  <text x="1460" y="50" text-anchor="end" font-family="Geist, sans-serif" font-size="13" font-weight="500"
+        fill="#3F506E" letter-spacing="3">CLEARSTONE.AI</text>
+
+  <!-- Bottom-right network badge -->
+  <g transform="translate(1265 435)">
+    <rect x="0" y="0" width="200" height="40" rx="20" fill="#1F2D48" fill-opacity="0.92" stroke="#3F506E" stroke-width="1"/>
+    <circle cx="22" cy="20" r="4.5" fill="#5DD389"/>
+    <text x="40" y="26" font-family="Geist, -apple-system, BlinkMacSystemFont, sans-serif"
+          font-size="13" font-weight="500" fill="#E2E7EF" letter-spacing="2">
+      BUILT ON SOLANA
+    </text>
+  </g>
+</svg>

@@ -1,0 +1,4 @@
+# SPA fallback. The console doesn't proxy Solstice — its config keeps
+# the direct URL and any Solstice calls go through the backend-edge
+# Worker which has its own CORS allowance.
+/*  /index.html  200

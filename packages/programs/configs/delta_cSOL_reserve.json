@@ -1,0 +1,93 @@
+{
+  "_comment": "cSOL collateral reserve. Underlying = wSOL via the cSOL native-pool wrapper (KYC-gated, 1:1 wrap, no Jito staking). Used as collateral in EG-3 (Margin Long SOL) and as debt in EG-4 (Margin Short SOL). Conservative LTV (65/85) inside the EGs reflects the negative SOL/USD correlation with the sUSDC counterparty — see docs/operations/MARGIN_PAIR.md.",
+  "_oracle_note": "cSOL price = wSOL Pyth feed (no exchange-rate drift; cSOL is a 1:1 wrapper). Pythconfiguration.price below is the wSOL Pyth Receiver price account (PriceUpdateV2 format).",
+
+  "status": 0,
+  "assetTier": 0,
+
+  "loanToValuePct": 55,
+  "liquidationThresholdPct": 65,
+  "minLiquidationBonusBps": 200,
+  "maxLiquidationBonusBps": 500,
+  "badDebtLiquidationBonusBps": 99,
+  "protocolLiquidationFeePct": 10,
+  "protocolOrderExecutionFeePct": 0,
+  "protocolTakeRatePct": 10,
+
+  "depositLimit": "1000000000000000",
+  "borrowLimit": "1000000000000000",
+
+  "borrowRateCurve": {
+    "points": [
+      { "utilizationRateBps": 0,     "borrowRateBps": 1 },
+      { "utilizationRateBps": 5000,  "borrowRateBps": 200 },
+      { "utilizationRateBps": 8000,  "borrowRateBps": 500 },
+      { "utilizationRateBps": 9000,  "borrowRateBps": 1000 },
+      { "utilizationRateBps": 9500,  "borrowRateBps": 1500 },
+      { "utilizationRateBps": 9700,  "borrowRateBps": 2000 },
+      { "utilizationRateBps": 9800,  "borrowRateBps": 2500 },
+      { "utilizationRateBps": 9900,  "borrowRateBps": 3000 },
+      { "utilizationRateBps": 9950,  "borrowRateBps": 3500 },
+      { "utilizationRateBps": 9980,  "borrowRateBps": 4000 },
+      { "utilizationRateBps": 10000, "borrowRateBps": 4500 }
+    ]
+  },
+
+  "tokenInfo": {
+    "name": "cSOL",
+    "heuristic": { "exp": "0", "lower": "0", "upper": "0" },
+    "maxTwapDivergenceBps": "4050",
+    "maxAgePriceSeconds": "600",
+    "maxAgeTwapSeconds": "1200",
+    "scopeConfiguration": {
+      "priceFeed": "11111111111111111111111111111111",
+      "priceChain": [65535, 65535, 65535, 65535],
+      "twapChain": [65535, 65535, 65535, 65535]
+    },
+    "switchboardConfiguration": {
+      "priceAggregator": "11111111111111111111111111111111",
+      "twapAggregator": "11111111111111111111111111111111"
+    },
+    "pythConfiguration": {
+      "price": "7UVimffxr9ow1uXYxsr4LHAcV58mLzhmwaeKvJ1pjLiE"
+    },
+    "blockPriceUsage": 0
+  },
+
+  "fees": {
+    "borrowFee": "0",
+    "flashLoanFee": "0",
+    "padding": [0, 0, 0, 0, 0, 0, 0, 0]
+  },
+
+  "depositWithdrawalCap": {
+    "configCapacity": "1000000000000000",
+    "currentTotal": "0",
+    "lastIntervalStartTimestamp": "0",
+    "configIntervalLengthSeconds": "86400"
+  },
+  "debtWithdrawalCap": {
+    "configCapacity": "1000000000000000",
+    "currentTotal": "0",
+    "lastIntervalStartTimestamp": "0",
+    "configIntervalLengthSeconds": "86400"
+  },
+
+  "borrowFactorPct": "100",
+  "multiplierSideBoost": [1, 1],
+  "multiplierTagBoost": [1, 1, 1, 1, 1, 1, 1, 1],
+  "elevationGroups": [3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+  "autodeleverageEnabled": 1,
+  "deleveragingBonusIncreaseBpsPerDay": 100,
+  "deleveragingThresholdDecreaseBpsPerDay": "24",
+  "deleveragingMarginCallPeriodSecs": "604800",
+  "disableUsageAsCollOutsideEmode": 1,
+  "utilizationLimitBlockBorrowingAbovePct": 100,
+  "hostFixedInterestRateBps": 0,
+  "borrowLimitOutsideElevationGroup": "18446744073709551615",
+  "borrowLimitAgainstThisCollateralInElevationGroup": [
+    "18446744073709551615","0","18446744073709551615","0","0","0","0","0","0","0","0","0","0","0","0","0",
+    "0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0"
+  ],
+  "reserved1": [0, 0]
+}
